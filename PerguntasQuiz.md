@@ -44,7 +44,47 @@ Vanguardas europeias:
     c) Pois o artista quis representar a violência praticada pelos humanos contra os animais
     d) Porque o artista desejava fortalecer o paradoxo entre a inocência dos animais e a crueldade e maldade dos humanos
 
-8- 
+8- Por que o artista de "Guernica" decidiu pintar o quadro de forma monocromática, com tons de cinza, preto e branco? # Dificuldade: Difícil
+    a) Porque ele queria fazer uma referência ao caráter documental das fotografias que o inspiraram na produção do painel # Resposta correta
+    b) Porque o formato monocromático na época estava se popularizando
+    c) Porque ele não queria que os sentimentos, melhores retratados pelas cores coloridas, interferissem na representação da realidade
+    d) Pois ele queria inovar o estilo de arte que era usada na época, explorando melhor o conceito de luz e sombra com a utilização de cores monocromáticas
+
+9- O pintor de "Guernica" desenhou uma vela no centro do quadro com o objetivo de retratar: # Dificuldade: Médio
+    a) Uma "luz solitária", uma pequena chama de esperança frente a todo o desespero da guerra, a expectativa de que dias melhores virão # Resposta correta
+    b) A luz da razão, em oposição à fé, que o acontecimento histórico conhecido como Renascimento idealizava tanto nas obras artísticas quanto nos movimentos revolucionários da época
+    c) O fogo que seria jogado pelos alemães nazistas contra as pessoas que estão representadas no quadro e sofrendo com a guerra
+    d) A luz que revelaria a maldade e a ganância da humanidade, demonstrando como o humano se põe contra sua própria espécie formando guerras
+
+10- O pintor de "Guernica" retratou a imagem de um cavalo com uma enorme boca aberta com os dentes à mostra e uma língua pontiaguda em sua obra para simbolizar: #Dificuldade: Difícil
+    a) A dor em um nível ainda maior que a dor humana, como um grito selvagem e visceral # Resposta correta
+    b) O maltrato aos animais praticado pelos humanos
+    c) A ideia de que o cavalo representa a beleza e a pureza que ainda podem ser encontradas em tempos sombrios
+    d) A interpretação do cavalo como uma metáfora da perseverança e da luta pela liberdade mesmo diante da adversidade
+
+11- O autor da pintura "Guernica"  retratou uma mãe que segura seu filho morto nos braços para simbolizar: # Dificuldade: Fácil
+    a) Toda a dor e o sofrimento maternal diante de uma perda em um cenário de guerra, fazendo uma alusão à famosa cena bíblica de Maria com Jesus sem vida em seu colo # Resposta correta
+    b) O retrato da mãe e filho como uma expressão de amor e união em tempos de conflito, transmitindo uma mensagem de resistência
+    c) A representação da maternidade como um símbolo de esperança e renovação em meio à devastação da guerra
+    d) A representação da mãe segurando seu filho morto simboliza a serenidade e a paz que podem ser encontradas mesmo nos momentos mais sombrios da história
+
+12- O artista que criou a obra "Guernica" pintou uma pessoa em chamas no lado direito do quadro simbolizando: # Dificuldade: Médio
+    a) Cenas de incêndios onde labaredas saem pelas janelas nessa área da pintura, mostrando o homem com braços levantados em sinal de desespero, referindo-se a "Os fuzilamentos de 3 de maio" de Goya # Resposta correta
+    b) A figura em chamas representa a esperança e a renovação, simbolizando o ressurgimento da cidade após a destruição
+    c) O homem em chamas é uma representação da força e da resistência do povo de Guernica diante da adversidade
+    d) A pessoa em chamas simboliza a vitória e a libertação, marcando o triunfo sobre a opressão e a tirania
+
+13- Em "Guernica", o pintor desenhou um lustre com raios triangulares em formato de olho na parte superior da obra com a finalidade de referir-se a: # Dificuldade: Difícil
+    a) O grande olho divino que observa a cena, se assemelhando à figura solar. # Resposta correta
+    b) A ideia de iluminação e esclarecimento, simbolizando o conhecimento e a sabedoria
+    c) Uma alusão ao poder e à autoridade, refletindo a vigilância do governo sobre a população, referindo-se ao "olho que tudo vê"
+    d) A ordem e a harmonia, representando a estabilidade social e política
+
+14- (Enem/2012) O quadro Les Demoiselles d’Avignon (1907), de Pablo Picasso, representa o rompimento com a estética clássica e a revolução da arte no início do século XX. Essa nova tendência se caracteriza pela: # Dificuldade: Vestibular (Enem)
+    a)  Pintura de modelos em planos irregulares
+    b) Mulher como temática central da obra
+    c) Cena representada por vários modelos
+    d) Oposição entre tons claros e escuros
 
 2. DADAÍSMO
 

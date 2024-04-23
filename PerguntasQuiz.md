@@ -38,6 +38,14 @@ Vanguardas europeias:
    c) Tanto o cubismo sintético quanto o analítico tinham a preocupação em transmitir uma realidade objetiva, abusando da profusão e intensidade cromática
    d) Henri Matisse e Wassily Kandinsky são os artistas de destaque nessa vertente
 
+7- Por que o artista de "Guernica" pintou animais, como um cavalo e um touro, em seu quadro? # Dificuldade: Difícil
+    a) Porque o cavalo e o touro são símbolos importantes da cultura do local onde se passa o quadro # Resposta correta
+    b) Porque a representação de animais faz uma crítica à "zoomorfização", onde o humano é comparado a animais por certos comportamentos e atitudes serem semelhantes
+    c) Pois o artista quis representar a violência praticada pelos humanos contra os animais
+    d) Porque o artista desejava fortalecer o paradoxo entre a inocência dos animais e a crueldade e maldade dos humanos
+
+8- 
+
 2. DADAÍSMO
 
 3. EXPRESSIONISMO

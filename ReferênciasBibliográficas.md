@@ -13,3 +13,5 @@
    Em formato ABNT: Completo, V. M. P. ([s.d.]). ARTE - Fonte de Conhecimento. Blogspot.com. Recuperado 30 de abril de 2024, de https://artefontedeconhecimento.blogspot.com/2010/07/danca-1909-henri-matisse.html
 7. https://www.projetoagathaedu.com.br/questoes-vestibular/historia-da-arte/idade-contemporanea/fauvismo.php
    Em formato ABNT: Fauvismo ou Fovismo. ([s.d.]). Com.br. Recuperado 30 de abril de 2024, de https://www.projetoagathaedu.com.br/questoes-vestibular/historia-da-arte/idade-contemporanea/fauvismo.php
+8. https://www.todamateria.com.br/fauvismo/
+   Em formato ABNT: Aidar, L. (2014, outubro 4). Fauvismo. Toda Matéria. https://www.todamateria.com.br/fauvismo/

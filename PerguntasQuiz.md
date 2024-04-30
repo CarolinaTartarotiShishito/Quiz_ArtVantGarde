@@ -117,7 +117,43 @@ Vanguardas europeias:
     b) Tarsila do Amaral
     c) Paul Gauguin
     d) Edvard Munch
-    
+
+3- O que o quadro "A Dança" retrata? # Dificuldade: Fácil
+    a) A arte da dança com a representação de uma roda de pessoas, onde cada uma delas parece continuar o movimento iniciado pela outra, como numa roda que gira sem interrupção # Resposta correta
+    b) A essência da união e do companheirismo, assim como da preservação da natureza e da valorização da simplicidade
+    c) O fortalecimento dos laços sociais, de forma que seja possível fornecer o desenvolvimento da confiança entre humanos
+    d) Um momento de voltar para as raízes, a fé e os ancestrais, praticando cultos e consolidando o vínculo espiritual entre pessoas
+
+4- Por que o pintor de "A Dança" decidiu criar a obra com cores chamativas? # Dificuldade: Fácil
+    a) Porque ele desejava criar emoções fortes e intensas no espectador e demonstrar a expressão emocional da arte, enfatizando a energia da dança # Resposta correta
+    b) Porque criar obras com cores quentes e saturadas estavam se tornando popular na época
+    c) Para dar um enfoque maior na melancolia e na tristeza que o quadro representa com a cor azul escuro profundo
+    d) Porque ele queria destacar a monotonia e a uniformidade do movimento, não se preocupando com os sentimentos dos dançarinos da obra, nem com os dos espectadores
+
+5- (Faculdade Cásper Líbero) A Pinacoteca do Estado de São Paulo recebeu nos meses de setembro e outubro deste ano a primeira exposição individual organizada no Brasil de um grande mestre das artes plásticas francesas, do mesmo movimento artístico do quadro "A Dança". A mostra reuniu cerca de 80 obras do artista, entre pinturas, esculturas, gravuras, colagens e desenhos. Assinale a alternativa que indica o nome desse artista francês. # Dificuldade: Vestibular (Faculdade Cásper Líbero)
+    a) Henri Matisse # Resposta correta
+    b) Henri Cartier-Bresson
+    c) Marc Chagall
+    d) Auguste Rodin
+
+6- (CONSULPLAN/modificado) Em relação à vanguarda europeia do quadro "A Dança", tendência estética da pintura, surgida no final do século XIX e desenvolvida no início do século XX, assinale a afirmativa correta # Dificuldade: Vestibular(Consulplan)
+    a) As obras apresentavam cores puras, exagero no desenho e da perspectiva # Resposta correta
+    b) Surgiu com um grupo de pintores na Itália
+    c) O ano de 1925 foi o mais triunfal para os fauves, pois o movimento atingiu o clímax nas exposições
+    d) Foi o mais duradouro e definido de todos os movimentos artísticos
+
+7- Como originou a vanguarda europeia que o quadro "A Dança" representa? # Dificuldade: Médio
+    a) Surgiu na França no início do século XX, onde os artistas dessa vertente eram conhecidos "les fauves" (“as feras” em francês) pelo uso ousado e expressivo da cor # Resposta correta
+    b) O movimento emergiu na Itália, no período do Renascimento, como uma reação ao Classicismo
+    c) A vanguarda teve origem na França, durante o movimento Impressionista, no final do século XIX, o que explica porque ambos os movimentos utilizam cores vibrantes para representar emoções humanas
+    d) O Fauvismo surgiu na Rússia, no final do século XIX, influenciado pelo Realismo
+
+8- Qual frase representaria o movimento europeu literário e artístico de qual o quadro "A Dança" faz parte? # Dificuldade: Médio
+    a) “Uma arte do equilíbrio, da pureza e da serenidade, destituída de temas perturbadores ou deprimentes.” # Resposta correta
+    b) "Uma arte da simetria, da imitação e da ordem, com temas nostálgicos e tradicionais."
+    c) "Uma arte da escuridão, do mistério e do desconhecido, repleta de temas sombrios e sinistros."
+    d) "Uma arte da abstração total, do caos cromático e da ausência de harmonia, com temas aleatórios e desconexos."
+
 5. FUTURISMO
 
 6. SURREALISMO

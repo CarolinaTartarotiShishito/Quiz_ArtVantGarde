@@ -1,0 +1,1 @@
+# Resumos das Vanguardas Europeias

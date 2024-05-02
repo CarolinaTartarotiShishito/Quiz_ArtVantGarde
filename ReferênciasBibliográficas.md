@@ -19,3 +19,5 @@
    Em formato ABNT: Carvalho, L. D. (2020, julho 14). Teste – A ARTE DO FAUVISMO - VÍRUS DA ARTE & CIA - Lu Dias Carvalho. VÍRUS DA ARTE & CIA - Lu Dias Carvalho; Lu Dias Carvalho. https://virusdaarte.net/teste-a-arte-do-fauvismo/
 10. https://virusdaarte.net/matisse-a-danca/
    Em formato ABNT: Carvalho, L. D. (2014, abril 24). Matisse – A DANÇA - VÍRUS DA ARTE & CIA - Lu Dias Carvalho. VÍRUS DA ARTE & CIA - Lu Dias Carvalho; Lu Dias Carvalho. https://virusdaarte.net/matisse-a-danca/
+11. https://querobolsa.com.br/enem/literatura/fauvismo
+   Em formato ABNT: Fauvismo. ([s.d.]). Com.br. Recuperado 2 de maio de 2024, de https://querobolsa.com.br/enem/literatura/fauvismo

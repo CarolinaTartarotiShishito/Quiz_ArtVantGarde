@@ -144,7 +144,7 @@ Vanguardas europeias:
 
 15- (Enem/2012) O quadro Les Demoiselles d’Avignon (1907), de Pablo Picasso, representa o rompimento com a estética clássica e a revolução da arte no início do século XX. Essa nova tendência se caracteriza pela: # Dificuldade: Vestibular (Enem)
    
-   a)  Pintura de modelos em planos irregulares
+   a)  Pintura de modelos em planos irregulares # Resposta correta
    
    b) Mulher como temática central da obra
    
@@ -152,17 +152,16 @@ Vanguardas europeias:
    
    d) Oposição entre tons claros e escuros
 
-16- (Enem/2014/Modificado) Na criação do texto, o chargista Iotti usa criativamente um intertexto: os traços reconstroem uma cena de Guernica. Na charge, publicada no período de carnaval, recebe destaque a figura do carro, elemento introduzido por Iotti no intertexto. Além dessa figura, a linguagem verbal contribui para estabelecer um diálogo entre a obra original e a charge, ao explorar: # Dificuldade: Vestibular(Enem)
+16- (FACASPER) O quadro Guernica foi pintado em 1937 pelo pintor espanhol Pablo Picasso. A temática do quadro é a Guerra Civil Espanhola e o sofrimento da população do povoado de Guernica, que foi bombardeado por aviões alemães que apoiavam o regime do General Franco, cuja morte, em 2015, completa 40 anos. # Dificuldade: Vestibular(FACASPER)
 
-![image](https://github.com/CarolinaTartarotiShishito/Quiz_ArtVantGarde/assets/167549701/b03bb82f-79af-42de-a58a-b572c7caa33e)
-   
-   a) Uma expressão polissêmica, “quadro dramático”, remetendo-se tanto à obra pictórica quanto ao contexto do trânsito brasileiro # Resposta correta
-   
-   b) Um termo pejorativo, “trânsito”, reforçando-se a imagem negativa de mundo caótico presente tanto em Guernica quanto na charge
-   
-   c) Uma referência ao tempo presente, com o emprego da forma verbal “é”, evidenciando-se a atualidade do tema abordado tanto pelo pintor espanhol quanto pelo chargista brasileiro
-   
-   d) Uma referência ao contexto, “trânsito no feriadão”, esclarecendo-se o referente tanto do texto de Iotti quanto da obra "Guernica"
+   a)	As figuras humanas aparecem marcadas pela dor, com corpos dilacerados, retratando o pânico causado pela guerra # Resposta correta
+
+   b)	A cena cotidiana retratada reproduz hábitos corriqueiros do povo espanhol no contexto da guerra
+
+   c) O quadro retrata aspectos épicos do franquismo, fazendo uma leitura apologética do regime do General Franco
+
+   d) O painel monumental pintado por Picasso é realista e narrativo, descrevendo uma cena presenciada pelo pintor
+
 
 2. DADAÍSMO -------------------------------------------------------------------------------------------------------------------------------------------
 

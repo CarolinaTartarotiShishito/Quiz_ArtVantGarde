@@ -195,6 +195,18 @@ Sobre a obra, assinale a alternativa INCORRETA:
    
    d) Exibe um caráter de sonho, com figuras deformadas inseridas em uma cena irreal, projetada apenas no inconsciente do artista. # Resposta correta
 
+3 - No quadro abaixo, uma de suas características marcantes é:
+
+url da imagem: https://abra.com.br/wp-content/uploads/2022/12/Obra-Cav.-Azul.png
+
+   a) A ausência de formas reconhecíveis, pois parece ser apenas um conjunto aleatório de linhas e manchas.
+
+   b) A subjetividade, pois apesar de teoricamente ser uma obra com um tema bem definido, possui margem para interpretações. # Resposta correta
+
+   c) A clareza extrema da mensagem transmitida, não deixando espaço para qualquer tipo de interpretação.
+
+   d) A falta de expressão emocional, pois transmite uma sensação de monotonia e indiferença.
+
 
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -388,6 +400,7 @@ Assim escreveu o pintor dos “relógios moles” e das “girafas em chamas” 
    d) Do reflexo que, apesar do termo "paranóico", possui sobriedade e elegância advindas de uma técnica de cores discretas e desenhos precisos.
 
 2 - (ENEM - 2015/modificado)
+
 url imagem: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89Fb1FtVTfh8fuUJ0qHMk2QeQFwOcQYDmKPs7RRvR7w&s
 
 O quadro acima pertence a uma das vanguardas artísticas europeias do início do século XX. René Magritte, pintor belga, apresenta elementos dessa vanguarda em suas produções.

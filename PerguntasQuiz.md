@@ -343,3 +343,19 @@ Assinale a alternativa correta:
 5. FUTURISMO ------------------------------------------------------------------------------------------------------------------------------------------
 
 6. SURREALISMO ----------------------------------------------------------------------------------------------------------------------------------------
+1 - (Enem 2010) “Todas as manhãs quando acordo, experimento um prazer supremo: o de ser Salvador Dalí.”
+
+(NÉRET, G. Salvador Dalí. Taschen, 1996)
+
+Assim escreveu o pintor dos “relógios moles” e das “girafas em chamas” em 1931. Esse artista excêntrico deu apoio ao general Franco durante a Guerra Civil Espanhola e, por esse motivo, foi afastado do movimento surrealista por seu líder, André Breton. Dessa forma, Dalí criou seu próprio estilo, baseado na interpretação dos sonhos e nos estudos de Sigmund Freud, denominado “método de interpretação paranoico”. Esse método era constituído por textos visuais que demonstram imagens:
+
+   a) Do fantástico, impregnado de civismo pelo governo espanhol, em que a busca pela emoção e pela dramaticidade desenvolveram um estilo incomparável.
+   
+   b) Do onírico, que misturava sonho com realidade e interagia refletindo a unidade entre o consciente e o inconsciente como um universo único ou pessoal. # Resposta correta
+   
+   c) Da linha inflexível da razão, dando vazão a uma forma de produção despojada no traço, na temática e nas formas vinculadas ao real.
+   
+   d) Do reflexo que, apesar do termo "paranóico", possui sobriedade e elegância advindas de uma técnica de cores discretas e desenhos precisos.
+
+2 - (ENEM - 2015/modificado)
+url imagem: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89Fb1FtVTfh8fuUJ0qHMk2QeQFwOcQYDmKPs7RRvR7w&s

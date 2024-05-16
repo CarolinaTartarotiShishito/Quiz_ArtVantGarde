@@ -59,5 +59,11 @@ Em formato ABNT: La reproduction interdite. Disponível em: <https://obraseartes
 
 Em formato ABNT: O Cavaleiro Azul: a obra expressionista mais famosa de Kandinsky Academia Brasileira de Arte -. Disponível em: <https://abra.com.br/artigos/o-cavaleiro-azul-a-obra-expressionista-mais-famosa-de-kandinsky/>.
 
+16. <https://beduka.com/blog/exercicios/literatura-exercicios/questoes-sobre-expressionismo/>
+
+Em formato ABNT: BEDUKA, R. Questões sobre expressionismo | Você consegue resolver? Disponível em: <https://beduka.com/blog/exercicios/literatura-exercicios/questoes-sobre-expressionismo/>. Acesso em: 16 maio. 2024.
+
+‌
+
 ‌
 ‌

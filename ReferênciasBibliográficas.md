@@ -50,3 +50,9 @@ Em formato ABNT: Os 7 Melhores Exercícios sobre Vanguardas Europeias com gabari
 13. https://www.colegiodearquitetos.com.br/wp-content/uploads/2017/03/Fauvismo-EF-e-EM.pdf
 
 Em formato ABNT: ([S.d.]). Com.br. Recuperado 2 de maio de 2024, de https://www.colegiodearquitetos.com.br/wp-content/uploads/2017/03/Fauvismo-EF-e-EM.pdf
+
+14. https://obraseartesblog.wordpress.com/2016/06/22/la-reproduction-interdite/
+
+Em formato ABNT: La reproduction interdite. Disponível em: <https://obraseartesblog.wordpress.com/2016/06/22/la-reproduction-interdite/>.
+
+‌

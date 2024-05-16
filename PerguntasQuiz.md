@@ -166,7 +166,36 @@ Vanguardas europeias:
 2. DADAÍSMO -------------------------------------------------------------------------------------------------------------------------------------------
 
 3. EXPRESSIONISMO ------------------------------------------------------------------------------------------------------------------------------------
+
+1 - (FUVEST - 2019/modificado)
+
+url da imagem: https://static.todamateria.com.br/upload/la/sa/lasarsegallexpressionismo-cke.jpg?auto_optimize=low
+
+Esta imagem:
    
+   a) É marcada por pinceladas soltas e pela temática da emigração americana para o continente europeu.
+   
+   b) É caracterizado pelas formas geométricas que procuram salientar a esperança daqueles que se dirigem para terras estrangeiras.
+   
+   c) Reforça o sofrimento dos que se deslocavam em um contexto de perseguições e intolerâncias. # Resposta correta
+
+   d) Procurava destacar o subconsciente atormentado daqueles que deixavam seus locais de origem.
+
+2 - O brasileiro Candido Portinari foi um dos artistas que usou as Vanguardas Artísticas Europeias como inspiração para suas telas, como é o caso da pintura abaixo:
+
+url da imagem: https://static.todamateria.com.br/upload/po/rt/portinari-cke.jpg
+
+Sobre a obra, assinale a alternativa INCORRETA:
+
+   a) Se chama "Retirantes" e retrata uma família em busca de melhores condições de vida.
+
+   b) Integra o acervo do Museu de Arte de São Paulo (MASP) e foi pintada em 1944.
+
+   c) Traz um aspecto sombrio, exibindo figuras desnutridas, um retrato da pobreza extrema que assolava o Brasil na primeira metade do século XX.
+   
+   d) Exibe um caráter de sonho, com figuras deformadas inseridas em uma cena irreal, projetada apenas no inconsciente do artista. # Resposta correta
+
+
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 
 1- A obra "A Dança", assim como a vanguarda europeia que esta representa, possui qual dessas características como a principal? # Dificuldade: Fácil

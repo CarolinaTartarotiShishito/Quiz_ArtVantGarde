@@ -55,4 +55,9 @@ Em formato ABNT: ([S.d.]). Com.br. Recuperado 2 de maio de 2024, de https://www.
 
 Em formato ABNT: La reproduction interdite. Disponível em: <https://obraseartesblog.wordpress.com/2016/06/22/la-reproduction-interdite/>.
 
+15. <https://abra.com.br/artigos/o-cavaleiro-azul-a-obra-expressionista-mais-famosa-de-kandinsky/>
+
+Em formato ABNT: O Cavaleiro Azul: a obra expressionista mais famosa de Kandinsky Academia Brasileira de Arte -. Disponível em: <https://abra.com.br/artigos/o-cavaleiro-azul-a-obra-expressionista-mais-famosa-de-kandinsky/>.
+
+‌
 ‌

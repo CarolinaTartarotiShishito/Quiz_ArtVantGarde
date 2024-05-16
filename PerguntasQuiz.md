@@ -343,6 +343,7 @@ Assinale a alternativa correta:
 5. FUTURISMO ------------------------------------------------------------------------------------------------------------------------------------------
 
 6. SURREALISMO ----------------------------------------------------------------------------------------------------------------------------------------
+
 1 - (Enem 2010) “Todas as manhãs quando acordo, experimento um prazer supremo: o de ser Salvador Dalí.”
 
 (NÉRET, G. Salvador Dalí. Taschen, 1996)
@@ -359,3 +360,15 @@ Assim escreveu o pintor dos “relógios moles” e das “girafas em chamas” 
 
 2 - (ENEM - 2015/modificado)
 url imagem: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89Fb1FtVTfh8fuUJ0qHMk2QeQFwOcQYDmKPs7RRvR7w&s
+
+O quadro acima pertence a uma das vanguardas artísticas europeias do início do século XX. René Magritte, pintor belga, apresenta elementos dessa vanguarda em suas produções.
+
+Um traço referente a essa vanguarda presente nessa pintura é o(a):
+
+   a) Justaposição de elementos díspares, observada na imagem do homem no espelho. # Resposta correta
+   
+   b) Crítica ao passadismo, exposta na dupla imagem do homem olhando sempre para frente.
+
+   c) Processo de automatismo, indicado na repetição da imagem do homem.
+
+   d) Procedimento de colagem, identificado no reflexo do livro no espelho.

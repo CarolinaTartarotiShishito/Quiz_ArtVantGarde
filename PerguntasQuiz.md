@@ -167,7 +167,7 @@ Vanguardas europeias:
 
 3. EXPRESSIONISMO ------------------------------------------------------------------------------------------------------------------------------------
 
-1 - (FUVEST - 2019/modificado)
+1 - (FUVEST - 2019/adaptada)
 
 url da imagem: https://static.todamateria.com.br/upload/la/sa/lasarsegallexpressionismo-cke.jpg?auto_optimize=low
 
@@ -207,6 +207,35 @@ url da imagem: https://abra.com.br/wp-content/uploads/2022/12/Obra-Cav.-Azul.png
 
    d) A falta de expressão emocional, pois transmite uma sensação de monotonia e indiferença.
 
+4 - (IFSudMinas - adaptada) Examine a pintura de Cândido Portinari (“Retirantes”, 1944) para responder à questão.
+
+url da imagem: https://beduka.com/blog/wp-content/uploads/2023/06/Questao-2-sobre-expressionismo.jpg
+
+Considerando-se o tema apresentado na tela “Retirantes”, de Portinari, é CORRETO apenas o que se afirma em:
+
+   a) Através de sua tela, o artista eterniza uma visão crítica do estado de degradação e martírio que muitas famílias brasileiras vivenciam. # Resposta correta
+
+   b) A realidade retratada por Portinari tem a ver com o processo migratório brasileiro que está associado à boa distribuição de renda na região Nordeste do Brasil.
+
+   d) Influenciado pelo onirismo e pela fantasia, Portinari idealiza o retrato da família brasileira que permanece no campo.
+
+   e) A obra artística revela um cenário harmonioso através do qual o bucólico e o pastoril acompanham o estado de espírito das personagens.
+
+5 - (Unichristus – adaptada) Edward Munch (1863-1944), artista norueguês, representa a opressão e a ansiedade do trabalhador: são rostos pálidos, com olhares perdidos e, tal como fantasmas, retornam à noite para casa.
+
+url da imagem: https://beduka.com/blog/wp-content/uploads/2023/06/Questao-3-sobre-expressionismo.jpg
+
+A arte de Munch, na visão de Karl Marx, representa
+
+   a) Uma visão clássica da classe camponesa explorada pelo senhor.
+
+   b) Um olhar denunciador do trabalho como mercadoria. # Resposta correta
+
+   c) Uma denúncia da exploração da mão de obra infantil nas fábricas.
+
+   d) A visão do operário do século XIX como agente produtor de riqueza.
+
+6 - 
 
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 

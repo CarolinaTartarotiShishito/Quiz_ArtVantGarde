@@ -307,7 +307,41 @@ Podemos afirmar que são influências e motivações da vertente:
    
    d) a influência de artistas como Van Gogh e Munch, que retrataram os sentimentos humanos como a angústia e a solidão. # Resposta correta
 
-9 - 
+9 - Uma característica marcante do quadro “A Noite Estrelada” de Vincent Van Gogh mostrado abaixo é:  
+
+url da imagem: https://static.todamateria.com.br/upload/an/oi/anoiteestrelada-cke.jpg 
+
+   a) O céu aparece na obra como uma enorme onda, o que cria uma sensação de atordoamento e vertigem. Podemos perceber que o pintor elabora uma reprodução estilizada da via Láctea. 
+
+   b) Enquanto muitas de suas obras apresentam uma sensação de tridimensionalidade e profundidade, nesta pintura as formas parecem planas e bidimensionais. 
+
+   c) A obra não apresenta uma paleta de cores vibrantes típica do estilo de Van Gogh. Ao contrário, predominam tons neutros e suaves, o que pode surpreender quem espera a intensidade cromática característica do artista 
+
+   d) Na obra, o artista faz o uso de formas e representação com mais precisão e realismo, destoando de suas outras obras, nas quais ele faz uso de distorções e abstrações. 
+
+10 – A partir da análise do quadro “O Grito” de Edvard Munch, todas as afirmações estão corretas, exceto: 
+
+url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg 
+
+   a) A composição exibe cores intensas, onde o próprio ambiente - especialmente o céu alaranjado - deixa transparecer a angústia vivida pelo personagem principal, além de sua feição que nos remete à própria morte. 
+
+   b) Tanto as formas da figura como da paisagem se encontram distorcidas, embora sejam facilmente identificáveis. 
+
+   c) Apesar de ser uma obra icônica que evoca intensas emoções, o quadro "O Grito" de Edvard Munch não exibe cores intensas, optando por uma paleta de tons suaves e pastéis que contrastam com a temática angustiante da obra. # Resposta correta 
+
+   d) Na tela vemos um protagonista em desespero, em cima de uma ponte, lutando com os sentimentos de solidão, ansiedade e medo, buscando revelar um lado sombrio e inquietante da existência humana. 
+
+11 – São características do quadro “A Noite Estrelada” de Vicent Van Gogh todas as afirmações a seguir, exceto: 
+
+   a) As luzes das janelas nas casas se relacionam às estrelas no céu, criando um diálogo entre a humanidade e a grandeza da via láctea. 
+
+   b) As espirais, uma característica marcante das obras de Van Gogh, chamam a atenção. As pinceladas rápidas em sentido horário dão uma sensação de profundidade e movimento ao céu, e revelam as perturbações mentais e preocupações do artista. 
+
+   c) A pintura é muito expressiva, a visão do céu noturno turbulento com as espirais é marcante, contrastando com a calmaria da pequena vila pouco abaixo das linhas dos montes. 
+
+   d) Uma característica notável desta obra é a ausência de textura expressiva. Ao contrário de outras pinturas de Van Gogh que exibem pinceladas marcadas e texturizadas, "A Noite Estrelada" apresenta uma superfície lisa e uniforme. # Resposta correta 
+
+12 - 
 
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -555,15 +589,4 @@ ei-los a engolir regularmente seus relógios
 enquanto o hierofante armado cavaleiro
 movia inutilmente seu único braço.
 
-(João Cabral de Melo Neto, “Dentro da perda da memória”.)
-
-e) – Desde que estou retirando
-só a morte vejo ativa,
-só a morte deparei
-e às vezes até festiva;
-só morte tem encontrado
-quem pensava encontrar vida,
-e o pouco que não foi morte
-foi de vida severina.
-
-(João Cabral de Melo Neto, “Morte e vida severina”.)
+(João Cabral de Melo Neto, “Dentro da perda da memória”.) # Resposta correta

@@ -7,6 +7,8 @@ Giulia Ribeiro Pinto Cardoso (RA: 24.00924-5)
 
 Louise Reis Bochnia (RA: 24.00165-0)
 
+Descrição do Jogo Quiz ArtVantGarde:
+
 O projeto visa desenvolver um jogo educacional para alunos do ensino médio, oferecendo uma abordagem instrutiva e interativa sobre os movimentos artísticos que moldaram 
 a cultura europeia nos séculos XIX e XX, conhecidos como as vanguardas. Serão explorados por meio de perguntas estruturadas com diferentes níveis de dificuldade, promovendo 
 uma progressão gradual nos conhecimentos dos aspectos históricos, estéticos e influências significativas, apresentando os principais artistas e suas obras emblemáticas. 

@@ -67,6 +67,12 @@ Em formato ABNT: BEDUKA, R. Questões sobre expressionismo | Você consegue reso
 
 Em formato ABNT: Questões sobre Expressionismo: Arte na Idade Contemporânea - Para o Enem e Vestibular. Disponível em: <https://www.projetoagathaedu.com.br/questoes-vestibular/historia-da-arte/idade-contemporanea/expressionismo.php>.
 
+18. <https://www.todamateria.com.br/exercicios-vanguardas-europeias/>
+
+Em formato ABNT: Exercícios sobre Vanguardas Europeias. Disponível em: <https://www.todamateria.com.br/exercicios-vanguardas-europeias/>.
+
+‌
+
 ‌
 ‌
 

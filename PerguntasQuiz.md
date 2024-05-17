@@ -235,7 +235,65 @@ A arte de Munch, na visão de Karl Marx, representa
 
    d) A visão do operário do século XIX como agente produtor de riqueza.
 
-6 - 
+6 - (UEG) Leia o soneto e observe a imagem a seguir para responder à questão.
+
+Soneto da separação
+
+De repente do riso fez-se o pranto
+
+Silencioso e branco como a bruma
+
+E das bocas unidas fez-se a espuma
+
+E das mãos espalmadas fez-se o espanto.
+
+De repente da calma fez-se o vento
+
+Que dos olhos desfez a última chama
+
+E da paixão fez-se o pressentimento
+
+E do momento imóvel fez-se o drama.
+
+De repente, não mais que de repente
+
+Fez-se de triste o que se fez amante
+
+E de sozinho o que se fez contente.
+
+Fez-se do amigo próximo o distante
+
+Fez-se da vida uma aventura errante
+
+De repente, não mais que de repente.
+
+MORAES, Vinícius de. Soneto da separação. In: Antologia poética. São Paulo: Companhia das Letras, 2009. p.177.
+
+url da imagem: https://www.projetoagathaquestoes.com.br/imagens/questoes-vestibular/historia-da-arte/img-seculoxx/nota-se-tanto-no-poema-quanto-na-pintura-apresentados.webp
+
+Nota-se, tanto no poema quanto na pintura apresentados, o retrato de um sentimento de:
+
+   a) Angústia
+
+   b) Arrependimento
+   
+   c) Êxtase
+   
+   d) Recato
+
+7 - (Enem 2009, 3ª aplicação - adaptada) Cândido Portinari, nascido em 1903, em uma fazenda de café em Brodósqui, no interior do estado de São Paulo, é um dos ícones das artes plásticas no Brasil e no mundo. Sua vasta e variada obra é um dos valiosos patrimônios da cultura brasileira. A seguir, são apresentadas pinturas desse grande artista.
+
+url da imagem: https://www.projetoagathaquestoes.com.br/imagens/provas-enem/linguagens-pos/2009-3/candido-portinari-nascido-em-1903-em-uma-fazenda-de-cafe-em-brodosqui-no-interior-do-estado-de-sao-paulo.webp
+
+Na série de pinturas apresentada, Portinari:
+
+   a) Valoriza o folclore brasileiro com a representação de tradicionais brincadeiras infantis, fenômeno da cultura popular. # Resposta correta
+   
+   b) Representa cenas de sua cidadezinha do interior e de sua infância de menino pobre, mas livre, que pertencem a um passado que se perdeu.
+   
+   c) Revela seu apego à cultura rural, mediante imagens impressionistas de tipos regionais remanescentes em algumas áreas do Brasil.
+   
+   d) Apresenta uma maneira própria de ver a arte, à medida que usa traços, luzes, formas, texturas, com impressões de seu estado de espírito no momento da criação.
 
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 

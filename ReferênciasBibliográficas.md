@@ -63,6 +63,11 @@ Em formato ABNT: O Cavaleiro Azul: a obra expressionista mais famosa de Kandinsk
 
 Em formato ABNT: BEDUKA, R. Questões sobre expressionismo | Você consegue resolver? Disponível em: <https://beduka.com/blog/exercicios/literatura-exercicios/questoes-sobre-expressionismo/>. Acesso em: 16 maio. 2024.
 
+17. <https://www.projetoagathaedu.com.br/questoes-vestibular/historia-da-arte/idade-contemporanea/expressionismo.php>
+
+Em formato ABNT: Questões sobre Expressionismo: Arte na Idade Contemporânea - Para o Enem e Vestibular. Disponível em: <https://www.projetoagathaedu.com.br/questoes-vestibular/historia-da-arte/idade-contemporanea/expressionismo.php>.
+
+‌
 ‌
 
 ‌

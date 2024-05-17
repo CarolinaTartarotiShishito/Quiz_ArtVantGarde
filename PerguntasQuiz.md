@@ -295,6 +295,20 @@ Na série de pinturas apresentada, Portinari:
    
    d) Apresenta uma maneira própria de ver a arte, à medida que usa traços, luzes, formas, texturas, com impressões de seu estado de espírito no momento da criação.
 
+8 -Uma das vanguardas surgiu na Alemanha na primeira década do século XX. Desponta através do grupo Die Bruck, formado pelos artistas Ernst Kirchner, Erickh Heckel e Karl Schimidt-Rottluff.
+
+Podemos afirmar que são influências e motivações da vertente:
+
+   a) as ideias de industrialização da Art Nouveu e referências em artistas como o francês René Lalique.
+
+   b) a observação dos efeitos luminosos nas cenas e a representação das cores em contato com a luz do sol, tendo como influência a pintura de Monet e Renoir.
+   
+   c) o intuito de expressar uma arte de massa inspirada na fotografia, como era próprio da produção de Andy Warhol.
+   
+   d) a influência de artistas como Van Gogh e Munch, que retrataram os sentimentos humanos como a angústia e a solidão. # Resposta correta
+
+9 - 
+
 4. FAUVISMO --------------------------------------------------------------------------------------------------------------------------------------------
 
 1- A obra "A Dança", assim como a vanguarda europeia que esta representa, possui qual dessas características como a principal? # Dificuldade: Fácil
@@ -486,7 +500,7 @@ Assim escreveu o pintor dos “relógios moles” e das “girafas em chamas” 
    
    d) Do reflexo que, apesar do termo "paranóico", possui sobriedade e elegância advindas de uma técnica de cores discretas e desenhos precisos.
 
-2 - (ENEM - 2015/modificado)
+2 - (ENEM - 2015 - adaptada)
 
 url imagem: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89Fb1FtVTfh8fuUJ0qHMk2QeQFwOcQYDmKPs7RRvR7w&s
 
@@ -501,3 +515,55 @@ Um traço referente a essa vanguarda presente nessa pintura é o(a):
    c) Processo de automatismo, indicado na repetição da imagem do homem.
 
    d) Procedimento de colagem, identificado no reflexo do livro no espelho.
+
+3 - (Unifesp/2018 - adaptada)
+
+Uma das vanguardas buscou a comunicação com o irracional e o ilógico, deliberadamente desorientando e reorientando a consciência por meio do inconsciente.
+Fiona Bradley. Surrealismo, 2001
+
+Verifica-se a influência e tal vanguarda nos seguintes versos:
+
+a) Um gatinho faz pipi.
+Com gestos de garçom de restaurant-Palace
+Encobre cuidadosamente a mijadinha.
+Sai vibrando com elegância a patinha direita:
+– É a única criatura fina na pensãozinha burguesa.
+
+(Manuel Bandeira, “Pensão familiar”.)
+
+b) A igreja era grande e pobre. Os altares, humildes.
+Havia poucas flores. Eram flores de horta.
+Sob a luz fraca, na sombra esculpida
+(quais as imagens e quais os fiéis?)
+ficávamos.
+
+(Carlos Drummond de Andrade, “Evocação Mariana”.)
+
+c) Nunca me esquecerei desse acontecimento
+na vida de minhas retinas tão fatigadas.
+Nunca me esquecerei que no meio do caminho
+tinha uma pedra
+tinha uma pedra no meio do caminho
+no meio do caminho tinha uma pedra.
+
+(Carlos Drummond de Andrade, “No meio do caminho”.)
+
+d) E nas bicicletas que eram poemas
+chegavam meus amigos alucinados.
+Sentados em desordem aparente,
+ei-los a engolir regularmente seus relógios
+enquanto o hierofante armado cavaleiro
+movia inutilmente seu único braço.
+
+(João Cabral de Melo Neto, “Dentro da perda da memória”.)
+
+e) – Desde que estou retirando
+só a morte vejo ativa,
+só a morte deparei
+e às vezes até festiva;
+só morte tem encontrado
+quem pensava encontrar vida,
+e o pouco que não foi morte
+foi de vida severina.
+
+(João Cabral de Melo Neto, “Morte e vida severina”.)

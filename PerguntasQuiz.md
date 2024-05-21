@@ -4,6 +4,8 @@ Vanguardas europeias:
 
 1- Quem pintou o quadro "Guernica"? # Dificuldade: Fácil
 
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
+
    a) Pablo Picasso # Resposta correta
    
    b) Georges Braque
@@ -13,6 +15,8 @@ Vanguardas europeias:
    d) Salvador Dali
 
 2- De qual método artístico a obra Guernica, assim como a vanguarda europeia que esta representa, se usufrui para representar a realidade? # Dificuldade: Fácil
+
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
 
    a) Formas geométricas, produzindo uma fragmentação dos planos e das perspectivas e compondo a realidade de forma inusitada # Resposta correta
    
@@ -24,6 +28,8 @@ Vanguardas europeias:
 
 3- O autor da pintura "Guernica"  retratou uma mãe que segura seu filho morto nos braços para simbolizar: # Dificuldade: Fácil
 
+https://cdn.studenti.stbm.it/images/2016/11/11/guernica-particolare-1_200x300.jpeg
+
    a) Toda a dor e o sofrimento maternal diante de uma perda em um cenário de guerra, fazendo uma alusão à famosa cena bíblica de Maria com Jesus sem vida em seu colo # Resposta correta
     
    b) O retrato da mãe e filho como uma expressão de amor e união em tempos de conflito, transmitindo uma mensagem de resistência
@@ -33,6 +39,8 @@ Vanguardas europeias:
    d) A representação da mãe segurando seu filho morto simboliza a serenidade e a paz que podem ser encontradas mesmo nos momentos mais sombrios da história
    
 4- O que o quadro "Guernica" retrata? # Dificuldade: Médio
+
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
 
    a) Um bombardeio realizado pela Alemanha Nazista a uma cidade do país Basco durante a Guerra Civil Espanhola # Resposta correta
    
@@ -44,6 +52,8 @@ Vanguardas europeias:
 
 5- Qual crítica o quadro "Guernica" traz? # Dificuldade: Médio
 
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
+
    a) Uma crítica ao fascismo alemão durante a época em que a influência do nazismo no mundo estava em seu auge # Resposta correta
    
    b) Uma crítica à fome com a qual a população brasileira sofreu e ainda sofre
@@ -54,6 +64,8 @@ Vanguardas europeias:
 
 6- O pintor de "Guernica" desenhou uma vela no centro do quadro com o objetivo de retratar: # Dificuldade: Médio
 
+https://cdn.culturagenial.com/es/imagenes/guernica-detalle-bombillas.jpg
+
    a) Uma "luz solitária", uma pequena chama de esperança frente a todo o desespero da guerra, a expectativa de que dias melhores virão # Resposta correta
     
    b) A luz da razão, em oposição à fé, que o acontecimento histórico conhecido como Renascimento idealizava tanto nas obras artísticas quanto nos movimentos revolucionários da época
@@ -63,6 +75,8 @@ Vanguardas europeias:
    d) A luz que revelaria a maldade e a ganância da humanidade, demonstrando como o humano se põe contra sua própria espécie formando guerras
 
 7- O artista que criou a obra "Guernica" pintou uma pessoa em chamas no lado direito do quadro simbolizando: # Dificuldade: Médio
+
+https://images.uncyc.org/pt/thumb/c/cb/Guernica_-_detalhe5.jpg/200px-Guernica_-_detalhe5.jpg.png 
 
    a) Cenas de incêndios onde labaredas saem pelas janelas nessa área da pintura, mostrando o homem com braços levantados em sinal de desespero, referindo-se a "Os fuzilamentos de 3 de maio" de Goya # Resposta correta
    
@@ -93,7 +107,9 @@ Vanguardas europeias:
    d) Di Cavalcanti
 
 10- Por que o artista de "Guernica" pintou animais, como um cavalo e um touro, em seu quadro? # Dificuldade: Difícil
-   
+
+https://cdn.culturagenial.com/es/imagenes/guernica-animales-cke.jpg
+
    a) Porque o cavalo e o touro são símbolos importantes da cultura do local onde se passa o quadro # Resposta correta
    
    b) Porque a representação de animais faz uma crítica à "zoomorfização", onde o humano é comparado a animais por certos comportamentos e atitudes serem semelhantes
@@ -103,6 +119,8 @@ Vanguardas europeias:
    d) Porque o artista desejava fortalecer o paradoxo entre a inocência dos animais e a crueldade e maldade dos humanos
 
 11- Por que o artista de "Guernica" decidiu pintar o quadro de forma monocromática, com tons de cinza, preto e branco? # Dificuldade: Difícil
+
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
    
    a) Porque ele queria fazer uma referência ao caráter documental das fotografias que o inspiraram na produção do painel # Resposta correta
    
@@ -113,6 +131,8 @@ Vanguardas europeias:
    d) Pois ele queria inovar o estilo de arte que era usada na época, explorando melhor o conceito de luz e sombra com a utilização de cores monocromáticas
 
 12- O pintor de "Guernica" retratou a imagem de um cavalo com uma enorme boca aberta com os dentes à mostra e uma língua pontiaguda em sua obra para simbolizar: #Dificuldade: Difícil
+
+https://cdn.culturagenial.com/es/imagenes/guernica-animales-cke.jpg 
    
    a) A dor em um nível ainda maior que a dor humana, como um grito selvagem e visceral # Resposta correta
    
@@ -123,6 +143,8 @@ Vanguardas europeias:
    d) A interpretação do cavalo como uma metáfora da perseverança e da luta pela liberdade mesmo diante da adversidade
 
 13- Em "Guernica", o pintor desenhou um lustre com raios triangulares em formato de olho na parte superior da obra com a finalidade de referir-se a: # Dificuldade: Difícil
+
+https://cdn.culturagenial.com/es/imagenes/guernica-detalle-bombillas.jpg
    
    a) O grande olho divino que observa a cena, se assemelhando à figura solar. # Resposta correta
    
@@ -133,7 +155,9 @@ Vanguardas europeias:
    d) A ordem e a harmonia, representando a estabilidade social e política
 
 14- (Enem/2011) O pintor espanhol Pablo Picasso (1881-1973), um dos mais valorizados no mundo artístico, tanto em termos financeiros quanto históricos, criou a obra Guernica em protesto ao ataque aéreo à pequena cidade basca de mesmo nome. A obra, feita para integrar o Salão Internacional de Artes Plásticas de Paris, percorreu toda a Europa, chegando aos EUA e instalando-se no MoMA, de onde sairia apenas em 1981. Essa obra apresenta elementos plásticos identificados pelo: # Dificuldade: Vestibular (Enem)
-   
+
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg 
+
    a) Painel ideográfico, monocromático, que enfoca várias dimensões de um evento, renunciando à realidade, colocando-se em plano frontal ao espectador # Resposta correta
    
    b) Horror da guerra de forma fotográfica, com o uso da perspectiva clássica, envolvendo o espectador nesse exemplo brutal de crueldade do ser humano
@@ -142,9 +166,11 @@ Vanguardas europeias:
    
    d) Uso de vários ícones que representam personagens fragmentados bidimensionalmente, de forma fotográfica livre de sentimentalismo
 
-15- (Enem/2012) O quadro Les Demoiselles d’Avignon (1907), de Pablo Picasso, representa o rompimento com a estética clássica e a revolução da arte no início do século XX. Essa nova tendência se caracteriza pela: # Dificuldade: Vestibular (Enem)
+15- (Enem/2012) O quadro Les Demoiselles dAvignon (1907), de Pablo Picasso, representa o rompimento com a estética clássica e a revolução da arte no início do século XX. Essa nova tendência se caracteriza pela: # Dificuldade: Vestibular (Enem)
+
+https://cdn.britannica.com/22/181722-050-1BDD52A7/Museum-of-Modern-Art-patrons-viewing-Les-Demoiselles-d-Avignon-1907-Pablo-Picasso.jpg
    
-   a)  Pintura de modelos em planos irregulares # Resposta correta
+   a) Pintura de modelos em planos irregulares # Resposta correta
    
    b) Mulher como temática central da obra
    
@@ -153,6 +179,8 @@ Vanguardas europeias:
    d) Oposição entre tons claros e escuros
 
 16- (FACASPER) O quadro Guernica foi pintado em 1937 pelo pintor espanhol Pablo Picasso. A temática do quadro é a Guerra Civil Espanhola e o sofrimento da população do povoado de Guernica, que foi bombardeado por aviões alemães que apoiavam o regime do General Franco, cuja morte, em 2015, completa 40 anos. # Dificuldade: Vestibular(FACASPER)
+
+https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295195obj2035841.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.500.281.jpeg
 
    a)	As figuras humanas aparecem marcadas pela dor, com corpos dilacerados, retratando o pânico causado pela guerra # Resposta correta
 
@@ -164,7 +192,7 @@ Vanguardas europeias:
 
 17- (Enem/2014/Modificado) Na criação do texto, o chargista Iotti usa criativamente um intertexto: os traços reconstroem uma cena de Guernica. Na charge, publicada no período de carnaval, recebe destaque a figura do carro, elemento introduzido por Iotti no intertexto. Além dessa figura, a linguagem verbal contribui para estabelecer um diálogo entre a obra original e a charge, ao explorar: # Dificuldade: Vestibular(Enem)
 
-![image](https://github.com/CarolinaTartarotiShishito/Quiz_ArtVantGarde/assets/167549701/61598fd8-588d-4695-9ff8-97aca9c74480)
+https://d2q576s0wzfxtl.cloudfront.net/2017/08/08150010/questao127.enem2014.jpg
 
    a) Uma expressão polissêmica, “quadro dramático”, remetendo-se tanto à obra pictórica quanto ao contexto do trânsito brasileiro # Resposta correta
    
@@ -179,11 +207,10 @@ Vanguardas europeias:
 
 3. EXPRESSIONISMO ------------------------------------------------------------------------------------------------------------------------------------
 
-1 - (FUVEST - 2019/adaptada)
+1 - (FUVEST - 2019/adaptada) Esta imagem:
 
 url da imagem: https://static.todamateria.com.br/upload/la/sa/lasarsegallexpressionismo-cke.jpg?auto_optimize=low
 
-Esta imagem:
    
    a) É marcada por pinceladas soltas e pela temática da emigração americana para o continente europeu.
    

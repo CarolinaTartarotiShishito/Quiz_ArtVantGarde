@@ -162,6 +162,18 @@ Vanguardas europeias:
 
    d) O painel monumental pintado por Picasso é realista e narrativo, descrevendo uma cena presenciada pelo pintor
 
+17- (Enem/2014/Modificado) Na criação do texto, o chargista Iotti usa criativamente um intertexto: os traços reconstroem uma cena de Guernica. Na charge, publicada no período de carnaval, recebe destaque a figura do carro, elemento introduzido por Iotti no intertexto. Além dessa figura, a linguagem verbal contribui para estabelecer um diálogo entre a obra original e a charge, ao explorar: # Dificuldade: Vestibular(Enem)
+
+![image](https://github.com/CarolinaTartarotiShishito/Quiz_ArtVantGarde/assets/167549701/61598fd8-588d-4695-9ff8-97aca9c74480)
+
+   a) Uma expressão polissêmica, “quadro dramático”, remetendo-se tanto à obra pictórica quanto ao contexto do trânsito brasileiro # Resposta correta
+   
+   b) Um termo pejorativo, “trânsito”, reforçando-se a imagem negativa de mundo caótico presente tanto em Guernica quanto na charge
+   
+   c) Uma referência ao tempo presente, com o emprego da forma verbal “é”, evidenciando-se a atualidade do tema abordado tanto pelo pintor espanhol quanto pelo chargista brasileiro
+   
+   d) Uma referência ao contexto, “trânsito no feriadão”, esclarecendo-se o referente tanto do texto de Iotti quanto da obra "Guernica"
+
 
 2. DADAÍSMO -------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -386,6 +386,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 1- A obra "A Dança", assim como a vanguarda europeia que esta representa, possui qual dessas características como a principal? # Dificuldade: Fácil
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) A arbitrariedade cromática e a simplificação das formas # Resposta correta
    
    b) O abstracionismo, revelando a natureza de formas e cores, sem a preocupação com a representação
@@ -395,6 +397,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    d)  A influência da arte futurista, valorizando o dinamismo e a velocidade
 
 2- O que o quadro "A Dança" retrata? # Dificuldade: Fácil
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) A arte da dança com a representação de uma roda de pessoas, onde cada uma delas parece continuar o movimento iniciado pela outra, como numa roda que gira sem interrupção # Resposta correta
    
@@ -406,6 +410,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 3- Por que o pintor de "A Dança" decidiu criar a obra com cores chamativas? # Dificuldade: Fácil
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) Porque ele desejava criar emoções fortes e intensas no espectador e demonstrar a expressão emocional da arte, enfatizando a energia da dança # Resposta correta
    
    b) Porque criar obras com cores quentes e saturadas estavam se tornando popular na época
@@ -414,7 +420,9 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    
    d) Porque ele queria destacar a monotonia e a uniformidade do movimento, não se preocupando com os sentimentos dos dançarinos da obra, nem com os dos espectadores
 
-4- Complete o espaço em branco: Os artistas desse movimento inspiraram-se em ____, Paul Gauguin, Paul Cézanne (pós-impressionistas) e em Georges Seurat e Paul Signac (neoimpressionistas). # Dificuldade: Fácil
+4- De acordo com a vanguarda europeia da qual o quadro "A Dança" faz parte, complete o espaço em branco: Os artistas desse movimento inspiraram-se em ____, Paul Gauguin, Paul Cézanne (pós-impressionistas) e em Georges Seurat e Paul Signac (neoimpressionistas). # Dificuldade: Fácil
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) Vincent van Gogh # Resposta correta
    
@@ -426,6 +434,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 5- Sobre a vanguarda europeia de qual o quadro "A Dança" faz parte, marque a alternativa correta: # Dificuldade: Fácil
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) No Fauvismo as cores são puras # Resposta correta
    
    b) No Fauvismo predomina a mistura de cores
@@ -435,6 +445,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    d) No Fauvismo não existem cores fora da realidade habitual
 
 6- Sobre a vanguarda europeia de qual o quadro "A Dança" faz parte, marque a alternativa correta: # Dificuldade: Fácil
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) No Fauvismo as cores são as da realidade # Resposta correta
    
@@ -446,6 +458,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 7- Quem pintou o quadro "A Dança"? # Dificuldade: Médio
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) Henri Matisse # Resposta correta
    
    b) Tarsila do Amaral
@@ -455,6 +469,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    d) Edvard Munch
 
 8- Como originou a vanguarda europeia que o quadro "A Dança" representa? # Dificuldade: Médio
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) Surgiu na França no início do século XX, onde os artistas dessa vertente eram conhecidos "les fauves" (“as feras” em francês) pelo uso ousado e expressivo da cor # Resposta correta
    
@@ -466,6 +482,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 9- Qual frase representaria o movimento europeu literário e artístico de qual o quadro "A Dança" faz parte? # Dificuldade: Médio
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) “Uma arte do equilíbrio, da pureza e da serenidade, destituída de temas perturbadores ou deprimentes.” # Resposta correta
    
    b) "Uma arte da simetria, da imitação e da ordem, com temas nostálgicos e tradicionais."
@@ -476,6 +494,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 10- Qual era o principal objetivo dos artistas, como aquele que pintou "A Dança", ao criar uma arte nesta vertente? # Dificuldade: Médio
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) Utilizar elementos artísticos que causem qualidades expressivas ao interpretar a obra # Resposta correta
    
    b) Utilizar as mais diversas técnicas teóricas e artísticas da composição na pintura
@@ -485,6 +505,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    d) Produzir através da arte uma crítica política profunda sobre o que estava acontecendo na época
 
 11- Qual o elemento principal da obra "A Dança" e a justificativa do porquê o artista decidiu centralizá-lo? # Dificuldade: Médio
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) O humano porque não lhe interessava a natureza-morta nem a paisagem, mas sim as formas humanas imperfeitas, mas sempre expressivas # Resposta correta
    
@@ -497,6 +519,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 12- O que simbolizava a cor azul intensa no quadro "A Dança"? # Dificuldade: Difícil
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) O mar Mediterrâneo nos meses de agosto # Resposta correta
    
    b) O frio e a solidão dos meses de inverno
@@ -506,6 +530,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
    d) A frieza e a indiferença dos personagens retratados na obra
 
 13- O que inspirou o artista ao pintar um grupo dançando em uma roda em sua obra "A Dança"? # Dificuldade: Difícil
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) A cultura africana, que o artista descobriu durante as suas viagens pelo Norte de África # Resposta correta
    
@@ -527,6 +553,8 @@ url da imagem: https://abra.com.br/wp-content/uploads/2021/08/grito4.jpg
 
 15- (CONSULPLAN/modificado) Em relação à vanguarda europeia do quadro "A Dança", tendência estética da pintura, surgida no final do século XIX e desenvolvida no início do século XX, assinale a afirmativa correta # Dificuldade: Vestibular(Consulplan)
 
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
+
    a) As obras apresentavam cores puras, exagero no desenho e da perspectiva # Resposta correta
    
    b) Surgiu com um grupo de pintores na Itália
@@ -546,6 +574,8 @@ III. A pintura faz parte de um momento da pesquisa artística do artista em que 
 IV. Nessa imagem, o pintor expressou sentimentos dramáticos, tais como a solidão, a morte e o abandono, notados nos elementos compositivos. 
 
 Assinale a alternativa correta:
+
+https://lh3.googleusercontent.com/proxy/8EmvMAib5LpF1m2qAZ4ZEsOXts5aseCy0Nkr12YAHmemlLls6aCLAfq2g-NacoCsuvFpzByFWcs1xExbx5gpCf2f8ZkxNkDb5rUEb-q7pyDtCjCSB1bjLMvRFKTH55plQ4Q-
 
    a) Somente as afirmativas I e II são corretas # Resposta correta
    

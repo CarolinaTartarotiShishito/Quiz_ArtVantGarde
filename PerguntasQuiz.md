@@ -168,7 +168,7 @@ https://www.osservatoreromano.va/content/dam/or/images/it/2021/02/004/varobj4295
 
 15- (Enem/2012) O quadro Les Demoiselles dAvignon (1907), de Pablo Picasso, representa o rompimento com a estética clássica e a revolução da arte no início do século XX. Essa nova tendência se caracteriza pela: # Dificuldade: Vestibular (Enem)
 
-https://cdn.britannica.com/22/181722-050-1BDD52A7/Museum-of-Modern-Art-patrons-viewing-Les-Demoiselles-d-Avignon-1907-Pablo-Picasso.jpg
+https://www.researchgate.net/profile/Carlos-Fiolhais/publication/268263035/figure/fig1/AS:284406456569859@1444819193378/Pablo-Picasso-Les-Demoiselles-dAvignon-1907-Oleo-sobre-tela-2-44-x-2-34-m_Q320.jpg
    
    a) Pintura de modelos em planos irregulares # Resposta correta
    

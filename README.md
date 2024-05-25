@@ -1,4 +1,7 @@
 # Quiz_ArtVantGarde
+
+# TODO O CÓDIGO DE PROGRAMAÇÃO ESTÁ NA BRANCH DEV
+
 INTEGRANTES: 
 
 Carolina Tartaroti Shishito (RA: 24.00599-0)

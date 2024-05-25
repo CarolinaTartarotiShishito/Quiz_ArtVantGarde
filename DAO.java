@@ -228,16 +228,6 @@ public class DAO {
     } 
     
     //Métodos da classe Resumo
-        //Consultar resumo
-    public String pegarResumo(int idVanguarda) throws Exception {
-        String sql = "SELECT resumo FROM tbResumos WHERE idVanguarda = ?";
-        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setInt(1, idVanguarda);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            return rs.getString("resumo");
-        }
-    }
     
     public String pegarNomeVanguarda(int idVanguarda) throws Exception {
         String sql = "SELECT vanguarda FROM tbVanguardas WHERE idVanguarda = ?";

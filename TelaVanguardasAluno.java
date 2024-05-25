@@ -1,3 +1,7 @@
+/**
+ *
+ * @author carol
+ */
 public class TelaVanguardasAluno extends javax.swing.JFrame {
     static int idLogin;
     /**

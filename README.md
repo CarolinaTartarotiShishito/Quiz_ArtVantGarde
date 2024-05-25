@@ -1,5 +1,7 @@
 # Quiz_ArtVantGarde
 
+# Nesta branch (prod) está a documentação das perguntas e dos resumos do quiz, as referências bibliográficas e o script SQL
+
 # TODO O CÓDIGO DE PROGRAMAÇÃO ESTÁ NA BRANCH DEV
 
 INTEGRANTES: 

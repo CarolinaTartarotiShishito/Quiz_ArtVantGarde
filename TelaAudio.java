@@ -1,3 +1,7 @@
+/**
+ *
+ * @author monic
+ */
 public class TelaAudio extends javax.swing.JFrame {
     static int idLogin;
     /**

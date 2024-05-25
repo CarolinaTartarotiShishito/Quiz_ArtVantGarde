@@ -1,4 +1,7 @@
 # Quiz_ArtVantGarde
+
+# Nesta branch (dev) está todo o código de programação
+
 INTEGRANTES: 
 
 Carolina Tartaroti Shishito (RA: 24.00599-0)

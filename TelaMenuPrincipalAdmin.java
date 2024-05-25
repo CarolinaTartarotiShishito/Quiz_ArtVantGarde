@@ -1,3 +1,7 @@
+/**
+ *
+ * @author monic
+ */
 public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     static int idLogin;
     /**

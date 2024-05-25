@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author monic
+ * @author carol
  */
 public class TelaConfiguracoes extends javax.swing.JFrame {
     static int idLogin;

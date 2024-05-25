@@ -1,3 +1,7 @@
+/**
+ *
+ * @author carol
+ */
 import javax.swing.JOptionPane;
 
 public class TelaResumoAluno extends javax.swing.JFrame {

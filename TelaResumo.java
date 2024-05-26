@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class TelaResumo extends javax.swing.JFrame{
     static int idLogin;
     static int idVanguarda;
-    public String resumo;
+    public Resumo resumo;
     
     public TelaResumo(int idLogin, int idVanguarda) {
         super("Quiz ArtVantGarde");
@@ -21,8 +21,8 @@ public class TelaResumo extends javax.swing.JFrame{
         DAO dao = new DAO();
         try{
             if(dao.existeResumo(idVanguarda) == false){
-                resumo = dao.pegarResumo(idVanguarda);
-                resumoTextArea.setText(resumo);
+                resumo = new Resumo(this.idVanguarda, dao.pegarResumo(this.idVanguarda));
+                resumoTextArea.setText(resumo.getResumo());
             }else{
                 resumoTextArea.setText(" ");
             }
@@ -347,13 +347,13 @@ public class TelaResumo extends javax.swing.JFrame{
     private void adicionarResumoButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                       
         DAO dao = new DAO();
         try{
-            if(dao.existeResumo(idVanguarda) == false){
+            if(dao.existeResumo(idVanguarda) == true){
                 mostrarResumo.setVisible(false);
                 adicionarResumo.setVisible(true);
                 resumoTextArea.setVisible(false);
                 resumo2.setVisible(true);
             }else{
-                JOptionPane.showMessageDialog(null, "Não é possível adicionar o resumo da vanguarda\nselecionada porque ela já existe!", "Quiz ArtVantGarde", 2);
+                JOptionPane.showMessageDialog(null, "Não é possível adicionar o resumo da vanguarda\nselecionada porque ele já existe!", "Quiz ArtVantGarde", 2);
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Problema adicionarResumoButton1");
@@ -367,7 +367,7 @@ public class TelaResumo extends javax.swing.JFrame{
                 mostrarResumo.setVisible(false);
                 alterarResumo.setVisible(true);
             }else{
-                JOptionPane.showMessageDialog(null, "Não é possível alterar o resumo da vanguarda\nselecionada porque ela não existe!", "Quiz ArtVantGarde", 2);
+                JOptionPane.showMessageDialog(null, "Não é possível alterar o resumo da vanguarda\nselecionada porque ele não existe!", "Quiz ArtVantGarde", 2);
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Problemas técnicos");
@@ -387,8 +387,9 @@ public class TelaResumo extends javax.swing.JFrame{
         options[0]); //default button title
         if (escolha == JOptionPane.YES_OPTION){
             try{
-                dao.removerResumo(idVanguarda, resumo);
+                dao.removerResumo(resumo);
                 JOptionPane.showMessageDialog(null, "Resumo cadastrado com sucesso", "Quiz ArtVantGarde", 1);
+                resumoTextArea.setText(dao.pegarResumo(idVanguarda));
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Problemas técnicos");
             }
@@ -396,45 +397,23 @@ public class TelaResumo extends javax.swing.JFrame{
     }                                                   
 
     private void adicionarResumoButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                       
-        /*try{
-            System.out.println("oi");
-            DAO dao = new DAO();
-            resumo = resumoTextArea2.getText();
-            if (resumo.length() == 0){
-                System.out.println("oii");
-                JOptionPane.showMessageDialog (null, "Preencha o espaço em branco para adicionar um resumo", "Quiz ArtVantGarde", 2);
-            }else{
-                System.out.println("oiii");
-                dao.adicionarResumo(idVanguarda, resumo);
-                JOptionPane.showMessageDialog(null, "Resumo removido com sucesso!", "Quiz ArtVantGarde", 1);
-                adicionarResumo.setVisible(false);
-                mostrarResumo.setVisible(true);
-                try{
-                   if(dao.existeResumo(idVanguarda) == false){
-                   resumo = dao.pegarResumo(idVanguarda);
-                   resumoTextArea.setText(resumo);
-                   }else{
-                       resumoTextArea.setText(" ");
-                   }
-                }catch(Exception e){
-                    JOptionPane.showMessageDialog(null, "Problemas técnicos");
-                } 
-                resumo2.setVisible(false);
-            }
-        }catch (Exception ee){
-            JOptionPane.showMessageDialog(null, "Problema adicionarResumoButton2");
-        }*/
-        resumo = resumoTextArea2.getText();
-        Resumo resumo = new Resumo(idVanguarda, this.resumo);
         DAO dao = new DAO();
         try{
-            dao.adicionarResumo(idVanguarda, resumo);
-            JOptionPane.showMessageDialog(null, "Resumo removido com sucesso!", "Quiz ArtVantGarde", 1);
-            adicionarResumo.setVisible(false);
-            mostrarResumo.setVisible(true);
-            resumo2.setVisible(false);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Problemas técnicos");
+            if ((resumoTextArea2.getText()).length() == 0){
+                JOptionPane.showMessageDialog (null, "Preencha o espaço em branco para adicionar um resumo", "Quiz ArtVantGarde", 2);
+            }else{
+                Resumo resumoNovo = new Resumo(idVanguarda, resumoTextArea2.getText());
+                dao.adicionarResumo(resumoNovo);
+                JOptionPane.showMessageDialog(null, "Resumo adicionado com sucesso!", "Quiz ArtVantGarde", 1);
+                adicionarResumo.setVisible(false);
+                mostrarResumo.setVisible(true);
+                resumo2.setVisible(false);
+                resumoTextArea.setText(dao.pegarResumo(idVanguarda));
+                resumoTextArea.setVisible(true);
+                }
+            
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Problema adicionarResumoButton2");
         }
     }                                                      
 

@@ -150,6 +150,11 @@ public class TelaFazerLogin extends javax.swing.JFrame {
         String email = loginTextField.getText();
         String senha = new String(senhaPasswordField.getPassword());
         Login login = new Login(email, senha);
+        
+        // Para tocar o soundtrack depois de clicar o botão de fazer login
+        Musica musica = new Musica();
+        musica.playMusic();
+        
         try{
             Login usuario = new Login(email, senha);
             DAO dao = new DAO();

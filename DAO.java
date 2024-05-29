@@ -193,12 +193,9 @@ public class DAO {
             int totalDeCursos = rs.last()?rs.getRow():0;
             System.out.println("total:" + totalDeCursos);
             rs.beforeFirst();
-            //int contador = 0;
             while(rs.next()){
                 int codQuestao = rs.getInt("codQuestao");
                 numeroQuestoes.add(codQuestao);
-                /*contador++;
-                rs.next();*/
             }
             return numeroQuestoes;
         }

@@ -146,7 +146,7 @@ public class TelaRanking extends javax.swing.JFrame {
     }//GEN-LAST:event_rankingTableMouseClicked
 
     private void menuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalButtonActionPerformed
-        TelaMenuPrincipalAdministrador frame = new TelaMenuPrincipalAdministrador();
+        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_menuPrincipalButtonActionPerformed

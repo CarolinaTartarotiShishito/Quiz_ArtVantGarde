@@ -8,7 +8,9 @@ public class TelaSelecionarCadastro extends javax.swing.JFrame {
      * Creates new form TelaSelecionarCadastro
      */
     public TelaSelecionarCadastro() {
+        super("Quiz ArtVantGarde");
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

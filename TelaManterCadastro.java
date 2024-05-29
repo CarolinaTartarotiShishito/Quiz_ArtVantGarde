@@ -333,7 +333,7 @@ public class TelaManterCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarButtonActionPerformed
 
     private void voltarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButton1ActionPerformed
-        TelaMenuPrincipalAdministrador frame = new TelaMenuPrincipalAdministrador();
+        TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_voltarButton1ActionPerformed

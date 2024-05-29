@@ -166,7 +166,7 @@ public class TelaFazerLogin extends javax.swing.JFrame {
                     frame.setVisible(true);
                 }
             }else if(email.equals("admin") && senha.equals("admin")){
-                TelaMenuPrincipalAdministrador frame = new TelaMenuPrincipalAdministrador();
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(0);
                 this.dispose();
                 frame.setVisible(true);
             }else{

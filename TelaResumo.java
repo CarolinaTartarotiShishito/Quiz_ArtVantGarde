@@ -389,7 +389,7 @@ public class TelaResumo extends javax.swing.JFrame{
         if (escolha == JOptionPane.YES_OPTION){
             try{
                 dao.removerResumo(resumo);
-                JOptionPane.showMessageDialog(null, "Resumo cadastrado com sucesso", "Quiz ArtVantGarde", 1);
+                JOptionPane.showMessageDialog(null, "Resumo removido com sucesso", "Quiz ArtVantGarde", 1);
                 resumoTextArea.setText(dao.pegarResumo(idVanguarda));
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Problemas técnicos");

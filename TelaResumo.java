@@ -1,5 +1,3 @@
-package com.mycompany.apachepii;
-
 import javax.swing.JOptionPane;
 
 /**

@@ -154,6 +154,7 @@ public class TelaFazerLogin extends javax.swing.JFrame {
         try{
             Login usuario = new Login(email, senha);
             DAO dao = new DAO();
+            Musica musica = new Musica();
             if(dao.existe(usuario)){
                 JOptionPane.showMessageDialog(null, "Bem Vindo " + usuario.getEmail());
                 int idLogin = dao.pegarId(login);
@@ -163,23 +164,22 @@ public class TelaFazerLogin extends javax.swing.JFrame {
                     frame.setVisible(true);
 
                     // Para tocar o soundtrack depois de clicar o botão de fazer login
-                    Musica musica = new Musica();
                     musica.playMusic();
+                    
                 }else if(idLogin == 1){
                     TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(0);
                     this.dispose();
                     frame.setVisible(true);
 
                     // Para tocar o soundtrack depois de clicar o botão de fazer login
-                    Musica musica = new Musica();
                     musica.playMusic();
+                    
                 }else{
                     TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
                     this.dispose();
                     frame.setVisible(true);
 
                     // Para tocar o soundtrack depois de clicar o botão de fazer login
-                    Musica musica = new Musica();
                     musica.playMusic();
                 }
             }else{

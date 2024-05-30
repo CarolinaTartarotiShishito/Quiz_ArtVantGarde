@@ -167,7 +167,7 @@ public class TelaFazerLogin extends javax.swing.JFrame {
                     musica.playMusic();
                     
                 }else if(idLogin == 1){
-                    TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(0);
+                    TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(1);
                     this.dispose();
                     frame.setVisible(true);
 

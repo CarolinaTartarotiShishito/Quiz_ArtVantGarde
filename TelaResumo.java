@@ -1,8 +1,7 @@
 import javax.swing.JOptionPane;
-
 /**
  *
- * @author monic
+ * @author carol
  */
 public class TelaResumo extends javax.swing.JFrame {
     static int idLogin;
@@ -47,7 +46,7 @@ public class TelaResumo extends javax.swing.JFrame {
 
         jPanel17 = new javax.swing.JPanel();
         logoLabel14 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        resumo1 = new javax.swing.JScrollPane();
         resumoTextArea = new javax.swing.JTextArea();
         mostrarResumo = new javax.swing.JLayeredPane();
         voltarSelecaoVanguardasButton = new javax.swing.JButton();
@@ -83,15 +82,17 @@ public class TelaResumo extends javax.swing.JFrame {
         }.getIcon());
         logoLabel14.setText("jLabel1");
 
+        resumo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
+
         resumoTextArea.setEditable(false);
         resumoTextArea.setBackground(new java.awt.Color(222, 209, 193));
         resumoTextArea.setColumns(20);
         resumoTextArea.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         resumoTextArea.setRows(5);
-        resumoTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137)));
-        jScrollPane2.setViewportView(resumoTextArea);
+        resumoTextArea.setBorder(null);
+        resumo1.setViewportView(resumoTextArea);
 
-        mostrarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137)));
+        mostrarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
 
         voltarSelecaoVanguardasButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         voltarSelecaoVanguardasButton.setText("Voltar");
@@ -143,32 +144,33 @@ public class TelaResumo extends javax.swing.JFrame {
         mostrarResumo.setLayout(mostrarResumoLayout);
         mostrarResumoLayout.setHorizontalGroup(
             mostrarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mostrarResumoLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+            .addGroup(mostrarResumoLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addComponent(adicionarResumoButton1)
                 .addGap(50, 50, 50)
                 .addComponent(alterarResumoButton)
                 .addGap(50, 50, 50)
                 .addComponent(removerResumoButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(voltarSelecaoVanguardasButton)
                 .addGap(50, 50, 50)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addGap(49, 49, 49))
         );
         mostrarResumoLayout.setVerticalGroup(
             mostrarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mostrarResumoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addGroup(mostrarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(voltarSelecaoVanguardasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(alterarResumoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(removerResumoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adicionarResumoButton1)))
+                    .addComponent(adicionarResumoButton1))
+                .addContainerGap())
         );
 
-        adicionarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137)));
+        adicionarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
 
         cancelarAdicionarButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         cancelarAdicionarButton.setText("Cancelar");
@@ -194,20 +196,23 @@ public class TelaResumo extends javax.swing.JFrame {
         adicionarResumoLayout.setHorizontalGroup(
             adicionarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adicionarResumoLayout.createSequentialGroup()
-                .addGap(387, 387, 387)
+                .addGap(386, 386, 386)
                 .addComponent(adicionarResumoButton2)
                 .addGap(69, 69, 69)
                 .addComponent(cancelarAdicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
         adicionarResumoLayout.setVerticalGroup(
             adicionarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adicionarResumoLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
                 .addGroup(adicionarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarAdicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adicionarResumoButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(adicionarResumoButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        resumo2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
 
         jScrollPane1.setBackground(new java.awt.Color(222, 209, 193));
 
@@ -215,7 +220,7 @@ public class TelaResumo extends javax.swing.JFrame {
         resumoTextArea2.setColumns(20);
         resumoTextArea2.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         resumoTextArea2.setRows(5);
-        resumoTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137)));
+        resumoTextArea2.setBorder(null);
         jScrollPane1.setViewportView(resumoTextArea2);
 
         resumo2.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -231,7 +236,7 @@ public class TelaResumo extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
-        alterarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137)));
+        alterarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
 
         alterarResumoButton2.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         alterarResumoButton2.setText("Alterar Resumo");
@@ -257,19 +262,20 @@ public class TelaResumo extends javax.swing.JFrame {
         alterarResumoLayout.setHorizontalGroup(
             alterarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterarResumoLayout.createSequentialGroup()
-                .addContainerGap(459, Short.MAX_VALUE)
+                .addContainerGap(454, Short.MAX_VALUE)
                 .addComponent(alterarResumoButton2)
                 .addGap(69, 69, 69)
                 .addComponent(cancelarButton2)
-                .addGap(360, 360, 360))
+                .addGap(361, 361, 361))
         );
         alterarResumoLayout.setVerticalGroup(
             alterarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(alterarResumoLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterarResumoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(alterarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelarButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alterarResumoButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(alterarResumoButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -283,18 +289,18 @@ public class TelaResumo extends javax.swing.JFrame {
                         .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(217, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(204, Short.MAX_VALUE)
+                    .addContainerGap(110, Short.MAX_VALUE)
                     .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(213, Short.MAX_VALUE)))
+                    .addContainerGap(119, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(199, Short.MAX_VALUE)
+                    .addContainerGap(105, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(208, Short.MAX_VALUE)))
+                    .addContainerGap(114, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -302,9 +308,9 @@ public class TelaResumo extends javax.swing.JFrame {
                     .addGap(212, 212, 212)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(197, Short.MAX_VALUE)
+                    .addContainerGap(103, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(206, Short.MAX_VALUE)))
+                    .addContainerGap(112, Short.MAX_VALUE)))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,28 +318,28 @@ public class TelaResumo extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(154, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(681, Short.MAX_VALUE)
+                    .addContainerGap(620, Short.MAX_VALUE)
                     .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(81, Short.MAX_VALUE)))
+                    .addContainerGap(20, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(679, Short.MAX_VALUE)
+                    .addContainerGap(622, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(75, Short.MAX_VALUE)))
+                    .addContainerGap(19, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(211, Short.MAX_VALUE)
+                    .addContainerGap(156, Short.MAX_VALUE)
                     .addComponent(resumo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(149, Short.MAX_VALUE)))
+                    .addContainerGap(94, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(677, Short.MAX_VALUE)
+                    .addContainerGap(622, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(75, Short.MAX_VALUE)))
+                    .addContainerGap(20, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,7 +365,7 @@ public class TelaResumo extends javax.swing.JFrame {
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         DAO dao = new DAO();
         try{
-            if(dao.existeProfessor(idLogin) == false){
+            if(dao.existeProfessor(idLogin) == true){
                 TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
                 this.dispose();
                 frame.setVisible(true);
@@ -382,7 +388,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 resumoTextArea.setVisible(false);
                 resumo2.setVisible(true);
                 resumoTextArea2.setText(dao.pegarResumo(idVanguarda));
-                resumoTextArea2.setVisible(true);
+                resumo1.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Não é possível alterar o resumo da vanguarda\nselecionada porque ele não existe!", "Quiz ArtVantGarde", 2);
             }
@@ -425,6 +431,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 adicionarResumo.setVisible(true);
                 resumoTextArea.setVisible(false);
                 resumo2.setVisible(true);
+                resumo1.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Não é possível adicionar o resumo da vanguarda\nselecionada porque ele já existe!", "Quiz ArtVantGarde", 2);
             }
@@ -446,8 +453,8 @@ public class TelaResumo extends javax.swing.JFrame {
         }
         adicionarResumo.setVisible(false);
         mostrarResumo.setVisible(true);
-        resumoTextArea.setEditable(false);
         resumoTextArea.setVisible(true);
+        resumo1.setVisible(true);
     }                                                       
 
     private void adicionarResumoButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                       
@@ -463,6 +470,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 mostrarResumo.setVisible(true);
                 resumo2.setVisible(false);
                 resumoTextArea.setText(dao.pegarResumo(idVanguarda));
+                resumo1.setVisible(true);
                 resumoTextArea.setVisible(true);
                 }
             
@@ -484,6 +492,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 mostrarResumo.setVisible(true);
                 resumo2.setVisible(false);
                 resumoTextArea.setText(dao.pegarResumo(idVanguarda));
+                resumo1.setVisible(true);
                 resumoTextArea.setVisible(true);
                 }
             
@@ -505,7 +514,7 @@ public class TelaResumo extends javax.swing.JFrame {
         }
         alterarResumo.setVisible(false);
         mostrarResumo.setVisible(true);
-        resumoTextArea.setEditable(false);
+        resumo1.setVisible(true);
         resumoTextArea.setVisible(true);
     }                                               
 
@@ -555,10 +564,10 @@ public class TelaResumo extends javax.swing.JFrame {
     private javax.swing.JButton cancelarButton2;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel logoLabel14;
     private javax.swing.JLayeredPane mostrarResumo;
     private javax.swing.JButton removerResumoButton;
+    private javax.swing.JScrollPane resumo1;
     private javax.swing.JLayeredPane resumo2;
     private javax.swing.JTextArea resumoTextArea;
     private javax.swing.JTextArea resumoTextArea2;

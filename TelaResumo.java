@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author carol
@@ -151,7 +152,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 .addComponent(alterarResumoButton)
                 .addGap(50, 50, 50)
                 .addComponent(removerResumoButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(voltarSelecaoVanguardasButton)
                 .addGap(50, 50, 50)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,7 +201,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 .addComponent(adicionarResumoButton2)
                 .addGap(69, 69, 69)
                 .addComponent(cancelarAdicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap(398, Short.MAX_VALUE))
         );
         adicionarResumoLayout.setVerticalGroup(
             adicionarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +263,7 @@ public class TelaResumo extends javax.swing.JFrame {
         alterarResumoLayout.setHorizontalGroup(
             alterarResumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterarResumoLayout.createSequentialGroup()
-                .addContainerGap(454, Short.MAX_VALUE)
+                .addContainerGap(456, Short.MAX_VALUE)
                 .addComponent(alterarResumoButton2)
                 .addGap(69, 69, 69)
                 .addComponent(cancelarButton2)
@@ -288,19 +289,19 @@ public class TelaResumo extends javax.swing.JFrame {
                         .addGap(457, 457, 457)
                         .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(217, Short.MAX_VALUE))
+                        .addGap(187, 187, 187)
+                        .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(211, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(110, Short.MAX_VALUE)
+                    .addContainerGap(188, Short.MAX_VALUE)
                     .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(119, Short.MAX_VALUE)))
+                    .addContainerGap(211, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(105, Short.MAX_VALUE)
+                    .addContainerGap(187, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(114, Short.MAX_VALUE)))
+                    .addContainerGap(211, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -308,9 +309,9 @@ public class TelaResumo extends javax.swing.JFrame {
                     .addGap(212, 212, 212)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(103, Short.MAX_VALUE)
+                    .addContainerGap(187, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(112, Short.MAX_VALUE)))
+                    .addContainerGap(214, Short.MAX_VALUE)))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,18 +319,18 @@ public class TelaResumo extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(620, Short.MAX_VALUE)
+                    .addContainerGap(675, Short.MAX_VALUE)
                     .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+                    .addContainerGap(75, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(622, Short.MAX_VALUE)
+                    .addContainerGap(677, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(19, Short.MAX_VALUE)))
+                    .addContainerGap(74, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                     .addContainerGap(156, Short.MAX_VALUE)
@@ -337,9 +338,9 @@ public class TelaResumo extends javax.swing.JFrame {
                     .addContainerGap(94, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(622, Short.MAX_VALUE)
+                    .addContainerGap(677, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+                    .addContainerGap(75, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

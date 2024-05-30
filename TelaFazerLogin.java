@@ -151,10 +151,6 @@ public class TelaFazerLogin extends javax.swing.JFrame {
         String senha = new String(senhaPasswordField.getPassword());
         Login login = new Login(email, senha);
         
-        // Para tocar o soundtrack depois de clicar o botão de fazer login
-        Musica musica = new Musica();
-        musica.playMusic();
-        
         try{
             Login usuario = new Login(email, senha);
             DAO dao = new DAO();
@@ -165,15 +161,27 @@ public class TelaFazerLogin extends javax.swing.JFrame {
                     TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
                     this.dispose();
                     frame.setVisible(true);
+
+                    // Para tocar o soundtrack depois de clicar o botão de fazer login
+                    Musica musica = new Musica();
+                    musica.playMusic();
+                }else if(idLogin == 1){
+                    TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(0);
+                    this.dispose();
+                    frame.setVisible(true);
+
+                    // Para tocar o soundtrack depois de clicar o botão de fazer login
+                    Musica musica = new Musica();
+                    musica.playMusic();
                 }else{
                     TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
                     this.dispose();
                     frame.setVisible(true);
+
+                    // Para tocar o soundtrack depois de clicar o botão de fazer login
+                    Musica musica = new Musica();
+                    musica.playMusic();
                 }
-            }else if(email.equals("admin") && senha.equals("admin")){
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(0);
-                this.dispose();
-                frame.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!");
             }

@@ -3,7 +3,7 @@
  * @author carol
  */
 public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
-    static int idLogin;
+    static int idLogin = 1;
     /**
      * Creates new form TelaMenuPrincipalAdmin
      */
@@ -11,6 +11,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
+        this.idLogin = idLogin;
     }
 
     /**
@@ -94,11 +95,10 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
             }
         });
 
-        logoLabel.setIcon(new javax.swing.ImageIcon("D:\\PII\\logo.png")); // NOI18N
         logoLabel.setText("jLabel1");
 
         menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
-        menuPrincipalLabel.setText("Menu Principal");
+        menuPrincipalLabel.setText("Menu Principal - Administrador");
 
         perguntasButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         perguntasButton.setText("Perguntas");
@@ -123,37 +123,36 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(356, Short.MAX_VALUE)
+                .addGap(458, 458, 458)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(354, 354, 354))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(458, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(menuPrincipalLabel)
+                .addGap(638, 638, 638))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(608, 608, 608)
-                        .addComponent(menuPrincipalLabel))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(479, 479, 479)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(estatisticasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(perguntasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(102, 102, 102)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cadastrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(creditosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(configuracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(469, Short.MAX_VALUE))
+                    .addComponent(jogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estatisticasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(perguntasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cadastrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(creditosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(configuracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(569, 569, 569))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(27, 27, 27)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(42, 42, 42)
                 .addComponent(menuPrincipalLabel)
-                .addGap(70, 70, 70)
+                .addGap(67, 67, 67)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,7 +170,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cadastrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,45 +188,52 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void estatisticasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        //TelaEstatisticas frame = new TelaEstatisticas();
-        //this.dispose();
-        //frame.setVisible(true);
+        TelaEstatisticas frame = new TelaEstatisticas(1);
+        this.dispose();
+        frame.setVisible(true);
     }                                                  
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        TelaNivel frame = new TelaNivel(idLogin);
+        TelaNivel frame = new TelaNivel(1);
         this.dispose();
         frame.setVisible(true);
     }                                           
 
     private void resumosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        TelaVanguardas frame = new TelaVanguardas(idLogin);
+        TelaVanguardas frame = new TelaVanguardas(1);
         this.dispose();
         frame.setVisible(true);
     }                                             
 
     private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        TelaConfiguracoes frame = new TelaConfiguracoes(idLogin);
+        idLogin = 1;
+        TelaConfiguracoes frame = new TelaConfiguracoes(1);
         this.dispose();
         frame.setVisible(true);
     }                                                   
 
     private void creditosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // programar
+        TelaCreditos frame = new TelaCreditos(1);
+        this.dispose();
+        frame.setVisible(true);
     }                                              
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         TelaFazerLogin frame = new TelaFazerLogin();
         this.dispose();
         frame.setVisible(true);
+        Musica musica = new Musica();
+        musica.pauseMusic();
     }                                            
 
     private void perguntasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // programar
+        // TODO add your handling code here:
     }                                               
 
     private void cadastrosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // programar
+        TelaAlterarCadastro frame = new TelaAlterarCadastro(1);
+        this.dispose();
+        frame.setVisible(true);
     }                                               
 
     /**

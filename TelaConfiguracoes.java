@@ -147,7 +147,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         DAO dao = new DAO();
         try{
-            if(dao.existeProfessor(idLogin) == false){
+            if(dao.existeProfessor(idLogin) == true){
                 TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
                 this.dispose();
                 frame.setVisible(true);

@@ -22,6 +22,7 @@ public class TelaResumo extends javax.swing.JFrame {
         adicionarResumo.setVisible(false);
         alterarResumo.setVisible(false);
         resumo2.setVisible(false);
+        this.idLogin = idLogin;
         this.idVanguarda = idVanguarda;
         DAO dao = new DAO();
         try{

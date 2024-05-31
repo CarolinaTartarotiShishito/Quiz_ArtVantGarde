@@ -11,6 +11,7 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
+        this.idLogin = idLogin;
     }
 
     /**
@@ -74,11 +75,11 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
             }
         });
 
-        logoLabel.setIcon(new javax.swing.ImageIcon("D:\\PII\\logo.png")); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon("D:\\PII\\logo jogo.png")); // NOI18N
         logoLabel.setText("jLabel1");
 
         menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
-        menuPrincipalLabel.setText("Menu Principal");
+        menuPrincipalLabel.setText("Menu Principal - Aluno");
 
         rankingButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         rankingButton.setText("Ranking");
@@ -102,11 +103,15 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(350, Short.MAX_VALUE)
+                .addGap(457, 457, 457)
+                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(459, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(354, 354, 354))
+                        .addComponent(menuPrincipalLabel)
+                        .addGap(682, 682, 682))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(rankingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,19 +122,16 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
                             .addComponent(configuracoesButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(creditosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(480, 480, 480))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(menuPrincipalLabel)
-                        .addGap(612, 612, 612))))
+                        .addGap(588, 588, 588))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(23, 23, 23)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addGap(57, 57, 57)
                 .addComponent(menuPrincipalLabel)
-                .addGap(54, 54, 54)
+                .addGap(63, 63, 63)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(configuracoesButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -141,22 +143,18 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resumoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -181,17 +179,21 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
     }                                                    
 
     private void creditosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // programar
+        TelaCreditos frame = new TelaCreditos(idLogin);
+        this.dispose();
+        frame.setVisible(true);
     }                                              
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         TelaFazerLogin frame = new TelaFazerLogin();
         this.dispose();
         frame.setVisible(true);
+        Musica musica = new Musica();
+        musica.pauseMusic();
     }                                            
 
     private void rankingButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        TelaVanguardaRanking frame = new TelaVanguardaRanking(idLogin, idVanguarda);
+        TelaVanguardaRanking frame = new TelaVanguardaRanking(idLogin);
         this.dispose();
         frame.setVisible(true);
     }                                             

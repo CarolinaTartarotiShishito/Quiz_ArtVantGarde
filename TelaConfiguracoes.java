@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaConfiguracoes extends javax.swing.JFrame {
     static int idLogin;
+    static String filePathField;
     /**
      * Creates new form TelaConfiguracoes
      */
@@ -14,6 +15,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
+        this.filePathField = filePathField;
     }
 
     /**
@@ -63,7 +65,17 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
             }
         });
 
-        logoLabel.setText("jLabel1");
+        logoLabel.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/mf4A0bx.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         menuPrincipalLabel.setText("Configurações");
@@ -72,39 +84,40 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 199, Short.MAX_VALUE)
+                .addComponent(logoLabel)
+                .addGap(197, 197, 197))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(458, 458, 458)
-                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(727, 727, 727)
-                        .addComponent(menuPrincipalLabel))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(659, 659, 659)
+                        .addGap(662, 662, 662)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ajusteAudioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(alterarCadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(458, Short.MAX_VALUE))
+                                    .addComponent(alterarCadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(723, 723, 723)
+                        .addComponent(menuPrincipalLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(14, 14, 14)
+                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
                 .addComponent(menuPrincipalLabel)
-                .addGap(64, 64, 64)
+                .addGap(53, 53, 53)
                 .addComponent(ajusteAudioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(alterarCadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,7 +135,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void ajusteAudioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        TelaAudio frame = new TelaAudio(idLogin);
+        TelaAudio frame = new TelaAudio(idLogin, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                 
@@ -131,11 +144,11 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaAlterarCadastroProf frame = new TelaAlterarCadastroProf(idLogin);
+                TelaAlterarCadastroProf frame = new TelaAlterarCadastroProf(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaAlterarCadastroAluno frame = new TelaAlterarCadastroAluno(idLogin);
+                TelaAlterarCadastroAluno frame = new TelaAlterarCadastroAluno(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -148,15 +161,15 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }else if(idLogin == 1){
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
+                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }

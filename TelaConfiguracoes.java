@@ -16,6 +16,9 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
         this.musica = musica;
+        if(idLogin == 1){
+            alterarCadastroButton.setVisible(false);
+        }
     }
 
     /**
@@ -142,13 +145,9 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
     private void alterarCadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         DAO dao = new DAO();
-        try{
-            TelaAlterarCadastro frame = new TelaAlterarCadastro(idLogin, musica);
-            this.dispose();
-            frame.setVisible(true);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Problemas técnicos");
-        }
+        TelaAlterarCadastro frame = new TelaAlterarCadastro(idLogin, musica);
+        this.dispose();
+        frame.setVisible(true);
     }                                                     
 
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          

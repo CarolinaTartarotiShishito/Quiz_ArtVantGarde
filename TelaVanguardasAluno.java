@@ -4,16 +4,16 @@
  */
 public class TelaVanguardasAluno extends javax.swing.JFrame {
     static int idLogin;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaVanguardasAluno
      */
-    public TelaVanguardasAluno(int idLogin, String filePathField) {
+    public TelaVanguardasAluno(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
     }
 
     /**
@@ -184,48 +184,48 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
 
     private void cubismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
         int idVanguarda = 1;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                             
 
     private void dadaismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 2;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void expressionismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         int idVanguarda = 3;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                    
 
     private void fauvismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 4;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void futurismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         int idVanguarda = 5;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                               
 
     private void surrealismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         int idVanguarda = 6;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                 
 
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
-        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, filePathField);
+        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                         
@@ -260,7 +260,7 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaVanguardasAluno(idLogin, filePathField).setVisible(true);
+                new TelaVanguardasAluno(idLogin, musica).setVisible(true);
             }
         });
     }

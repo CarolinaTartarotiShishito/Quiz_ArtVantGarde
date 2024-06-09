@@ -3,17 +3,18 @@
  * @author carol
  */
 import javax.swing.JOptionPane;
-
 public class TelaResumoAluno extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
     public String resumo;
+    static String filePathField;
     
-    public TelaResumoAluno(int idLogin, int idVanguarda) {
+    public TelaResumoAluno(int idLogin, int idVanguarda, String filePathField) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
+        this.filePathField = filePathField;
         resumoTextArea.setLineWrap(true);
         resumoTextArea.setWrapStyleWord(true);
         DAO dao = new DAO();
@@ -50,7 +51,17 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(222, 209, 193));
         jPanel17.setPreferredSize(new java.awt.Dimension(1390, 700));
 
-        logoLabel14.setText("jLabel1");
+        logoLabel14.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/h2iNDe1.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         voltarSelecaoVanguardasButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         voltarSelecaoVanguardasButton.setText("Voltar");
@@ -65,6 +76,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         resumoTextArea.setColumns(20);
         resumoTextArea.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         resumoTextArea.setRows(5);
+        resumoTextArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
         jScrollPane2.setViewportView(resumoTextArea);
 
         voltarMenuPrincipalButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
@@ -79,6 +91,10 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addGap(0, 150, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
@@ -87,21 +103,17 @@ public class TelaResumoAluno extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(338, 338, 338)
-                        .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(348, 348, 348)
+                        .addComponent(logoLabel14)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addGap(0, 150, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 265, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarSelecaoVanguardasButton)
@@ -124,7 +136,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void voltarSelecaoVanguardasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              
-        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin);
+        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                             
@@ -133,11 +145,11 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -176,7 +188,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaResumoAluno(idLogin, idVanguarda).setVisible(true);
+                new TelaResumoAluno(idLogin, idVanguarda, filePathField).setVisible(true);
             }
         });
     }

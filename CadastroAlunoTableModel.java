@@ -13,8 +13,7 @@ public class CadastroAlunoTableModel extends AbstractTableModel{
         DAO dao = new DAO ();
         this.cadastrosAlunos = dao.pegarCadastrosAlunos();
     }
-    
-    
+
     @Override
     public int getRowCount() {
         return cadastrosAlunos.size();
@@ -51,4 +50,3 @@ public class CadastroAlunoTableModel extends AbstractTableModel{
         return this.colunas[column];
     }
 }
-

@@ -8,10 +8,11 @@ public class TelaResumo extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
     public Resumo resumo;
+    static String filePathField;
     /**
      * Creates new form TelaResumo
      */
-    public TelaResumo(int idLogin, int idVanguarda) {
+    public TelaResumo(int idLogin, int idVanguarda, String filePathField) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
@@ -24,6 +25,7 @@ public class TelaResumo extends javax.swing.JFrame {
         resumo2.setVisible(false);
         this.idLogin = idLogin;
         this.idVanguarda = idVanguarda;
+        this.filePathField = filePathField;
         DAO dao = new DAO();
         try{
             if(dao.existeResumo(idVanguarda) == false){
@@ -75,14 +77,13 @@ public class TelaResumo extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://lh3.googleusercontent.com/pw/AP1GczNTskyX3pnzPWqR12TotbiExPo1oqQ9cwpy-UG_ZvmN4yB1VV6bCibQzFheqBitE37iPWLLl0pXW5j6Fck1n9sSV1eFCBIT6gfheZ2hepnQH7ohSQdPYfuoSP4s-gSvy6Uqi8QugzTBcpfLrqO9wDZw0fBlg8WvEn7Co_s3o08G8vHt6UDn7RLaVZ7CWwvTYlEu2XwxZZFDUm9lKMgrAuEvCY8q9Nsr_Pgg6e-YAfEO__aN9osxWwEa-gsYG3vJNoJU4lt7ckBxJcK35IiJGvzW09OkiPc7ekaKC08xpFPfiUxQ55dQWQ_WKVl25aYwx1NX08N3qBT0cJ2TQC_3TX_6--BTB5iV6sW-xysyZ-h5SYkkfiCPxDgEf0jGyHO5eAa83xMbJ53qNIe6FJKQJBxLKUN6stRD41aRMBD1pKyCHzxHCXj3XO4wZ9qYvepkX-rWnvHekq0vCxbL07bIFpAvjMYigq_krtbcbVp2qy4rxzCjj3rN4hP4I-QJN6F9kmfNqjwZlUNa7ILj0f8Z7rl93v8QRaFAvy2Omp-fq78HTLHXo4yQ5G9MCw3AHoBxjs5851KnZIoY0Z1IlahIrFOKibaX5xEPMZoSpTwsG3KaKeMelkuBsq8H5gzRsf6WCoxaY7yOBz9fuI578TRDdEbq-rfNBTfY2RFRgfTB8U0iBgTSIlKZY5fvMNUg9jdZICiaAdDzbZh2CbcBjsM5sHE9YlrXN8DzqPZP3XZIC1wiMQUSwwh3ikOQfZnXXEkK8BpkklAbDIHSCxCEBFxFGt56i_CNOAjN-Ynt_iFBEPUWrlDb6h9ofBboo7r2zj7r3P-_A56Yv8wuURzftgPp57anrjG9h_KH39nyDIamHEKS_mibGduG6GRRO3ATrjrcKjzGLf6_j2K5mJXDXDQOj_WNU_kPxKy-wO21t1ZLkkKOBSMahCSRi_rXRRRxUg=w688-h217-s-no-gm?authuser=0")
+                        new java.net.URL("https://i.imgur.com/h2iNDe1.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
                 return null;
             }
         }.getIcon());
-        logoLabel14.setText("jLabel1");
 
         resumo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
 
@@ -235,7 +236,9 @@ public class TelaResumo extends javax.swing.JFrame {
         );
         resumo2Layout.setVerticalGroup(
             resumo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, resumo2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         alterarResumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(84, 93, 137), 3));
@@ -287,61 +290,55 @@ public class TelaResumo extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(457, 457, 457)
-                        .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(187, 187, 187)
-                        .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 1198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(339, 339, 339)
+                        .addComponent(logoLabel14)))
                 .addContainerGap(211, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(188, Short.MAX_VALUE)
-                    .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(211, Short.MAX_VALUE)))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(187, Short.MAX_VALUE)
+                    .addContainerGap(96, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(211, Short.MAX_VALUE)))
+                    .addContainerGap(120, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap(188, Short.MAX_VALUE)
                     .addComponent(resumo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(212, 212, 212)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(187, Short.MAX_VALUE)
+                    .addContainerGap(96, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(214, Short.MAX_VALUE)))
+                    .addContainerGap(123, Short.MAX_VALUE)))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(resumo1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(675, Short.MAX_VALUE)
-                    .addComponent(mostrarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(75, Short.MAX_VALUE)))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(677, Short.MAX_VALUE)
+                    .addContainerGap(673, Short.MAX_VALUE)
                     .addComponent(adicionarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(74, Short.MAX_VALUE)))
+                    .addContainerGap(31, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(156, Short.MAX_VALUE)
+                    .addContainerGap(308, Short.MAX_VALUE)
                     .addComponent(resumo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(94, Short.MAX_VALUE)))
+                    .addContainerGap(132, Short.MAX_VALUE)))
             .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(677, Short.MAX_VALUE)
+                    .addContainerGap(674, Short.MAX_VALUE)
                     .addComponent(alterarResumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(75, Short.MAX_VALUE)))
+                    .addContainerGap(31, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,7 +356,7 @@ public class TelaResumo extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void voltarSelecaoVanguardasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              
-        TelaVanguardas frame = new TelaVanguardas(idLogin);
+        TelaVanguardas frame = new TelaVanguardas(idLogin, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                             
@@ -368,11 +365,11 @@ public class TelaResumo extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -488,7 +485,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog (null, "Preencha o espaço em branco para alterar o resumo", "Quiz ArtVantGarde", 2);
             }else{
                 Resumo resumoNovo = new Resumo(idVanguarda, resumoTextArea2.getText());
-                dao.alterarResumo(resumoNovo);
+                dao.alterarResumo(idVanguarda, resumoNovo);
                 JOptionPane.showMessageDialog(null, "Resumo alterado com sucesso!", "Quiz ArtVantGarde", 1);
                 alterarResumo.setVisible(false);
                 mostrarResumo.setVisible(true);
@@ -550,7 +547,7 @@ public class TelaResumo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaResumo(idLogin, idVanguarda).setVisible(true);
+                new TelaResumo(idLogin, idVanguarda, filePathField).setVisible(true);
             }
         });
     }

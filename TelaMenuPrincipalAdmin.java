@@ -4,14 +4,16 @@
  */
 public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     static int idLogin = 1;
+    static String filePathField;
     /**
      * Creates new form TelaMenuPrincipalAdmin
      */
-    public TelaMenuPrincipalAdmin(int idLogin) {
+    public TelaMenuPrincipalAdmin(int idLogin, String filePathField) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
+        this.filePathField = filePathField;
     }
 
     /**
@@ -95,7 +97,17 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
             }
         });
 
-        logoLabel.setText("jLabel1");
+        logoLabel.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/mf4A0bx.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         menuPrincipalLabel.setText("Menu Principal - Administrador");
@@ -122,16 +134,12 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(458, 458, 458)
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(458, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(menuPrincipalLabel)
                 .addGap(638, 638, 638))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(585, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jogarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(estatisticasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,15 +152,19 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
                     .addComponent(configuracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(569, 569, 569))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(logoLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
+                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(menuPrincipalLabel)
-                .addGap(67, 67, 67)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,7 +182,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cadastrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addGap(101, 101, 101))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,13 +206,13 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }                                                  
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        TelaNivel frame = new TelaNivel(1);
+        TelaNivel frame = new TelaNivel(1, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                           
 
     private void resumosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        TelaVanguardas frame = new TelaVanguardas(1);
+        TelaVanguardas frame = new TelaVanguardas(1, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                             
@@ -219,10 +231,10 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }                                              
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        TelaFazerLogin frame = new TelaFazerLogin();
+        TelaFazerLogin frame = new TelaFazerLogin(filePathField);
         this.dispose();
         frame.setVisible(true);
-        Musica musica = new Musica();
+        Musica musica = new Musica(filePathField);
         musica.pauseMusic();
     }                                            
 
@@ -231,7 +243,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }                                               
 
     private void cadastrosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        TelaAlterarCadastro frame = new TelaAlterarCadastro(1);
+        TelaAlterarCadastro frame = new TelaAlterarCadastro(1, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                               
@@ -266,7 +278,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMenuPrincipalAdmin(idLogin).setVisible(true);
+                new TelaMenuPrincipalAdmin(idLogin, filePathField).setVisible(true);
             }
         });
     }

@@ -1,8 +1,9 @@
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author carol
  */
-import javax.swing.JOptionPane;
 public class TelaResumoAluno extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
@@ -45,6 +46,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         resumoTextArea = new javax.swing.JTextArea();
         voltarMenuPrincipalButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +89,9 @@ public class TelaResumoAluno extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel1.setText("Resumos");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -104,7 +109,10 @@ public class TelaResumoAluno extends javax.swing.JFrame {
                         .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(348, 348, 348)
-                        .addComponent(logoLabel14)))
+                        .addComponent(logoLabel14))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(726, 726, 726)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -112,8 +120,10 @@ public class TelaResumoAluno extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(logoLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 265, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarSelecaoVanguardasButton)
@@ -194,6 +204,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel logoLabel14;

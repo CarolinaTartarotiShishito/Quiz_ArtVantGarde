@@ -143,15 +143,9 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     private void alterarCadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         DAO dao = new DAO();
         try{
-            if(dao.existeProfessor(idLogin) == true){
-                TelaAlterarCadastroProf frame = new TelaAlterarCadastroProf(idLogin, musica);
-                this.dispose();
-                frame.setVisible(true);
-            }else{
-                TelaAlterarCadastroAluno frame = new TelaAlterarCadastroAluno(idLogin, musica);
-                this.dispose();
-                frame.setVisible(true);
-            }
+            TelaAlterarCadastro frame = new TelaAlterarCadastro(idLogin, musica);
+            this.dispose();
+            frame.setVisible(true);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Problemas técnicos");
         }

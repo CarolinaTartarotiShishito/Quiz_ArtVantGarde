@@ -8,11 +8,11 @@ public class TelaResumo extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
     public Resumo resumo;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaResumo
      */
-    public TelaResumo(int idLogin, int idVanguarda, String filePathField) {
+    public TelaResumo(int idLogin, int idVanguarda, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
@@ -25,7 +25,7 @@ public class TelaResumo extends javax.swing.JFrame {
         resumo2.setVisible(false);
         this.idLogin = idLogin;
         this.idVanguarda = idVanguarda;
-        this.filePathField = filePathField;
+        this.musica = musica;
         DAO dao = new DAO();
         try{
             if(dao.existeResumo(idVanguarda) == false){
@@ -356,7 +356,7 @@ public class TelaResumo extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void voltarSelecaoVanguardasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              
-        TelaVanguardas frame = new TelaVanguardas(idLogin, filePathField);
+        TelaVanguardas frame = new TelaVanguardas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                             
@@ -365,11 +365,11 @@ public class TelaResumo extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -485,7 +485,7 @@ public class TelaResumo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog (null, "Preencha o espaço em branco para alterar o resumo", "Quiz ArtVantGarde", 2);
             }else{
                 Resumo resumoNovo = new Resumo(idVanguarda, resumoTextArea2.getText());
-                dao.alterarResumo(idVanguarda, resumoNovo);
+                dao.alterarResumo(resumoNovo);
                 JOptionPane.showMessageDialog(null, "Resumo alterado com sucesso!", "Quiz ArtVantGarde", 1);
                 alterarResumo.setVisible(false);
                 mostrarResumo.setVisible(true);
@@ -547,7 +547,7 @@ public class TelaResumo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaResumo(idLogin, idVanguarda, filePathField).setVisible(true);
+                new TelaResumo(idLogin, idVanguarda, musica).setVisible(true);
             }
         });
     }

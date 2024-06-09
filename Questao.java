@@ -3,17 +3,18 @@
  * @author louis
  */
 public class Questao {
-    public int codQuestao;
-    public String pergunta;
-    public String respostaCorreta;
-    public String respostaIncorreta1;
-    public String respostaIncorreta2;
-    public String respostaIncorreta3;
-    public int qtdeAcertos;
-    public int qtdeErros;
-    public int idVanguarda;
+    private int codQuestao;
+    private String pergunta;
+    private String urlImagem;
+    private String respostaCorreta;
+    private String respostaIncorreta1;
+    private String respostaIncorreta2;
+    private String respostaIncorreta3;
+    private int qtdeAcertos;
+    private int qtdeErros;
+    private int idVanguarda;
 
-    public int getCodQuestao() {
+   public int getCodQuestao() {
         return codQuestao;
     }
 
@@ -27,6 +28,14 @@ public class Questao {
 
     public void setPergunta(String pergunta) {
         this.pergunta = pergunta;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 
     public String getRespostaCorreta() {
@@ -85,9 +94,10 @@ public class Questao {
         this.idVanguarda = idVanguarda;
     }
 
-    public Questao(int codQuestao, String pergunta, String respostaCorreta, String respostaIncorreta1, String respostaIncorreta2, String respostaIncorreta3, int qtdeAcertos, int qtdeErros, int idVanguarda) {
+    public Questao(int codQuestao, String pergunta, String urlImagem, String respostaCorreta, String respostaIncorreta1, String respostaIncorreta2, String respostaIncorreta3, int qtdeAcertos, int qtdeErros, int idVanguarda) {
         this.codQuestao = codQuestao;
         this.pergunta = pergunta;
+        this.urlImagem = urlImagem;
         this.respostaCorreta = respostaCorreta;
         this.respostaIncorreta1 = respostaIncorreta1;
         this.respostaIncorreta2 = respostaIncorreta2;
@@ -96,6 +106,15 @@ public class Questao {
         this.qtdeErros = qtdeErros;
         this.idVanguarda = idVanguarda;
     }
-    
-    
+
+    public Questao(int codQuestao, String pergunta, String urlImagem, String respostaCorreta, String respostaIncorreta1, String respostaIncorreta2, String respostaIncorreta3, int idVanguarda) {
+        this.codQuestao = codQuestao;
+        this.pergunta = pergunta;
+        this.urlImagem = urlImagem;
+        this.respostaCorreta = respostaCorreta;
+        this.respostaIncorreta1 = respostaIncorreta1;
+        this.respostaIncorreta2 = respostaIncorreta2;
+        this.respostaIncorreta3 = respostaIncorreta3;
+        this.idVanguarda = idVanguarda;
+    }    
 }

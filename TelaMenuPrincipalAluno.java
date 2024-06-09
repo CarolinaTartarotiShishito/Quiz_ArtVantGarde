@@ -4,16 +4,16 @@
  */
 public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
     static int idLogin;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaMenuPrincipalAluno
      */
-    public TelaMenuPrincipalAluno(int idLogin, String filePathField) {
+    public TelaMenuPrincipalAluno(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
     }
 
     /**
@@ -172,39 +172,38 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void resumoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin, filePathField);
+        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                            
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        TelaNivel frame = new TelaNivel(idLogin, filePathField);
+        TelaNivel frame = new TelaNivel(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                           
 
     private void configuracoesButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        TelaConfiguracoes frame = new TelaConfiguracoes(idLogin);
+        TelaConfiguracoes frame = new TelaConfiguracoes(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                    
 
     private void creditosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        TelaCreditos frame = new TelaCreditos(idLogin);
+        TelaCreditos frame = new TelaCreditos(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        TelaFazerLogin frame = new TelaFazerLogin(filePathField);
+        TelaFazerLogin frame = new TelaFazerLogin();
         this.dispose();
         frame.setVisible(true);
-        Musica musica = new Musica(filePathField);
         musica.pauseMusic();
     }                                            
 
     private void rankingButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        TelaVanguardaRanking frame = new TelaVanguardaRanking(idLogin, filePathField);
+        TelaVanguardaRanking frame = new TelaVanguardaRanking(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                             
@@ -239,7 +238,7 @@ public class TelaMenuPrincipalAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMenuPrincipalAluno(idLogin, filePathField).setVisible(true);
+                new TelaMenuPrincipalAluno(idLogin, musica).setVisible(true);
             }
         });
     }

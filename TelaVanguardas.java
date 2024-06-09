@@ -8,7 +8,7 @@ public class TelaVanguardas extends javax.swing.JFrame {
     /**
      * Creates new form TelaVanguardas
      */
-    public TelaVanguardas(int idLogin, String musica) {
+    public TelaVanguardas(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
@@ -35,6 +35,7 @@ public class TelaVanguardas extends javax.swing.JFrame {
         futurismoButton = new javax.swing.JButton();
         surrealismoButton = new javax.swing.JButton();
         voltarMenuPrincipalButton = new javax.swing.JButton();
+        selecionarVanguardaLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,8 +54,8 @@ public class TelaVanguardas extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        selecionarVanguardaLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
-        selecionarVanguardaLabel.setText("Você deseja acessar o resumo de qual Vanguarda Artística Europeia?");
+        selecionarVanguardaLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        selecionarVanguardaLabel.setText("Resumos");
 
         cubismoButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         cubismoButton.setText("Cubismo");
@@ -112,6 +113,9 @@ public class TelaVanguardas extends javax.swing.JFrame {
             }
         });
 
+        selecionarVanguardaLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        selecionarVanguardaLabel1.setText("Vanguardas:");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -122,26 +126,28 @@ public class TelaVanguardas extends javax.swing.JFrame {
                         .addGap(346, 346, 346)
                         .addComponent(logoLabel))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(443, 443, 443)
+                        .addGap(568, 568, 568)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cubismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(expressionismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(dadaismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fauvismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(futurismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(surrealismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(644, 644, 644)
+                        .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(713, 713, 713)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(125, 125, 125)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cubismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(expressionismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(dadaismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(64, 64, 64)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fauvismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(futurismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(surrealismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(201, 201, 201)
-                                .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(selecionarVanguardaLabel))))
+                            .addComponent(selecionarVanguardaLabel)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(selecionarVanguardaLabel1)
+                                .addGap(9, 9, 9)))))
                 .addContainerGap(350, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -149,9 +155,11 @@ public class TelaVanguardas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(logoLabel)
-                .addGap(55, 55, 55)
+                .addGap(18, 18, 18)
                 .addComponent(selecionarVanguardaLabel)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(selecionarVanguardaLabel1)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cubismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fauvismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,7 +174,7 @@ public class TelaVanguardas extends javax.swing.JFrame {
                         .addComponent(expressionismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,6 +283,7 @@ public class TelaVanguardas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JLabel selecionarVanguardaLabel;
+    private javax.swing.JLabel selecionarVanguardaLabel1;
     private javax.swing.JButton surrealismoButton;
     private javax.swing.JButton voltarMenuPrincipalButton;
     // End of variables declaration                   

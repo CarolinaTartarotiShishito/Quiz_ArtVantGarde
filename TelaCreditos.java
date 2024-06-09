@@ -54,7 +54,7 @@ public class TelaCreditos extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        creditosLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        creditosLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         creditosLabel.setText("Créditos");
 
         creditosLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
@@ -94,34 +94,33 @@ public class TelaCreditos extends javax.swing.JFrame {
                 .addGap(0, 199, Short.MAX_VALUE)
                 .addComponent(logoLabel)
                 .addGap(197, 197, 197))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(351, 351, 351)
-                                .addComponent(creditosLabel))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(269, 269, 269)
-                                .addComponent(creditosLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(260, 260, 260)
-                                .addComponent(creditosLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(creditosLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(304, 304, 304)
-                                .addComponent(creditosLabel6))))
+                        .addGap(269, 269, 269)
+                        .addComponent(creditosLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(641, 641, 641)
+                        .addGap(260, 260, 260)
+                        .addComponent(creditosLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(creditosLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(creditosLabel6))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
                         .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(570, 570, 570)
+                        .addGap(180, 180, 180)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(84, 84, 84)
                                 .addComponent(creditosLabel7))
                             .addComponent(creditosLabel3))))
+                .addGap(401, 401, 401))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(724, 724, 724)
+                .addComponent(creditosLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -139,13 +138,13 @@ public class TelaCreditos extends javax.swing.JFrame {
                 .addComponent(creditosLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(creditosLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(creditosLabel3)
                 .addGap(0, 0, 0)
                 .addComponent(creditosLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -4,13 +4,15 @@
  */
 public class TelaVanguardaRanking extends javax.swing.JFrame {
     static int idLogin;
+    static Musica musica;
     /**
      * Creates new form TelaVanguardaRanking
      */
-    public TelaVanguardaRanking(int idLogin) {
+    public TelaVanguardaRanking(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.idLogin = idLogin;
+        this.musica = musica;
     }
 
     /**
@@ -172,42 +174,42 @@ public class TelaVanguardaRanking extends javax.swing.JFrame {
 
     private void cubismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubismoButtonActionPerformed
         int idVanguarda = 1;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_cubismoButtonActionPerformed
 
     private void dadaismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadaismoButtonActionPerformed
         int idVanguarda = 2;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_dadaismoButtonActionPerformed
 
     private void expressionismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expressionismoButtonActionPerformed
         int idVanguarda = 3;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_expressionismoButtonActionPerformed
 
     private void fauvismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fauvismoButtonActionPerformed
         int idVanguarda = 4;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_fauvismoButtonActionPerformed
 
     private void futurismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_futurismoButtonActionPerformed
         int idVanguarda = 5;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_futurismoButtonActionPerformed
 
     private void surrealismoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surrealismoButtonActionPerformed
         int idVanguarda = 6;
-        TelaRanking frame = new TelaRanking(idLogin, idVanguarda);
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_surrealismoButtonActionPerformed
@@ -246,7 +248,7 @@ public class TelaVanguardaRanking extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaVanguardaRanking(idLogin).setVisible(true);
+                new TelaVanguardaRanking(idLogin, musica).setVisible(true);
             }
         });
     }

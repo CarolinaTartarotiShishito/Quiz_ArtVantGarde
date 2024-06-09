@@ -80,7 +80,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        menuPrincipalLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         menuPrincipalLabel.setText("Configurações");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -103,7 +103,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
                                     .addComponent(ajusteAudioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(alterarCadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(723, 723, 723)
+                        .addGap(678, 678, 678)
                         .addComponent(menuPrincipalLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -112,15 +112,15 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(51, 51, 51)
                 .addComponent(menuPrincipalLabel)
-                .addGap(53, 53, 53)
+                .addGap(48, 48, 48)
                 .addComponent(ajusteAudioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(alterarCadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,7 +144,6 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     }                                                 
 
     private void alterarCadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        DAO dao = new DAO();
         TelaAlterarCadastro frame = new TelaAlterarCadastro(idLogin, musica);
         this.dispose();
         frame.setVisible(true);

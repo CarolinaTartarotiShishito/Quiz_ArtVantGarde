@@ -4,16 +4,16 @@
  */
 public class TelaVanguardas extends javax.swing.JFrame {
     static int idLogin;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaVanguardas
      */
-    public TelaVanguardas(int idLogin, String filePathField) {
+    public TelaVanguardas(int idLogin, String musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
     }
 
     /**
@@ -185,48 +185,48 @@ public class TelaVanguardas extends javax.swing.JFrame {
 
     private void cubismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
         int idVanguarda = 1;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                             
 
     private void dadaismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 2;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void expressionismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         int idVanguarda = 3;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                    
 
     private void fauvismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 4;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void futurismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         int idVanguarda = 5;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                               
 
     private void surrealismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         int idVanguarda = 6;
-        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, filePathField);
+        TelaResumo frame = new TelaResumo(idLogin, idVanguarda, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                 
 
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
-        TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
+        TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                         
@@ -261,7 +261,7 @@ public class TelaVanguardas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaVanguardas(idLogin, filePathField).setVisible(true);
+                new TelaVanguardas(idLogin, musica).setVisible(true);
             }
         });
     }

@@ -11,11 +11,33 @@ public class DAO {
     
     //Métodos da classe Login
         //Consultar login
-    public boolean existe(Login login) throws Exception {
+    public boolean existeLogin(Login login) throws Exception {
         String sql = "SELECT * FROM tbLogins WHERE email = ? AND senha = ?";
         try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
             ps.setString(1, login.getEmail());
             ps.setString(2, login.getSenha());
+            try(ResultSet rs = ps.executeQuery()){
+                return rs.next();
+            }
+        }
+    }
+    public boolean existeLogin(String email) throws Exception {
+        String sql = "SELECT * FROM tbLogins WHERE email = ?";
+        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, email);
+            try(ResultSet rs = ps.executeQuery()){
+                return rs.next();
+            }
+        }
+    }
+    public boolean existeLogin(String email, String nomeCompleto) throws Exception {
+        String sql = "SELECT l.email, a.nomeCompleto, p.nomeCompleto FROM tbLogins l LEFT JOIN tbAlunos a "
+                + "ON l.idLogin = a.idLogin LEFT JOIN tbProfessores p ON l.idLogin = p.idLogin WHERE l.email "
+                + "like ? and a.nomeCompleto like ? or p.nomeCompleto like ?";
+        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, email);
+            ps.setString(2, nomeCompleto);
+            ps.setString(3, nomeCompleto);
             try(ResultSet rs = ps.executeQuery()){
                 return rs.next();
             }
@@ -42,12 +64,20 @@ public class DAO {
     }
     
         //Alterar login
-    public void alterarCadastro(Login login, int idLogin) throws Exception {
+    public void alterarCadastro(Login login) throws Exception {
         String sql = "UPDATE tbLogins SET email = ?, senha = ? WHERE idLogin = ?";
         try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, login.getEmail());
             ps.setString(2, login.getSenha());
-            ps.setInt(3, idLogin);
+            ps.setInt(3, login.getIdLogin());
+            ps.execute();
+        }
+    }
+    public void alterarCadastro(String email, String senha) throws Exception {
+        String sql = "UPDATE tbLogins SET senha = ? WHERE email = ?";
+        try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+            ps.setString(1, senha);
+            ps.setString(2, email);
             ps.execute();
         }
     }
@@ -62,11 +92,11 @@ public class DAO {
     
     //Métodos da classe Aluno
         //Consultar aluno
-    public boolean existeAluno(String nome, String serie) throws Exception {
-        String sql = "SELECT * FROM tbAlunos WHERE nomeCompleto = ? AND serie = ?";
+    public boolean existeAluno(UsuarioAluno aluno) throws Exception {
+        String sql = "SELECT * FROM tbAlunos WHERE nomeCompleto = ? AND codMatricula = ?";
         try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, nome);
-            ps.setString(2, serie);
+            ps.setString(1, aluno.getNome());
+            ps.setString(2, aluno.getCodMatricula());
             try(ResultSet rs = ps.executeQuery()){
                 return rs.next();
             }
@@ -81,11 +111,11 @@ public class DAO {
             }
         }
     }
-    public int pegarIdLoginAluno(String nome, String serie) throws Exception {
-      String sql = "SELECT idLogin FROM tbAlunos WHERE nomeCompleto = ? and serie = ?";
+    public int pegarIdLoginAluno(UsuarioAluno aluno) throws Exception {
+      String sql = "SELECT idLogin FROM tbAlunos WHERE nomeCompleto = ? and codMatricula = ?";
         try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, nome);
-            ps.setString(2, serie);
+            ps.setString(1, aluno.getNome());
+            ps.setString(2, aluno.getCodMatricula());
             ResultSet rs = ps.executeQuery();
             rs.next();
             return rs.getInt("idLogin");
@@ -104,13 +134,12 @@ public class DAO {
     }
         //Alterar aluno
     public void alterarAluno(UsuarioAluno aluno) throws Exception {
-        String sql = "UPDATE tbAlunos SET nomeCompleto = ?, serie = ?, codMatricula = ?, idLogin = ? WHERE idLogin = ?";
+        String sql = "UPDATE tbAlunos SET nomeCompleto = ?, serie = ?, codMatricula = ? WHERE idLogin = ?";
         try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, aluno.getNome());
             ps.setString(2, aluno.getSerie());
             ps.setString(3, aluno.getCodMatricula());
             ps.setInt(4, aluno.getIdLogin());
-            ps.setInt(5, aluno.getIdLogin());
             ps.execute();
         }
     }
@@ -142,42 +171,53 @@ public class DAO {
             return cadastrosAlunos;
         }
     }
+            //Mostrar o cadastro de alunos juntamente com seu login
+    public ArrayList<String> pegarCadastrosAlunos(int idLogin) throws Exception {
+        String sql = "SELECT l.email, l.senha, a.nomeCompleto, a.serie, a.codMatricula FROM tbLogins l JOIN tbAlunos a ON l.idLogin = a.idLogin WHERE l.idLogin = ?";
+        ArrayList<String> cadastrosAlunos = new ArrayList<>();
+        try(Connection conn = ConnectionFactory.obterConexao(); 
+                PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
+            ps.setInt(1, idLogin);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                cadastrosAlunos.add(rs.getString("l.email"));
+                cadastrosAlunos.add(rs.getString("l.senha"));
+                cadastrosAlunos.add(rs.getString("a.nomeCompleto"));
+                cadastrosAlunos.add(rs.getString("a.serie"));
+                cadastrosAlunos.add(rs.getString("a.codMatricula"));
+            }
+            return cadastrosAlunos;
+        }
+    }
     
     //Métodos da classe Professor
         //Consultar professor
-        public ArrayList<CadastroProfessor> pegarCadastrosProfessores() throws Exception {
-        String sql = "SELECT l.idLogin, l.email, l.senha, p.idProfessor, p.nomeCompleto, p.materiaLecionada FROM tbLogins l JOIN tbProfessores p ON l.idLogin = p.idLogin";
-        ArrayList<CadastroProfessor> cadastrosProfessores = new ArrayList<>();
-        try(Connection conn = ConnectionFactory.obterConexao(); 
-                PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY); 
-                ResultSet rs = ps.executeQuery()){
-            while(rs.next()){
-                int idLogin = rs.getInt("l.idLogin");
-                int idProf = rs.getInt("p.idProfessor");
-                String email = rs.getString("l.email");
-                String senha = rs.getString("l.senha");
-                String nomeCompleto = rs.getString("p.nomeCompleto");
-                String materiaLecionada = rs.getString("p.materiaLecionada");
-                cadastrosProfessores.add(new CadastroProfessor(idLogin, idProf, email, senha, nomeCompleto, materiaLecionada));
-            }
-            return cadastrosProfessores;
-        }
-    } 
-    public boolean existeProfessor(String nome, String materia) throws Exception {
+    public boolean existeProfessor(UsuarioProfessor prof) throws Exception {
         String sql = "SELECT * FROM tbProfessores WHERE nomeCompleto = ? AND materiaLecionada = ?";
         try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, nome);
-            ps.setString(2, materia);
+            ps.setString(1, prof.getNomeCompleto());
+            ps.setString(2, prof.getMateriaLecionada());
             try(ResultSet rs = ps.executeQuery()){
                 return rs.next();
             }
         }
     }   
-    public int pegarIdLoginProfessor(String nome, String materia) throws Exception {
+        // Método para ver na tabela de professores se o idLogin existe
+    public boolean existeProfessor(int idLogin) throws Exception {
+        String sql = "SELECT * FROM tbProfessores WHERE idLogin = ?";
+        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setInt(1, idLogin);
+            try(ResultSet rs = ps.executeQuery()){
+                return rs.next();
+            }
+        }
+    }
+
+    public int pegarIdLoginProfessor(UsuarioProfessor prof) throws Exception {
       String sql = "SELECT idLogin FROM tbProfessores WHERE nomeCompleto = ? and materiaLecionada = ?";
         try (Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, nome);
-            ps.setString(2, materia);
+            ps.setString(1, prof.getNomeCompleto());
+            ps.setString(2, prof.getMateriaLecionada());
             ResultSet rs = ps.executeQuery();
             rs.next();
             return rs.getInt("idLogin");
@@ -195,12 +235,11 @@ public class DAO {
     }
         //Alterar professor
     public void alterarProfessor(UsuarioProfessor prof) throws Exception {
-        String sql = "UPDATE tbProfessores SET nomeCompleto = ?, materiaLecionada = ?, idLogin = ? WHERE idLogin = ?";
+        String sql = "UPDATE tbProfessores SET nomeCompleto = ?, materiaLecionada = ? WHERE idLogin = ?";
         try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
             ps.setString(1, prof.getNomeCompleto());
             ps.setString(2, prof.getMateriaLecionada());
             ps.setInt(3, prof.getIdLogin());
-            ps.setInt(4, prof.getIdLogin());
             ps.execute();
         }
     }
@@ -212,7 +251,43 @@ public class DAO {
             ps.execute();
         }
     }
+        //Mostrar o cadastro de professores juntamente com seu login
+    public ArrayList<CadastroProfessor> pegarCadastrosProfessores() throws Exception {
+        String sql = "SELECT l.idLogin, l.email, l.senha, p.idProfessor, p.nomeCompleto, p.materiaLecionada FROM tbLogins l JOIN tbProfessores p ON l.idLogin = p.idLogin";
+        ArrayList<CadastroProfessor> cadastrosProfessores = new ArrayList<>();
+        try(Connection conn = ConnectionFactory.obterConexao(); 
+                PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY); 
+                ResultSet rs = ps.executeQuery()){
+            while(rs.next()){
+                int idLogin = rs.getInt("l.idLogin");
+                int idProf = rs.getInt("p.idProfessor");
+                String email = rs.getString("l.email");
+                String senha = rs.getString("l.senha");
+                String nomeCompleto = rs.getString("p.nomeCompleto");
+                String materiaLecionada = rs.getString("p.materiaLecionada");
+                cadastrosProfessores.add(new CadastroProfessor(idLogin, idProf, email, senha, nomeCompleto, materiaLecionada));
+            }
+            return cadastrosProfessores;
+        }
+    }
     
+            //Mostrar o cadastro do professor juntamente com seu login
+    public ArrayList<String> pegarCadastrosProfessores(int idLogin) throws Exception {
+        String sql = "SELECT l.email, l.senha, p.nomeCompleto, p.materiaLecionada FROM tbLogins l JOIN tbProfessores p ON l.idLogin = p.idLogin WHERE p.idLogin = ?";
+        ArrayList<String> cadastroProfessor = new ArrayList<>();
+        try(Connection conn = ConnectionFactory.obterConexao(); 
+                PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
+            ps.setInt(1, idLogin);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                cadastroProfessor.add(rs.getString("l.email"));
+                cadastroProfessor.add(rs.getString("l.senha"));
+                cadastroProfessor.add(rs.getString("p.nomeCompleto"));
+                cadastroProfessor.add(rs.getString("p.materiaLecionada"));
+            }
+            return cadastroProfessor;
+        }
+    }
     //Métodos da classe Grupo
         //Consultar grupo    
     public int pegarIdGrupo (String nomeGrupo) throws Exception {
@@ -373,35 +448,66 @@ public class DAO {
             return rs.getString("respostaCorreta");
         }
     } 
-
         //Cadastrar questão
     public void cadastrarQuestao(Questao questao) throws Exception{
-        String sql = "INSERT INTO tbQuestoes (pergunta, respostaCorreta, respostaIncorreta1, respostaIncorreta2, "
-                + "respostaIncorreta3, idVanguarda) VALUES (?, ?, ?, ?, ?, ?)";
-        try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
-            ps.setString(1, questao.getPergunta());
-            ps.setString(2, questao.getRespostaCorreta());
-            ps.setString(3, questao.getRespostaIncorreta1());
-            ps.setString(4, questao.getRespostaIncorreta2());
-            ps.setString(5, questao.getRespostaIncorreta3());
-            ps.setInt(6, questao.getIdVanguarda());
-            ps.execute();
+        String urlImagem = questao.getUrlImagem();
+        if(urlImagem.isEmpty()){
+            String sql = "INSERT INTO tbQuestoes (pergunta, respostaCorreta, respostaIncorreta1, respostaIncorreta2, "
+                    + "respostaIncorreta3, idVanguarda) VALUES (?, ?, ?, ?, ?, ?)";
+            try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+                ps.setString(1, questao.getPergunta());
+                ps.setString(2, questao.getRespostaCorreta());
+                ps.setString(3, questao.getRespostaIncorreta1());
+                ps.setString(4, questao.getRespostaIncorreta2());
+                ps.setString(5, questao.getRespostaIncorreta3());
+                ps.setInt(6, questao.getIdVanguarda());
+                ps.execute();
+            }
+        }else{
+            String sql = "INSERT INTO tbQuestoes (pergunta, urlImagem, respostaCorreta, respostaIncorreta1, respostaIncorreta2, "
+                    + "respostaIncorreta3, idVanguarda) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+                ps.setString(1, questao.getPergunta());
+                ps.setString(2, urlImagem);
+                ps.setString(3, questao.getRespostaCorreta());
+                ps.setString(4, questao.getRespostaIncorreta1());
+                ps.setString(5, questao.getRespostaIncorreta2());
+                ps.setString(6, questao.getRespostaIncorreta3());
+                ps.setInt(7, questao.getIdVanguarda());
+                ps.execute();
+            }
         }
     }
         //Alterar questao
     public void alterarQuestao(Questao questao) throws Exception {
-        String sql = "UPDATE tbQuestoes SET pergunta = ?, urlImagem = ?, respostaCorreta = ?, respostaIncorreta1 = ?, "
-                + "respostaIncorreta2 = ?, respostaIncorreta3 = ?, idVanguarda = ? WHERE codQuestao = ?";
-        try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
-            ps.setString(1, questao.getPergunta());
-            ps.setString(2, questao.getUrlImagem());
-            ps.setString(3, questao.getRespostaCorreta());
-            ps.setString(4, questao.getRespostaIncorreta1());
-            ps.setString(5, questao.getRespostaIncorreta2());
-            ps.setString(6, questao.getRespostaIncorreta3());
-            ps.setInt(7, questao.getIdVanguarda());
-            ps.setInt(8, questao.getCodQuestao());
-            ps.execute();
+        String urlImagem = questao.getUrlImagem();
+        if(urlImagem.isBlank()){
+            String sql = "UPDATE tbQuestoes SET pergunta = ?, respostaCorreta = ?, respostaIncorreta1 = ?, "
+                    + "respostaIncorreta2 = ?, respostaIncorreta3 = ?, idVanguarda = ? WHERE codQuestao = ?";
+            try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+                ps.setString(1, questao.getPergunta());
+                ps.setString(2, questao.getRespostaCorreta());
+                ps.setString(3, questao.getRespostaIncorreta1());
+                ps.setString(4, questao.getRespostaIncorreta2());
+                ps.setString(5, questao.getRespostaIncorreta3());
+                ps.setInt(6, questao.getIdVanguarda());
+                ps.setInt(7, questao.getCodQuestao());
+                ps.execute();
+            }
+        }else{
+            String sql = "UPDATE tbQuestoes SET pergunta = ?, urlImagem = ?, respostaCorreta = ?, respostaIncorreta1 = ?, "
+                    + "respostaIncorreta2 = ?, respostaIncorreta3 = ?, idVanguarda = ? WHERE codQuestao = ?";
+            try (Connection conexao = ConnectionFactory.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+                ps.setString(1, questao.getPergunta());
+                ps.setString(2, questao.getUrlImagem());
+                ps.setString(3, questao.getRespostaCorreta());
+                ps.setString(4, questao.getRespostaIncorreta1());
+                ps.setString(5, questao.getRespostaIncorreta2());
+                ps.setString(6, questao.getRespostaIncorreta3());
+                ps.setInt(7, questao.getIdVanguarda());
+                ps.setInt(8, questao.getCodQuestao());
+                ps.execute();
+            }
         }
     }
         //Apagar questão
@@ -475,7 +581,7 @@ public class DAO {
         }
     }
         // Método para alterar no banco de dados resumo editado pelo ator
-    public void alterarResumo (int idVanguarda, String resumo) throws Exception{
+    public void alterarResumo (Resumo resumo) throws Exception{
         String sql = "UPDATE tbResumos SET resumo = ? WHERE idVanguarda = ?";
         try (Connection conn = ConnectionFactory.obterConexao();
         PreparedStatement ps = conn.prepareStatement(sql)){
@@ -484,17 +590,6 @@ public class DAO {
         }
     }
     
-        // Método para ver na tabela de professores se o idLogin existe
-    public boolean existeProfessor(int idLogin) throws Exception {
-        String sql = "SELECT * FROM tbProfessores WHERE idLogin = ?";
-        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setInt(1, idLogin);
-            try(ResultSet rs = ps.executeQuery()){
-                return rs.next();
-            }
-        }
-    }
-
     ///Métodos da classe Vanguarda
         //Consultar vanguarda
     public String pegarNomeVanguarda(int idVanguarda) throws Exception {
@@ -510,7 +605,7 @@ public class DAO {
     //Métodos da classe Ranking
         //Mostrar a posição de cada grupo no ranking
     public ArrayList<Ranking> pegarRanking(int idVanguarda) throws Exception {
-        String sql = "SELECT nomeGrupo, qtdeAcertos, qtdeErros, tempoResolucaoVanguarda FROM tbGrupos WHERE idVanguarda = ? ORDER BY qtdeAcertos desc, qtdeErros, tempoResolucaoVanguarda desc";
+        String sql = "SELECT nomeGrupo, qtdeAcertos, qtdeErros, tempoResolucaoVanguarda FROM tbGrupos WHERE idVanguarda = ? ORDER BY qtdeAcertos desc, qtdeErros, tempoResolucaoVanguarda";
         ArrayList<Ranking> ranking = new ArrayList<>();
         try(Connection conn = ConnectionFactory.obterConexao(); 
                 PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
@@ -558,7 +653,7 @@ public class DAO {
         String sql = "SELECT a.nomeCompleto, a.serie, a.codMatricula, g.nomeGrupo, g.qtdeAcertos, g.qtdeErros, "
                 + "g.tempoResolucaoVanguarda FROM tbAlunos a JOIN tbLogins l ON "
                 + "a.idLogin = l.idLogin JOIN integrantesGrupo ig ON l.idLogin = ig.idLogin "
-                + "JOIN tbGrupos g ON ig.idGrupo = g.idGrupo WHERE g.idVanguarda = ?";
+                + "JOIN tbGrupos g ON ig.idGrupo = g.idGrupo WHERE g.idVanguarda = ? ORDER BY a.nomeCompleto";
         ArrayList<EstatisticasAluno> estatisticasAlunos = new ArrayList<>();
         try(Connection conn = ConnectionFactory.obterConexao(); 
                 PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){
@@ -620,6 +715,18 @@ public class DAO {
                 estatisticasPerguntas.add(new EstatisticasPerguntas(codQuestao, pergunta, respostaCorreta, acertos, erros));
             }
             return estatisticasPerguntas;
+        }
+    }
+    
+    //Métodos da classe peça
+    public String pegarUrlPeca(int idVanguarda, String posicao) throws Exception {
+        String sql = "SELECT urlImagem from tbPecas WHERE idVanguarda = ? and localPeca = ?";
+        try(Connection conn = ConnectionFactory.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setInt(1, idVanguarda);
+            ps.setString(2, posicao);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            return rs.getString("urlImagem");
         }
     }
     

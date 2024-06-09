@@ -4,14 +4,16 @@
  */
 public class TelaVanguardasAluno extends javax.swing.JFrame {
     static int idLogin;
+    static String filePathField;
     /**
      * Creates new form TelaVanguardasAluno
      */
-    public TelaVanguardasAluno(int idLogin) {
+    public TelaVanguardasAluno(int idLogin, String filePathField) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
+        this.filePathField = filePathField;
     }
 
     /**
@@ -39,7 +41,17 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(222, 209, 193));
         jPanel3.setPreferredSize(new java.awt.Dimension(1390, 770));
 
-        logoLabel.setText("jLabel1");
+        logoLabel.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/h2iNDe1.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         selecionarVanguardaLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         selecionarVanguardaLabel.setText("Você deseja acessar o resumo de qual Vanguarda Artística Europeia?");
@@ -105,35 +117,38 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cubismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(expressionismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dadaismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(64, 64, 64)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fauvismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(futurismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(surrealismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(452, 452, 452)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cubismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(expressionismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(dadaismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fauvismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(futurismoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(surrealismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(selecionarVanguardaLabel)
-                    .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(459, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(187, 187, 187)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(646, 646, 646))
+                .addContainerGap(350, Short.MAX_VALUE)
+                .addComponent(logoLabel)
+                .addGap(346, 346, 346))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(28, 28, 28)
+                .addComponent(logoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(selecionarVanguardaLabel)
                 .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -148,20 +163,20 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
                             .addComponent(futurismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50)
                         .addComponent(expressionismoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61)
+                .addGap(50, 50, 50)
                 .addComponent(voltarMenuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(79, 79, 79))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1596, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
         );
 
         pack();
@@ -169,48 +184,48 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
 
     private void cubismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
         int idVanguarda = 1;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                             
 
     private void dadaismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 2;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void expressionismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         int idVanguarda = 3;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                    
 
     private void fauvismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int idVanguarda = 4;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void futurismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         int idVanguarda = 5;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                               
 
     private void surrealismoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         int idVanguarda = 6;
-        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda);
+        TelaResumoAluno frame = new TelaResumoAluno(idLogin, idVanguarda, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                 
 
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
-        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
+        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, filePathField);
         this.dispose();
         frame.setVisible(true);
     }                                                         
@@ -245,7 +260,7 @@ public class TelaVanguardasAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaVanguardasAluno(idLogin).setVisible(true);
+                new TelaVanguardasAluno(idLogin, filePathField).setVisible(true);
             }
         });
     }

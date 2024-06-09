@@ -213,7 +213,7 @@ public class TelaCreditos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCreditos(idLogin).setVisible(true);
+                new TelaCreditos(idLogin, musica).setVisible(true);
             }
         });
     }

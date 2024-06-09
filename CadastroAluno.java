@@ -1,11 +1,11 @@
 public class CadastroAluno {
-    public int idLogin;
-    public int idAluno;
-    public String email;
-    public String senha;
-    public String nomeCompleto;
-    public String serie;
-    public String codMatricula;
+    private int idLogin;
+    private int idAluno;
+    private String email;
+    private String senha;
+    private String nomeCompleto;
+    private String serie;
+    private String codMatricula;
 
     public int getIdLogin() {
         return idLogin;
@@ -72,6 +72,13 @@ public class CadastroAluno {
         this.serie = serie;
         this.codMatricula = codMatricula;
     }
-    
+
+    public CadastroAluno(String email, String senha, String nomeCompleto, String serie, String codMatricula) {
+        this.email = email;
+        this.senha = senha;
+        this.nomeCompleto = nomeCompleto;
+        this.serie = serie;
+        this.codMatricula = codMatricula;
+    }
     
 }

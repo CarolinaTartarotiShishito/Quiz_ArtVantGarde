@@ -3,17 +3,17 @@
  * @author carol
  */
 public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
-    static int idLogin = 1;
-    static String filePathField;
+    static int idLogin;
+    static Musica musica;
     /**
      * Creates new form TelaMenuPrincipalAdmin
      */
-    public TelaMenuPrincipalAdmin(int idLogin, String filePathField) {
+    public TelaMenuPrincipalAdmin(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
     }
 
     /**
@@ -200,50 +200,50 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void estatisticasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        TelaEstatisticas frame = new TelaEstatisticas(1);
+        TelaVanguardasEstatisticas frame = new TelaVanguardasEstatisticas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                  
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        TelaNivel frame = new TelaNivel(1, filePathField);
+        TelaNivel frame = new TelaNivel(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                           
 
     private void resumosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        TelaVanguardas frame = new TelaVanguardas(1, filePathField);
+        TelaVanguardas frame = new TelaVanguardas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                             
 
-    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        idLogin = 1;
-        TelaConfiguracoes frame = new TelaConfiguracoes(1);
+    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        TelaConfiguracoes frame = new TelaConfiguracoes(idLoginMusica);
         this.dispose();
         frame.setVisible(true);
     }                                                   
 
     private void creditosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        TelaCreditos frame = new TelaCreditos(1);
+        TelaCreditos frame = new TelaCreditos(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                              
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        TelaFazerLogin frame = new TelaFazerLogin(filePathField);
+        TelaFazerLogin frame = new TelaFazerLogin();
         this.dispose();
         frame.setVisible(true);
-        Musica musica = new Musica(filePathField);
         musica.pauseMusic();
     }                                            
 
     private void perguntasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
+        TelaVanguardasPerguntas frame = new TelaVanguardasPerguntas(idLogin, musica);
+        this.dispose();
+        frame.setVisible(true);
     }                                               
 
     private void cadastrosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        TelaAlterarCadastro frame = new TelaAlterarCadastro(1, filePathField);
+        TelaSelecionarCadastro frame = new TelaSelecionarCadastro(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                               
@@ -278,7 +278,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMenuPrincipalAdmin(idLogin, filePathField).setVisible(true);
+                new TelaMenuPrincipalAdmin(idLogin, musica).setVisible(true);
             }
         });
     }

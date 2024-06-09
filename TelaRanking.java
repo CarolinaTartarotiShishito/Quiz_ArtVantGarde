@@ -7,14 +7,16 @@ import javax.swing.JOptionPane;
 public class TelaRanking extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
+    static Musica musica;
     /**
      * Creates new form TelaRanking
      */
-    public TelaRanking(int idLogin, int idVanguarda) {
+    public TelaRanking(int idLogin, int idVanguarda, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.idLogin = idLogin;
         this.idVanguarda = idVanguarda;
+        this.musica = musica;
         DAO dao = new DAO();
         try{
            rankingTable.setModel(new RankingTableModel(idVanguarda));
@@ -146,7 +148,7 @@ public class TelaRanking extends javax.swing.JFrame {
     }//GEN-LAST:event_rankingTableMouseClicked
 
     private void menuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalButtonActionPerformed
-        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin);
+        TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }//GEN-LAST:event_menuPrincipalButtonActionPerformed
@@ -181,7 +183,7 @@ public class TelaRanking extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaRanking(idLogin, idVanguarda).setVisible(true);
+                new TelaRanking(idLogin, idVanguarda, musica).setVisible(true);
             }
         });
     }

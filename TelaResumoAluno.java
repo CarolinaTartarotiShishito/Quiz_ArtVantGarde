@@ -7,14 +7,14 @@ public class TelaResumoAluno extends javax.swing.JFrame {
     static int idLogin;
     static int idVanguarda;
     public String resumo;
-    static String filePathField;
+    static Musica musica;
     
-    public TelaResumoAluno(int idLogin, int idVanguarda, String filePathField) {
+    public TelaResumoAluno(int idLogin, int idVanguarda, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
         resumoTextArea.setLineWrap(true);
         resumoTextArea.setWrapStyleWord(true);
         DAO dao = new DAO();
@@ -136,7 +136,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void voltarSelecaoVanguardasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              
-        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin, filePathField);
+        TelaVanguardasAluno frame = new TelaVanguardasAluno(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                             
@@ -145,11 +145,11 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -188,7 +188,7 @@ public class TelaResumoAluno extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaResumoAluno(idLogin, idVanguarda, filePathField).setVisible(true);
+                new TelaResumoAluno(idLogin, idVanguarda, musica).setVisible(true);
             }
         });
     }

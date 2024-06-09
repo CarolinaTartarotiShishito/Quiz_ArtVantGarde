@@ -6,16 +6,16 @@ import javax.swing.JOptionPane;
  */
 public class TelaConfiguracoes extends javax.swing.JFrame {
     static int idLogin;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaConfiguracoes
      */
-    public TelaConfiguracoes(int idLogin) {
+    public TelaConfiguracoes(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
-        this.filePathField = filePathField;
+        this.musica = musica;
     }
 
     /**
@@ -135,7 +135,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void ajusteAudioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        TelaAudio frame = new TelaAudio(idLogin, filePathField);
+        TelaAudio frame = new TelaAudio(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                 
@@ -144,11 +144,11 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaAlterarCadastroProf frame = new TelaAlterarCadastroProf(idLogin, filePathField);
+                TelaAlterarCadastroProf frame = new TelaAlterarCadastroProf(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaAlterarCadastroAluno frame = new TelaAlterarCadastroAluno(idLogin, filePathField);
+                TelaAlterarCadastroAluno frame = new TelaAlterarCadastroAluno(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -160,16 +160,16 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         DAO dao = new DAO();
         try{
-            if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
+            if(dao.existeProfessor(idLogin)){
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
-            }else if(idLogin == 1){
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
+            }else if(dao.existeAluno(idLogin)){
+                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, filePathField);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }
@@ -211,7 +211,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConfiguracoes(idLogin).setVisible(true);
+                new TelaConfiguracoes(idLogin, musica).setVisible(true);
             }
         });
     }

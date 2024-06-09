@@ -6,15 +6,16 @@ import javax.swing.JOptionPane;
  */
 public class TelaCreditos extends javax.swing.JFrame {
     static int idLogin;
-    static String filePathField;
+    static Musica musica;
     /**
      * Creates new form TelaCreditos
      */
-    public TelaCreditos(int idLogin) {
+    public TelaCreditos(int idLogin, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
         this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
+        this.musica = musica;
     }
 
     /**
@@ -165,15 +166,15 @@ public class TelaCreditos extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             if(dao.existeProfessor(idLogin) == true){
-                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, filePathField);
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else if(idLogin == 1){
-                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, filePathField);
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }else{
-                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, filePathField);
+                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, musica);
                 this.dispose();
                 frame.setVisible(true);
             }

@@ -108,8 +108,8 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
-        menuPrincipalLabel.setText("Menu Principal - Professor");
+        menuPrincipalLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        menuPrincipalLabel.setText("Menu Principal");
 
         perguntasButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
         perguntasButton.setText("Perguntas");
@@ -124,7 +124,7 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -139,15 +139,16 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
                             .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(menuPrincipalLabel)
-                        .addGap(89, 89, 89)))
+                        .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(575, 575, 575))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(logoLabel)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(logoLabel))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(674, 674, 674)
+                        .addComponent(menuPrincipalLabel)))
                 .addContainerGap(201, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -155,7 +156,7 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(menuPrincipalLabel)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +192,7 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void estatisticasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        TelaVanguardasEstatisticas frame = new TelaVanguardasEstatisticas(idLogin, musica);
+        TelaEstatisticas frame = new TelaEstatisticas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                  

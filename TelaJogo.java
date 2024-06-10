@@ -13,28 +13,38 @@ public class TelaJogo extends javax.swing.JFrame {
     static int idLogin;
     static int idGrupo;
     static int idVanguarda;
-    static int inicio1;
-    static int fim1;
-    static ArrayList<Integer> numeroQuestoes = new ArrayList<>();
+    static Musica musica;
+    public int inicio;
+    public int tempoTotal = 0;
+    public ArrayList<Integer> numeroQuestoes = new ArrayList<>();
     public int idQuestao;
     public Collection<String> alternativas = new ArrayList<>();
     public int respostaAluno;
     public int acertos = 0;
     public int erros = 0;
+    public DAO dao = new DAO();
+    public Random gerador = new Random();
+    
  
     
     /**
      * Creates new form TelaCubismo
      */
-    public TelaJogo(int idLogin, int idGrupo, int idVanguarda) {
+    public TelaJogo(int idLogin, int idGrupo, int idVanguarda, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.musica = musica;
+        
+        //início do timer 1
+        inicio = (int) new Date().getTime();
+        
         this.idLogin = idLogin;
         this.idGrupo = idGrupo;
         this.idVanguarda = idVanguarda;
         DAO dao = new DAO();
         try {
-            numeroQuestoes = dao.obterNumeroQuestoes(this.idVanguarda);
+            numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
         }
@@ -64,6 +74,163 @@ public class TelaJogo extends javax.swing.JFrame {
         perguntaMeioSupDirPanel.setVisible(false);
         respostaMeioSupDirPanel.setVisible(false);
         ultimaPerguntaPanel.setVisible(false);
+        mensagemFimPanel.setVisible(false);
+        vanguardaErradaPanel.setVisible(false);
+        vanguardaCertaPanel.setVisible(false);
+        perdeuPanel.setVisible(false);
+        
+        //Colocar imagem na peça cantoInfEsq
+        cantoEsqInfLabel.setText("");
+        //Inserindo a imagem da peça na label
+        cantoEsqInfLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "cantoInfEsq")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça meioInfEsq
+        meioEsqInfLabel.setText("");
+        //Inserindo a imagem da peça na label
+        meioEsqInfLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "meioInfEsq")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+
+        //Colocar imagem na peça cantoSupEsq
+        cantoSupEsqLabel.setText("");
+        //Inserindo a imagem da peça na label
+        cantoSupEsqLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "cantoSupEsq")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça meioSupDir
+        meioSupDirLabel.setText("");
+        //Inserindo a imagem da peça na label
+        meioSupDirLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "meioSupDir")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça meioInfDir
+        meioInfDirLabel.setText("");
+        //Inserindo a imagem da peça na label
+        meioInfDirLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "meioInfDir")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça cantoInfDir
+        cantoInfDirLabel.setText("");
+        //Inserindo a imagem da peça na label
+        cantoInfDirLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "cantoInfDir")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça cantoSupDir
+        cantoSupDirLabel.setText("");
+        //Inserindo a imagem da peça na label
+        cantoSupDirLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "cantoSupDir")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem na peça meioSupEsq
+        meioSupEsqLabel.setText("");
+        //Inserindo a imagem da peça na label
+        meioSupEsqLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "meioSupEsq")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
+        
+        //Colocar imagem final
+        imagemFinalLabel.setText("");
+        //Inserindo a imagem da peça na label
+        imagemFinalLabel.setIcon(new javax.swing.JLabel(){
+            public javax.swing.Icon getIcon() {
+                try{
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL(dao.pegarUrlPeca(idVanguarda, "imagemFinal")));
+                }catch (java.net.MalformedURLException e){
+                    JOptionPane.showMessageDialog(null, "url");
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Problemas dao url");
+                }
+                return null;
+            }
+        }.getIcon());
     }
 
     /**
@@ -72,7 +239,7 @@ public class TelaJogo extends javax.swing.JFrame {
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLayeredPane2 = new javax.swing.JLayeredPane();
@@ -264,13 +431,39 @@ public class TelaJogo extends javax.swing.JFrame {
         jScrollPane40 = new javax.swing.JScrollPane();
         perguntaCantoSupDirTextArea1 = new javax.swing.JTextArea();
         ultimaPerguntaPanel = new javax.swing.JPanel();
-        jLayeredPane3 = new javax.swing.JLayeredPane();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
+        ultimaPerguntaPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        imagemFinalLabel = new javax.swing.JLabel();
         inserirVanguardaTextField = new javax.swing.JTextField();
-        resposderVanguardaButton = new javax.swing.JButton();
+        responderVanguardaButton = new javax.swing.JButton();
+        mensagemFimPanel = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        rankingButton = new javax.swing.JButton();
+        menuPrincipalButton = new javax.swing.JButton();
+        jLayeredPane4 = new javax.swing.JLayeredPane();
+        vanguardaErradaPanel = new javax.swing.JPanel();
+        acertosFimLabel1 = new javax.swing.JLabel();
+        totalQuestoesLabel1 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        errosFimLabel1 = new javax.swing.JLabel();
+        nomeVanguardaLabel = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        vanguardaCertaPanel = new javax.swing.JPanel();
+        acertosFimLabel = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        totalQuestoesLabel = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        errosFimLabel = new javax.swing.JLabel();
+        perdeuPanel = new javax.swing.JPanel();
+        acertosFimLabel2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        totalQuestoesLabel2 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        errosFimLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,7 +471,17 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         jogoPanel.setPreferredSize(new java.awt.Dimension(1596, 848));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\ArtVantGarde_logo2.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/h2iNDe1.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         cantoEsqInfButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,18 +497,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         cantoEsqInfButtonPanelLayout.setVerticalGroup(
             cantoEsqInfButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoEsqInfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cantoEsqInfButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         cantoEsqInfLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        cantoEsqInfLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Canto_Inferior_Esquerdo.jpg")); // NOI18N
         cantoEsqInfLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout labelCantoEsq2PannelLayout = new javax.swing.GroupLayout(labelCantoEsq2Pannel);
         labelCantoEsq2Pannel.setLayout(labelCantoEsq2PannelLayout);
         labelCantoEsq2PannelLayout.setHorizontalGroup(
             labelCantoEsq2PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoEsqInfLabel)
+            .addComponent(cantoEsqInfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         labelCantoEsq2PannelLayout.setVerticalGroup(
             labelCantoEsq2PannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,18 +552,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         meioInfEsqButtonPanelLayout.setVerticalGroup(
             meioInfEsqButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioEsqInfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(meioEsqInfButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         meioEsqInfLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        meioEsqInfLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Meio_Inferior_Esquerdo.jpg")); // NOI18N
         meioEsqInfLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout labelMeioEsqInfPannelLayout = new javax.swing.GroupLayout(labelMeioEsqInfPannel);
         labelMeioEsqInfPannel.setLayout(labelMeioEsqInfPannelLayout);
         labelMeioEsqInfPannelLayout.setHorizontalGroup(
             labelMeioEsqInfPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioEsqInfLabel)
+            .addComponent(meioEsqInfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         labelMeioEsqInfPannelLayout.setVerticalGroup(
             labelMeioEsqInfPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,18 +607,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         cantoSupEsqButtonPanelLayout.setVerticalGroup(
             cantoSupEsqButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoSupEsqButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cantoSupEsqButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         cantoSupEsqLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        cantoSupEsqLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Canto_Superior_Esquerdo.jpg")); // NOI18N
         cantoSupEsqLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout labelCantoSupEsqPannel1Layout = new javax.swing.GroupLayout(labelCantoSupEsqPannel1);
         labelCantoSupEsqPannel1.setLayout(labelCantoSupEsqPannel1Layout);
         labelCantoSupEsqPannel1Layout.setHorizontalGroup(
             labelCantoSupEsqPannel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoSupEsqLabel)
+            .addComponent(cantoSupEsqLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         labelCantoSupEsqPannel1Layout.setVerticalGroup(
             labelCantoSupEsqPannel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,18 +662,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         meioSupDirButtonPanelLayout.setVerticalGroup(
             meioSupDirButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioSupDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(meioSupDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         meioSupDirLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        meioSupDirLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Meio_Superior_Direito.jpg")); // NOI18N
         meioSupDirLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout meioSupDirLabelPanelLayout = new javax.swing.GroupLayout(meioSupDirLabelPanel);
         meioSupDirLabelPanel.setLayout(meioSupDirLabelPanelLayout);
         meioSupDirLabelPanelLayout.setHorizontalGroup(
             meioSupDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioSupDirLabel)
+            .addComponent(meioSupDirLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         meioSupDirLabelPanelLayout.setVerticalGroup(
             meioSupDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,18 +717,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         meioInfDirButtonPanelLayout.setVerticalGroup(
             meioInfDirButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioInfDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(meioInfDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         meioInfDirLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        meioInfDirLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Meio_Inferior_Direito.jpg")); // NOI18N
         meioInfDirLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout meioInfDirLabelPanelLayout = new javax.swing.GroupLayout(meioInfDirLabelPanel);
         meioInfDirLabelPanel.setLayout(meioInfDirLabelPanelLayout);
         meioInfDirLabelPanelLayout.setHorizontalGroup(
             meioInfDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioInfDirLabel)
+            .addComponent(meioInfDirLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         meioInfDirLabelPanelLayout.setVerticalGroup(
             meioInfDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -574,18 +772,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         cantoInfDirButtonPanelLayout.setVerticalGroup(
             cantoInfDirButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoInfDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cantoInfDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         cantoInfDirLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        cantoInfDirLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Canto_Inferior_Direito.jpg")); // NOI18N
         cantoInfDirLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout cantoInfDirLabelPanelLayout = new javax.swing.GroupLayout(cantoInfDirLabelPanel);
         cantoInfDirLabelPanel.setLayout(cantoInfDirLabelPanelLayout);
         cantoInfDirLabelPanelLayout.setHorizontalGroup(
             cantoInfDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoInfDirLabel)
+            .addComponent(cantoInfDirLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         cantoInfDirLabelPanelLayout.setVerticalGroup(
             cantoInfDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -630,18 +827,17 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         cantoSupDirButtonPanelLayout.setVerticalGroup(
             cantoSupDirButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoSupDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cantoSupDirButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         cantoSupDirLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        cantoSupDirLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Canto_Superior_Direito.jpg")); // NOI18N
         cantoSupDirLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout cantoSupDirLabelPanelLayout = new javax.swing.GroupLayout(cantoSupDirLabelPanel);
         cantoSupDirLabelPanel.setLayout(cantoSupDirLabelPanelLayout);
         cantoSupDirLabelPanelLayout.setHorizontalGroup(
             cantoSupDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cantoSupDirLabel)
+            .addComponent(cantoSupDirLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
         );
         cantoSupDirLabelPanelLayout.setVerticalGroup(
             cantoSupDirLabelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -686,11 +882,10 @@ public class TelaJogo extends javax.swing.JFrame {
         );
         meioSupEsqButtonPanelLayout.setVerticalGroup(
             meioSupEsqButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(meioSupEsqButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(meioSupEsqButton, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         meioSupEsqLabel.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
-        meioSupEsqLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\Meio_Superior_Esquerdo.jpg")); // NOI18N
         meioSupEsqLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout meioEsqSupLabelPanelLayout = new javax.swing.GroupLayout(meioEsqSupLabelPanel);
@@ -767,16 +962,16 @@ public class TelaJogo extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cantoSupEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meioSupDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meioSupEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cantoSupDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cantoSupEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meioSupDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meioSupEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cantoSupDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(meioInfEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cantoInfEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meioInfDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cantoInfDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(meioInfEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cantoInfEsqPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meioInfDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cantoInfDirPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -792,7 +987,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(jogoPanelLayout.createSequentialGroup()
                         .addGap(345, 345, 345)
                         .addComponent(jLabel6)))
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
         jogoPanelLayout.setVerticalGroup(
             jogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -801,7 +996,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         perguntaCantoSupEsqPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -858,7 +1053,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaCantoSupEsqPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderCantoSupEsqButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaCantoSupEsqPanelLayout.setVerticalGroup(
             perguntaCantoSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -869,16 +1064,16 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addComponent(imagemCantoSupEsqPerguntaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(perguntaCantoSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(perguntaCantoSupEsqPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(perguntaCantoSupEsqPanelLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaCantoSupEsqTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(responderCantoSupEsqButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                        .addComponent(responderCantoSupEsqButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(perguntaCantoSupEsqPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaCantoSupEsqPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -939,7 +1134,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaCantoSupEsqPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemCantoSupEsqRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaCantoSupEsqPanelLayout.setVerticalGroup(
             respostaCantoSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -952,7 +1147,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaCantoSupEsqPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(51, Short.MAX_VALUE))
+                        .addContainerGap(55, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, respostaCantoSupEsqPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(respostaAlunoCantoSupEsqRespostaLabel)
@@ -1017,7 +1212,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaCantoInfEsqPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderCantoEsqInfButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         perguntaCantoInfEsqPanelLayout.setVerticalGroup(
             perguntaCantoInfEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1037,7 +1232,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaCantoEsqInfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderCantoEsqInfButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaCantoInfEsqPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1098,7 +1293,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaCantoInfEsqPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemCantoEsqInfRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaCantoInfEsqPanelLayout.setVerticalGroup(
             respostaCantoInfEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1106,10 +1301,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemCantoEsqInfRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemCantoEsqInfRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaCantoInfEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaCantoInfEsqPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(respostaAlunoCantoEsqInfRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaCantoEsqInfRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1176,7 +1371,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaMeioEsqInfPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderMeioEsqInfButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaMeioEsqInfPanelLayout.setVerticalGroup(
             perguntaMeioEsqInfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1196,7 +1391,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaMeioEsqInfTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderMeioEsqInfButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaMeioEsqInfPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1257,7 +1452,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaMeioEsqInfPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemMeioEsqInfRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaMeioEsqInfPanelLayout.setVerticalGroup(
             respostaMeioEsqInfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1265,10 +1460,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemMeioEsqInfRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemMeioEsqInfRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaMeioEsqInfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaMeioEsqInfPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(respostaAlunoMeioEsqInfRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaMeioEsqInfRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1335,7 +1530,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaMeioSupEsqPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderMeioSupEsqButton1)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaMeioSupEsqPanelLayout.setVerticalGroup(
             perguntaMeioSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1355,7 +1550,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaMeioSupEsqTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderMeioSupEsqButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaMeioSupEsqPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1416,7 +1611,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaMeioSupEsqPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemMeioSupEsqRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaMeioSupEsqPanelLayout.setVerticalGroup(
             respostaMeioSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1424,10 +1619,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemMeioSupEsqRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemMeioSupEsqRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaMeioSupEsqPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaMeioSupEsqPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(respostaAlunoMeioSupEsqRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaMeioSupEsqRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1494,7 +1689,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaMeioInfDirPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderMeioInfDirButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaMeioInfDirPanelLayout.setVerticalGroup(
             perguntaMeioInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1514,7 +1709,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaMeioInfDirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderMeioInfDirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaMeioInfDirPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1575,7 +1770,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaMeioInfDirPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemMeioInfDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaMeioInfDirPanelLayout.setVerticalGroup(
             respostaMeioInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1583,10 +1778,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemMeioInfDirRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemMeioInfDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaMeioInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaMeioInfDirPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(respostaAlunoMeioInfDirRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaMeioInfDirRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1653,7 +1848,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaMeioSupDirPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderMeioSupDirButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaMeioSupDirPanelLayout.setVerticalGroup(
             perguntaMeioSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1673,7 +1868,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaMeioSupDirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderMeioSupDirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaMeioSupDirPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1732,7 +1927,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaMeioSupDirPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemMeioSupDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaMeioSupDirPanelLayout.setVerticalGroup(
             respostaMeioSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1740,12 +1935,12 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemMeioSupDirRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemMeioSupDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaMeioSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaMeioSupDirPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(44, Short.MAX_VALUE))
+                        .addContainerGap(47, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, respostaMeioSupDirPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(respostaAlunoMeioSupDirRespostaLabel)
@@ -1810,7 +2005,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaCantoInfDirPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderCantoInfDirButton1)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaCantoInfDirPanelLayout.setVerticalGroup(
             perguntaCantoInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1830,7 +2025,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaCantoInfDirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderCantoInfDirButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaCantoInfDirPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -1891,7 +2086,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaCantoInfDirPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemCantoInfDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaCantoInfDirPanelLayout.setVerticalGroup(
             respostaCantoInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1899,10 +2094,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemCantoInfDirRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemCantoInfDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaCantoInfDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaCantoInfDirPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(respostaAlunoCantoInfDirRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaCantoInfDirRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1969,7 +2164,7 @@ public class TelaJogo extends javax.swing.JFrame {
                             .addGroup(perguntaCantoSupDirPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
                                 .addComponent(responderCantoSupDirButton)))))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         perguntaCantoSupDirPanelLayout.setVerticalGroup(
             perguntaCantoSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1989,7 +2184,7 @@ public class TelaJogo extends javax.swing.JFrame {
                         .addComponent(respostaCantoSupDirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(responderCantoSupDirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         respostaCantoSupDirPanel.setBackground(new java.awt.Color(222, 209, 193));
@@ -2050,7 +2245,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addGroup(respostaCantoSupDirPanelLayout.createSequentialGroup()
                         .addGap(357, 357, 357)
                         .addComponent(imagemCantoSupDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 779, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         respostaCantoSupDirPanelLayout.setVerticalGroup(
             respostaCantoSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2058,10 +2253,10 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagemCantoSupDirRespostaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                .addComponent(imagemCantoSupDirRespostaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(respostaCantoSupDirPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(respostaCantoSupDirPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(respostaAlunoCantoSupDirRespostaLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(respostaCantoSupDirRespostaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2076,9 +2271,18 @@ public class TelaJogo extends javax.swing.JFrame {
 
         ultimaPerguntaPanel.setBackground(new java.awt.Color(222, 209, 193));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\louis\\OneDrive\\Documentos\\Faculdade\\Projeto_Integrador_Interdisciplinar\\Imagens\\Guernica\\picasso-guernica.png")); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 28)); // NOI18N
+        jLabel2.setText("O quadro abaixo pertence a qual vanguarda?");
 
-        jLayeredPane3.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        jLabel12.setText("(Use as perguntas respondidas anteriormente e analise");
+
+        ultimaPerguntaPanel1.setBackground(new java.awt.Color(222, 209, 193));
+
+        jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        jLabel13.setText("as características do quadro para responder a questão)");
+
+        jLayeredPane3.setLayer(imagemFinalLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
         jLayeredPane3.setLayout(jLayeredPane3Layout);
@@ -2086,29 +2290,16 @@ public class TelaJogo extends javax.swing.JFrame {
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1080, Short.MAX_VALUE)
             .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                    .addGap(70, 70, 70)
-                    .addComponent(jLabel1)
-                    .addContainerGap(71, Short.MAX_VALUE)))
+                .addComponent(imagemFinalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE))
         );
         jLayeredPane3Layout.setVerticalGroup(
             jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 494, Short.MAX_VALUE)
             .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
+                    .addComponent(imagemFinalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
                     .addContainerGap()))
         );
-
-        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 28)); // NOI18N
-        jLabel2.setText("O quadro abaixo pertence a qual vanguarda?");
-
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
-        jLabel12.setText("(Use as perguntas respondidas anteriormente e analise");
-
-        jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
-        jLabel13.setText("as características do quadro para responder a questão)");
 
         inserirVanguardaTextField.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
         inserirVanguardaTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -2118,38 +2309,374 @@ public class TelaJogo extends javax.swing.JFrame {
             }
         });
 
-        resposderVanguardaButton.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        resposderVanguardaButton.setText("Responder");
-        resposderVanguardaButton.addActionListener(new java.awt.event.ActionListener() {
+        responderVanguardaButton.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        responderVanguardaButton.setText("Responder");
+        responderVanguardaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resposderVanguardaButtonActionPerformed(evt);
+                responderVanguardaButtonActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout ultimaPerguntaPanel1Layout = new javax.swing.GroupLayout(ultimaPerguntaPanel1);
+        ultimaPerguntaPanel1.setLayout(ultimaPerguntaPanel1Layout);
+        ultimaPerguntaPanel1Layout.setHorizontalGroup(
+            ultimaPerguntaPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ultimaPerguntaPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ultimaPerguntaPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ultimaPerguntaPanel1Layout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addComponent(jLabel13))
+                    .addGroup(ultimaPerguntaPanel1Layout.createSequentialGroup()
+                        .addGap(462, 462, 462)
+                        .addComponent(responderVanguardaButton))
+                    .addGroup(ultimaPerguntaPanel1Layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(inserirVanguardaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        ultimaPerguntaPanel1Layout.setVerticalGroup(
+            ultimaPerguntaPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ultimaPerguntaPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inserirVanguardaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(responderVanguardaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        mensagemFimPanel.setBackground(new java.awt.Color(222, 209, 193));
+        mensagemFimPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(81, 92, 147), 3));
+
+        jLabel14.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://i.imgur.com/h2iNDe1.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+
+        rankingButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        rankingButton.setText("Ranking");
+        rankingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rankingButtonActionPerformed(evt);
+            }
+        });
+
+        menuPrincipalButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        menuPrincipalButton.setText("Menu Principal");
+        menuPrincipalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalButtonActionPerformed(evt);
+            }
+        });
+
+        vanguardaErradaPanel.setBackground(new java.awt.Color(222, 209, 193));
+
+        acertosFimLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        acertosFimLabel1.setText("Você acertou _ questões");
+
+        totalQuestoesLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        totalQuestoesLabel1.setText("Você respondeu _ questões");
+
+        jLabel22.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel22.setText("Você terminou o jogo mas não acertou a pergunta final!");
+
+        errosFimLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        errosFimLabel1.setText("Você errou _ questões");
+
+        nomeVanguardaLabel.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        nomeVanguardaLabel.setText("A resposta era _________________");
+
+        jLabel15.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel15.setText("Parabéns!!!!");
+
+        javax.swing.GroupLayout vanguardaErradaPanelLayout = new javax.swing.GroupLayout(vanguardaErradaPanel);
+        vanguardaErradaPanel.setLayout(vanguardaErradaPanelLayout);
+        vanguardaErradaPanelLayout.setHorizontalGroup(
+            vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vanguardaErradaPanelLayout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(jLabel15)
+                .addContainerGap(223, Short.MAX_VALUE))
+            .addGroup(vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(vanguardaErradaPanelLayout.createSequentialGroup()
+                    .addGap(9, 9, 9)
+                    .addGroup(vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(vanguardaErradaPanelLayout.createSequentialGroup()
+                            .addComponent(acertosFimLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(errosFimLabel1))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vanguardaErradaPanelLayout.createSequentialGroup()
+                            .addComponent(totalQuestoesLabel1)
+                            .addGap(159, 159, 159))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vanguardaErradaPanelLayout.createSequentialGroup()
+                            .addComponent(nomeVanguardaLabel)
+                            .addGap(129, 129, 129))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vanguardaErradaPanelLayout.createSequentialGroup()
+                            .addComponent(jLabel22)
+                            .addGap(8, 8, 8)))
+                    .addGap(9, 9, 9)))
+        );
+        vanguardaErradaPanelLayout.setVerticalGroup(
+            vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vanguardaErradaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
+            .addGroup(vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(vanguardaErradaPanelLayout.createSequentialGroup()
+                    .addGap(59, 59, 59)
+                    .addComponent(jLabel22)
+                    .addGap(4, 4, 4)
+                    .addComponent(nomeVanguardaLabel)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(totalQuestoesLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(vanguardaErradaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(acertosFimLabel1)
+                        .addComponent(errosFimLabel1))
+                    .addContainerGap(12, Short.MAX_VALUE)))
+        );
+
+        vanguardaCertaPanel.setBackground(new java.awt.Color(222, 209, 193));
+
+        acertosFimLabel.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        acertosFimLabel.setText("Você acertou _ questões");
+
+        jLabel18.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel18.setText("Parabéns!!!!");
+
+        totalQuestoesLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        totalQuestoesLabel.setText("Você respondeu _ questões");
+
+        jLabel20.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel20.setText("Você terminou o jogo e acertou a pergunta final!");
+
+        errosFimLabel.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        errosFimLabel.setText("Você errou _ questões");
+
+        javax.swing.GroupLayout vanguardaCertaPanelLayout = new javax.swing.GroupLayout(vanguardaCertaPanel);
+        vanguardaCertaPanel.setLayout(vanguardaCertaPanelLayout);
+        vanguardaCertaPanelLayout.setHorizontalGroup(
+            vanguardaCertaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                .addGroup(vanguardaCertaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(acertosFimLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(errosFimLabel))
+                    .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                        .addGroup(vanguardaCertaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel20))
+                            .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                                .addGap(217, 217, 217)
+                                .addComponent(jLabel18)))
+                        .addGap(0, 49, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vanguardaCertaPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(totalQuestoesLabel)
+                .addGap(168, 168, 168))
+        );
+        vanguardaCertaPanelLayout.setVerticalGroup(
+            vanguardaCertaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vanguardaCertaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalQuestoesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(vanguardaCertaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(acertosFimLabel)
+                    .addComponent(errosFimLabel))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        perdeuPanel.setBackground(new java.awt.Color(222, 209, 193));
+
+        acertosFimLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        acertosFimLabel2.setText("Você acertou _ questões");
+
+        jLabel21.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
+        jLabel21.setText("Oh não! Você perdeu!");
+
+        totalQuestoesLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        totalQuestoesLabel2.setText("Você respondeu _ questões");
+
+        jLabel23.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel23.setText("Você terminou o jogo e acertou a pergunta final!");
+
+        errosFimLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
+        errosFimLabel2.setText("Você errou _ questões");
+
+        javax.swing.GroupLayout perdeuPanelLayout = new javax.swing.GroupLayout(perdeuPanel);
+        perdeuPanel.setLayout(perdeuPanelLayout);
+        perdeuPanelLayout.setHorizontalGroup(
+            perdeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, perdeuPanelLayout.createSequentialGroup()
+                .addGap(0, 74, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addGap(33, 33, 33))
+            .addGroup(perdeuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(perdeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(perdeuPanelLayout.createSequentialGroup()
+                        .addComponent(acertosFimLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(errosFimLabel2)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, perdeuPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(perdeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, perdeuPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(132, 132, 132))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, perdeuPanelLayout.createSequentialGroup()
+                                .addComponent(totalQuestoesLabel2)
+                                .addGap(164, 164, 164))))))
+        );
+        perdeuPanelLayout.setVerticalGroup(
+            perdeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(perdeuPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalQuestoesLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(perdeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(acertosFimLabel2)
+                    .addComponent(errosFimLabel2))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jLayeredPane4.setLayer(vanguardaErradaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(vanguardaCertaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(perdeuPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
+        jLayeredPane4.setLayout(jLayeredPane4Layout);
+        jLayeredPane4Layout.setHorizontalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(vanguardaErradaPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(vanguardaCertaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(perdeuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jLayeredPane4Layout.setVerticalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(vanguardaErradaPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(vanguardaCertaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(perdeuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout mensagemFimPanelLayout = new javax.swing.GroupLayout(mensagemFimPanel);
+        mensagemFimPanel.setLayout(mensagemFimPanelLayout);
+        mensagemFimPanelLayout.setHorizontalGroup(
+            mensagemFimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mensagemFimPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(mensagemFimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLayeredPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(mensagemFimPanelLayout.createSequentialGroup()
+                        .addComponent(rankingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(menuPrincipalButton)))
+                .addGap(269, 269, 269))
+            .addGroup(mensagemFimPanelLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel14)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+        mensagemFimPanelLayout.setVerticalGroup(
+            mensagemFimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mensagemFimPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLayeredPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(mensagemFimPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rankingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuPrincipalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
+        );
+
+        jLayeredPane5.setLayer(ultimaPerguntaPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(mensagemFimPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mensagemFimPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                    .addGap(36, 36, 36)
+                    .addComponent(ultimaPerguntaPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(37, Short.MAX_VALUE)))
+        );
+        jLayeredPane5Layout.setVerticalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mensagemFimPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                    .addGap(9, 9, 9)
+                    .addComponent(ultimaPerguntaPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(9, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout ultimaPerguntaPanelLayout = new javax.swing.GroupLayout(ultimaPerguntaPanel);
         ultimaPerguntaPanel.setLayout(ultimaPerguntaPanelLayout);
         ultimaPerguntaPanelLayout.setHorizontalGroup(
             ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
-                .addGap(256, 256, 256)
+                .addGap(518, 518, 518)
                 .addGroup(ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
                     .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addGroup(ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)))))
-                    .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
-                        .addGap(484, 484, 484)
-                        .addComponent(resposderVanguardaButton))
-                    .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(inserirVanguardaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(266, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel12)))
+                .addContainerGap(588, Short.MAX_VALUE))
+            .addGroup(ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
+                    .addGap(255, 255, 255)
+                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(244, Short.MAX_VALUE)))
         );
         ultimaPerguntaPanelLayout.setVerticalGroup(
             ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2158,15 +2685,12 @@ public class TelaJogo extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inserirVanguardaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resposderVanguardaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addContainerGap(713, Short.MAX_VALUE))
+            .addGroup(ultimaPerguntaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ultimaPerguntaPanelLayout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(56, Short.MAX_VALUE)))
         );
 
         jLayeredPane2.setLayer(jogoPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -2192,9 +2716,7 @@ public class TelaJogo extends javax.swing.JFrame {
         jLayeredPane2.setLayout(jLayeredPane2Layout);
         jLayeredPane2Layout.setHorizontalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addComponent(jogoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1602, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jogoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1664, Short.MAX_VALUE)
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addComponent(perguntaCantoSupEsqPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2260,16 +2782,11 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addComponent(respostaCantoSupDirPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ultimaPerguntaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(ultimaPerguntaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addComponent(jogoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jogoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane2Layout.createSequentialGroup()
                     .addComponent(perguntaCantoSupEsqPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2335,10 +2852,7 @@ public class TelaJogo extends javax.swing.JFrame {
                     .addComponent(respostaCantoSupDirPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ultimaPerguntaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(ultimaPerguntaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2357,25 +2871,25 @@ public class TelaJogo extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void cantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantoEsqInfButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
+    private void cantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
         
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaCantoEsqInfTextArea.setLineWrap(true);
@@ -2435,29 +2949,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_cantoEsqInfButtonActionPerformed
+    }                                                 
 
-    private void meioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meioEsqInfButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
+    private void meioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
         
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
-        
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaMeioEsqInfTextArea.setLineWrap(true);
@@ -2517,28 +3027,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_meioEsqInfButtonActionPerformed
+    }                                                
 
-    private void cantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantoSupEsqButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
-        // image.Visible = true;
+    private void cantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
+        
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaCantoSupEsqTextArea.setLineWrap(true);
@@ -2598,29 +3105,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_cantoSupEsqButtonActionPerformed
+    }                                                 
 
-    private void meioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meioSupDirButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
+    private void meioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
         
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
-        
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaMeioSupDirTextArea.setLineWrap(true);
@@ -2680,29 +3183,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_meioSupDirButtonActionPerformed
+    }                                                
 
-    private void meioSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meioSupEsqButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
+    private void meioSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
         
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
-        
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaMeioSupEsqTextArea.setLineWrap(true);
@@ -2762,29 +3261,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_meioSupEsqButtonActionPerformed
+    }                                                
 
-    private void meioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meioInfDirButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
+    private void meioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
         
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
-        
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaMeioInfDirTextArea.setLineWrap(true);
@@ -2844,28 +3339,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_meioInfDirButtonActionPerformed
+    }                                                
 
-    private void cantoInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantoInfDirButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
-        // image.Visible = true;
+    private void cantoInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
+        
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaCantoInfDirTextArea.setLineWrap(true);
@@ -2925,28 +3417,25 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_cantoInfDirButtonActionPerformed
+    }                                                 
 
-    private void cantoSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantoSupDirButtonActionPerformed
-        DAO dao = new DAO();
-        Random gerador = new Random();
-        // image.Visible = true;
+    private void cantoSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        JOptionPane.showMessageDialog(null, "Escolhendo questão... ヾ(⌐■_■)ノ♪", "Quiz ArtVantGarde", 1);
+
+        //Verificação da quantidade de questões
+        if(numeroQuestoes.isEmpty()){
+            try {
+                numeroQuestoes = dao.obterNumeroQuestoes(idVanguarda);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Problemas Técnicos!!(┬┬﹏┬┬)");
+            }
+        }
+        
         //ID mínimo e máximo das questões
         int n = numeroQuestoes.size();
-        int min = numeroQuestoes.get(0);
-        int max = numeroQuestoes.get(n-1);
         //Sorteio da questão
-        if(n > 1){
-            int indexIdQuestao = gerador.nextInt(min, max);
-            idQuestao = numeroQuestoes.get(indexIdQuestao);
-            System.out.println(idQuestao + indexIdQuestao);
-        }else{
-            idQuestao = numeroQuestoes.get(0);
-            System.out.println(idQuestao);
-        }
+        int indexQuestao = gerador.nextInt(n);
+        idQuestao = numeroQuestoes.get(indexQuestao);
             
         //Ajustes da área em que a pergunta aparece
         perguntaCantoSupDirTextArea.setLineWrap(true);
@@ -3006,13 +3495,11 @@ public class TelaJogo extends javax.swing.JFrame {
         jogoPanel.setVisible(false);
         int indexIdQuestao = numeroQuestoes.indexOf(idQuestao);
         numeroQuestoes.remove(indexIdQuestao);
-        
-        //início do timer 1
-        inicio1 = (int) new Date().getTime();
-    }//GEN-LAST:event_cantoSupDirButtonActionPerformed
+    }                                                 
 
-    private void responderCantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderCantoSupEsqButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderCantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaCantoSupEsqTextArea2.setLineWrap(true);
         perguntaCantoSupEsqTextArea2.setWrapStyleWord(true);
@@ -3036,8 +3523,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaCantoSupEsqPanel.setVisible(false);
                 respostaCantoSupEsqPanel.setVisible(true);
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
                 
             }else{
                 cantoSupEsqButtonPanel.setVisible(true);
@@ -3045,13 +3531,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaCantoSupEsqPanel.setVisible(false);
                 respostaCantoSupEsqPanel.setVisible(true);
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3102,37 +3582,40 @@ public class TelaJogo extends javax.swing.JFrame {
                 
         perguntaCantoSupEsqPanel.setVisible(false);
         respostaCantoSupEsqPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderCantoSupEsqButtonActionPerformed
+    }                                                          
 
-    private void continuarCantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarCantoSupEsqButtonActionPerformed
+    private void continuarCantoSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaCantoSupEsqPanel.setVisible(false);
             ultimaPerguntaPanel.setVisible(true);
             
             // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
             try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
+                dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
             }
         }else{
             jogoPanel.setVisible(true);
             respostaCantoSupEsqPanel.setVisible(false); 
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+            }
             
             //Remover o texto da área de inserir resposta
             respostaTextField4.setText("");
         } 
-    }//GEN-LAST:event_continuarCantoSupEsqButtonActionPerformed
+    }                                                          
 
-    private void responderCantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderCantoEsqInfButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderCantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaCantoEsqInfTextArea1.setLineWrap(true);
         perguntaCantoEsqInfTextArea1.setWrapStyleWord(true);
@@ -3158,9 +3641,7 @@ public class TelaJogo extends javax.swing.JFrame {
                                 
                 //Contabilizar os acertos
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
             }else{
                 cantoEsqInfButtonPanel.setVisible(true);
                 cantoEsqInfButton.setVisible(true);
@@ -3169,13 +3650,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 
                 // Contabilizar os erros
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3226,36 +3701,39 @@ public class TelaJogo extends javax.swing.JFrame {
         
         perguntaCantoInfEsqPanel.setVisible(false);
         respostaCantoInfEsqPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderCantoEsqInfButtonActionPerformed
+    }                                                          
 
-    private void continuarCantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarCantoEsqInfButtonActionPerformed
+    private void continuarCantoEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaCantoInfEsqPanel.setVisible(false);
             ultimaPerguntaPanel.setVisible(true);
-            
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }
         }else{
             jogoPanel.setVisible(true);
             respostaCantoInfEsqPanel.setVisible(false);
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto da área de mostrar a resposta inserid pelo jogador
             respostaCantoEsqInfRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarCantoEsqInfButtonActionPerformed
+    }                                                          
 
-    private void responderMeioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderMeioEsqInfButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderMeioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaMeioEsqInfTextArea1.setLineWrap(true);
         perguntaMeioEsqInfTextArea1.setWrapStyleWord(true);
@@ -3281,8 +3759,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 
                 //Contabilizar os acertos
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
                 
             }else{
                 meioInfEsqButtonPanel.setVisible(true);
@@ -3292,15 +3769,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 
                 //Contabilizar e registrar os erros
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
-                //Perder o jogo
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3351,37 +3820,37 @@ public class TelaJogo extends javax.swing.JFrame {
         
         perguntaMeioEsqInfPanel.setVisible(false);
         respostaMeioEsqInfPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderMeioEsqInfButtonActionPerformed
+    }                                                         
 
-    private void continuarMeioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarMeioEsqInfButtonActionPerformed
+    private void continuarMeioEsqInfButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaMeioEsqInfPanel.setVisible(false);
-            ultimaPerguntaPanel.setVisible(true);
-            
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }    
+            ultimaPerguntaPanel.setVisible(true);   
         }else{
             jogoPanel.setVisible(true);
             respostaMeioEsqInfPanel.setVisible(false);
-            
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto na área de exibir a resposta inserida pelo jogador
             respostaMeioEsqInfRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarMeioEsqInfButtonActionPerformed
+    }                                                         
 
-    private void responderMeioSupEsqButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderMeioSupEsqButton1ActionPerformed
-        DAO dao = new DAO();
+    private void responderMeioSupEsqButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaMeioSupEsqTextArea1.setLineWrap(true);
         perguntaMeioSupEsqTextArea1.setWrapStyleWord(true);
@@ -3405,22 +3874,14 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaMeioSupEsqPanel.setVisible(false);
                 respostaMeioSupEsqPanel.setVisible(true);
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
             }else{
                 meioSupEsqButtonPanel.setVisible(true);
                 meioSupEsqButton.setVisible(true);
                 perguntaMeioSupEsqPanel.setVisible(false);
                 respostaMeioSupEsqPanel.setVisible(true);
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3471,37 +3932,39 @@ public class TelaJogo extends javax.swing.JFrame {
         
         perguntaMeioSupEsqPanel.setVisible(false);
         respostaMeioSupEsqPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderMeioSupEsqButton1ActionPerformed
+    }                                                          
 
-    private void continuarMeioSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarMeioSupEsqButtonActionPerformed
+    private void continuarMeioSupEsqButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaMeioSupEsqPanel.setVisible(false);
             ultimaPerguntaPanel.setVisible(true);
-        
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }
         }else{
             jogoPanel.setVisible(true);
             respostaMeioSupEsqPanel.setVisible(false); 
-            
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto da área de exibir a resposta inserida pelo jogador
             respostaMeioSupEsqRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarMeioSupEsqButtonActionPerformed
+    }                                                         
 
-    private void responderMeioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderMeioInfDirButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderMeioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaMeioInfDirTextArea1.setLineWrap(true);
         perguntaMeioInfDirTextArea1.setWrapStyleWord(true);
@@ -3525,22 +3988,14 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaMeioInfDirPanel.setVisible(false);
                 respostaMeioInfDirPanel.setVisible(true);
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
             }else{
                 meioInfDirButtonPanel.setVisible(true);
                 meioInfDirButton.setVisible(true);
                 perguntaMeioInfDirPanel.setVisible(false);
                 respostaMeioInfDirPanel.setVisible(true);
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3591,37 +4046,37 @@ public class TelaJogo extends javax.swing.JFrame {
                 
         perguntaMeioInfDirPanel.setVisible(false);
         respostaMeioInfDirPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderMeioInfDirButtonActionPerformed
+    }                                                         
 
-    private void continuarMeioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarMeioInfDirButtonActionPerformed
+    private void continuarMeioInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaMeioInfDirPanel.setVisible(false); 
             ultimaPerguntaPanel.setVisible(true);
-        
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }
         }else{
             jogoPanel.setVisible(true);
             respostaMeioInfDirPanel.setVisible(false); 
-            
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto da área de exibir a resposta inserida pelo jogador
             respostaMeioInfDirRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarMeioInfDirButtonActionPerformed
+    }                                                         
 
-    private void responderMeioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderMeioSupDirButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderMeioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+        
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaMeioSupDirTextArea1.setLineWrap(true);
         perguntaMeioSupDirTextArea1.setWrapStyleWord(true);
@@ -3645,22 +4100,14 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaMeioSupDirPanel.setVisible(false);
                 respostaMeioSupDirPanel.setVisible(true);
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
             }else{
                 meioSupDirButtonPanel.setVisible(true);
                 meioSupDirButton.setVisible(true);
                 perguntaMeioSupDirPanel.setVisible(false);
                 respostaMeioSupDirPanel.setVisible(true);
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3711,37 +4158,37 @@ public class TelaJogo extends javax.swing.JFrame {
                 
         perguntaMeioSupDirPanel.setVisible(false);
         respostaMeioSupDirPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderMeioSupDirButtonActionPerformed
+    }                                                         
 
-    private void continuarMeioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarMeioSupDirButtonActionPerformed
+    private void continuarMeioSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaMeioSupDirPanel.setVisible(false);
             ultimaPerguntaPanel.setVisible(true);
-        
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }
         }else{
             jogoPanel.setVisible(true);
             respostaMeioSupDirPanel.setVisible(false); 
-            
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto da área de exibir a resposta inserida pelo jogador
             respostaMeioSupDirRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarMeioSupDirButtonActionPerformed
+    }                                                         
 
-    private void responderCantoInfDirButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderCantoInfDirButton1ActionPerformed
-        DAO dao = new DAO();
+    private void responderCantoInfDirButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                            
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaCantoInfDirTextArea1.setLineWrap(true);
         perguntaCantoInfDirTextArea1.setWrapStyleWord(true);
@@ -3765,22 +4212,14 @@ public class TelaJogo extends javax.swing.JFrame {
                 perguntaCantoInfDirPanel.setVisible(false);
                 respostaCantoInfDirPanel.setVisible(true);
                 acertos++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
             }else{
                 cantoInfDirButtonPanel.setVisible(true);
                 cantoInfDirButton.setVisible(true);
                 perguntaCantoInfDirPanel.setVisible(false);
                 respostaCantoInfDirPanel.setVisible(true);
                 erros++;
-                System.out.println(acertos);
-                System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3831,38 +4270,38 @@ public class TelaJogo extends javax.swing.JFrame {
                 
         perguntaCantoInfDirPanel.setVisible(false);
         respostaCantoInfDirPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderCantoInfDirButton1ActionPerformed
+    }                                                           
 
-    private void continuarCantoInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarCantoInfDirButtonActionPerformed
+    private void continuarCantoInfDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaCantoInfDirPanel.setVisible(false);
             ultimaPerguntaPanel.setVisible(true);
-        
-            // Registrar acertos e erros do grupo
-            DAO dao = new DAO();
-            try{
-                dao.contabilizarAcertosErros(idGrupo, acertos, erros);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
-            }
         }else{
             jogoPanel.setVisible(true);
             respostaCantoInfDirPanel.setVisible(false); 
-            
+            if(erros == 16){
+                int total = acertos + erros;
+                acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                errosFimLabel2.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                perdeuPanel.setVisible(true);
+                mensagemFimPanel.setVisible(true);
+                try{
+                    dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
+                }
+            }
             //Remover o texto da área de exibir a resposta inserida pelo aluno
             respostaCantoInfDirRespostaTextField.setText("");
             
         }
-    }//GEN-LAST:event_continuarCantoInfDirButtonActionPerformed
+    }                                                          
 
-    private void responderCantoSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_responderCantoSupDirButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderCantoSupDirButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         //Ajustes das áreas em que a pergunta e a resposta aparecem
         perguntaCantoSupDirTextArea1.setLineWrap(true);
         perguntaCantoSupDirTextArea1.setWrapStyleWord(true);
@@ -3888,6 +4327,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 acertos++;
                 System.out.println(acertos);
                 System.out.println(erros);
+                dao.contabilizarAcertos(idQuestao, idVanguarda);
                 
             }else{
                 cantoSupDirButtonPanel.setVisible(true);
@@ -3897,11 +4337,7 @@ public class TelaJogo extends javax.swing.JFrame {
                 erros++;
                 System.out.println(acertos);
                 System.out.println(erros);
-                if(erros == 16){
-                    TelaGameOver frame = new TelaGameOver(idLogin, idGrupo);
-                    this.dispose();
-                    frame.setVisible(true);
-                }
+                dao.contabilizarErros(idQuestao, idVanguarda);
             }
             
             try{
@@ -3952,14 +4388,11 @@ public class TelaJogo extends javax.swing.JFrame {
                 
         perguntaCantoSupDirPanel.setVisible(false);
         respostaCantoSupDirPanel.setVisible(true);
-        
-        //Fim do timer 1
-        fim1 = (int) new Date().getTime();
-        int tempoTotal = (fim1-inicio1);
-        System.out.println(tempoTotal);
-    }//GEN-LAST:event_responderCantoSupDirButtonActionPerformed
+    }                                                          
 
-    private void continuarCantoSupDirButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuarCantoSupDirButton1ActionPerformed
+    private void continuarCantoSupDirButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                            
+        JOptionPane.showMessageDialog(null, "Corrigindo... ＼（〇_ｏ）／", "Quiz ArtVantGarde", 1);
+
         // Código para ganhar
         if(cantoEsqInfLabel.isVisible() == true && meioEsqInfLabel.isVisible() == true && cantoSupEsqLabel.isVisible() == true && meioSupDirLabel.isVisible() == true && meioInfDirLabel.isVisible() == true && cantoInfDirLabel.isVisible() == true && cantoSupDirLabel.isVisible() == true && meioSupEsqLabel.isVisible() ==  true){
             respostaCantoSupDirPanel.setVisible(false);
@@ -3968,25 +4401,49 @@ public class TelaJogo extends javax.swing.JFrame {
         }else{
             jogoPanel.setVisible(true);
             respostaCantoSupDirPanel.setVisible(false);
-            
+            if(erros == 16){
+                    int total = acertos + erros;
+                    acertosFimLabel2.setText("Você acertou " + acertos + " questões");
+                    errosFimLabel2.setText("Você errou " + erros + " questões");
+                    totalQuestoesLabel2.setText("Você respondeu " + total + "questões");
+                    perdeuPanel.setVisible(true);
+                    ultimaPerguntaPanel1.setVisible(false);
+                    jLabel2.setVisible(false);
+                    jLabel12.setVisible(false);
+                    ultimaPerguntaPanel.setVisible(true);
+                    mensagemFimPanel.setVisible(true);
+            }
             //Remover o texto da área de exibir a resposta inserida pelo aluno
             respostaCantoSupDirRespostaTextField.setText("");
         }
-    }//GEN-LAST:event_continuarCantoSupDirButton1ActionPerformed
+    }                                                                                                                 
 
-    private void inserirVanguardaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirVanguardaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inserirVanguardaTextFieldActionPerformed
-
-    private void resposderVanguardaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resposderVanguardaButtonActionPerformed
-        DAO dao = new DAO();
+    private void responderVanguardaButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+        //Fim do timer 7
+        int fim = (int) new Date().getTime();
+        int tempoTotal = (fim-inicio);
         try{
             String nomeVanguarda = dao.pegarNomeVanguarda(idVanguarda);
             String respostaAluno = inserirVanguardaTextField.getText();
             if((respostaAluno.toLowerCase()).equals(nomeVanguarda.toLowerCase())){
                 acertos++;
+                int total = acertos + erros;
+                acertosFimLabel.setText("Você acertou " + acertos + " questões");
+                errosFimLabel.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel.setText("Você respondeu " + total + " questões");
+                ultimaPerguntaPanel1.setVisible(false);
+                mensagemFimPanel.setVisible(true);
+                vanguardaCertaPanel.setVisible(true);
             }else{
                 erros++;
+                int total = acertos + erros;
+                nomeVanguardaLabel.setText("A resposta certa era " + nomeVanguarda);
+                acertosFimLabel1.setText("Você acertou " + acertos + " questões");
+                errosFimLabel1.setText("Você errou " + erros + " questões");
+                totalQuestoesLabel1.setText("Você respondeu " + total + " questões");
+                ultimaPerguntaPanel1.setVisible(false);
+                mensagemFimPanel.setVisible(true);
+                vanguardaErradaPanel.setVisible(true);
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, "Problemas técnicos!!");
@@ -3994,49 +4451,44 @@ public class TelaJogo extends javax.swing.JFrame {
 
         // Registrar acertos e erros do grupo
         try{
-            dao.contabilizarAcertosErros(idGrupo, acertos, erros);
+            dao.contabilizarAcertosErros(idGrupo, acertos, erros, idVanguarda);
+            dao.contabilizarTempo(idGrupo, tempoTotal);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Problemas técnicos!! @-@");
         }
-    }//GEN-LAST:event_resposderVanguardaButtonActionPerformed
+    }                                                        
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+    private void rankingButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        TelaRanking frame = new TelaRanking(idLogin, idVanguarda, musica);
+        this.dispose();
+        frame.setVisible(true);
+    }                                             
+
+    private void menuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        try{
+            if(dao.existeProfessor(idLogin)){
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
+                this.dispose();
+                frame.setVisible(true);
+            }else if(dao.existeAluno(idLogin)){
+                TelaMenuPrincipalAluno frame = new TelaMenuPrincipalAluno(idLogin, musica);
+                this.dispose();
+                frame.setVisible(true);
+            }else{
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
+                this.dispose();
+                frame.setVisible(true);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Problemas técnicos!!");
         }
-        //</editor-fold>
-        //</editor-fold>
+    }                                                   
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaJogo(idLogin, idGrupo, idVanguarda).setVisible(true);
-            }
-        });
-    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel acertosFimLabel;
+    private javax.swing.JLabel acertosFimLabel1;
+    private javax.swing.JLabel acertosFimLabel2;
     private javax.swing.JTextArea alternativasCantoEsqInfTextArea;
     private javax.swing.JTextArea alternativasCantoEsqInfTextArea1;
     private javax.swing.JTextArea alternativasCantoInfDirTextArea;
@@ -4079,6 +4531,9 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JButton continuarMeioInfDirButton;
     private javax.swing.JButton continuarMeioSupDirButton;
     private javax.swing.JButton continuarMeioSupEsqButton;
+    private javax.swing.JLabel errosFimLabel;
+    private javax.swing.JLabel errosFimLabel1;
+    private javax.swing.JLabel errosFimLabel2;
     private javax.swing.JLabel imagemCantoEsqInfPerguntaLabel;
     private javax.swing.JLabel imagemCantoEsqInfRespostaLabel;
     private javax.swing.JLabel imagemCantoInfDirPerguntaLabel;
@@ -4087,6 +4542,7 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JLabel imagemCantoSupDirRespostaLabel;
     private javax.swing.JLabel imagemCantoSupEsqPerguntaLabel;
     private javax.swing.JLabel imagemCantoSupEsqRespostaLabel;
+    private javax.swing.JLabel imagemFinalLabel;
     private javax.swing.JLabel imagemMeioEsqInfPerguntaLabel;
     private javax.swing.JLabel imagemMeioEsqInfRespostaLabel;
     private javax.swing.JLabel imagemMeioInfDirPerguntaLabel;
@@ -4096,12 +4552,18 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JLabel imagemMeioSupEsqPerguntaLabel;
     private javax.swing.JLabel imagemMeioSupEsqRespostaLabel;
     private javax.swing.JTextField inserirVanguardaTextField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -4112,6 +4574,8 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
+    private javax.swing.JLayeredPane jLayeredPane4;
+    private javax.swing.JLayeredPane jLayeredPane5;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -4167,6 +4631,10 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JPanel meioSupEsqButtonPanel;
     private javax.swing.JLabel meioSupEsqLabel;
     private javax.swing.JLayeredPane meioSupEsqPanel;
+    private javax.swing.JPanel mensagemFimPanel;
+    private javax.swing.JButton menuPrincipalButton;
+    private javax.swing.JLabel nomeVanguardaLabel;
+    private javax.swing.JPanel perdeuPanel;
     private javax.swing.JTextArea perguntaCantoEsqInfTextArea;
     private javax.swing.JTextArea perguntaCantoEsqInfTextArea1;
     private javax.swing.JPanel perguntaCantoInfDirPanel;
@@ -4191,6 +4659,7 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JPanel perguntaMeioSupEsqPanel;
     private javax.swing.JTextArea perguntaMeioSupEsqTextArea;
     private javax.swing.JTextArea perguntaMeioSupEsqTextArea1;
+    private javax.swing.JButton rankingButton;
     private javax.swing.JButton responderCantoEsqInfButton;
     private javax.swing.JButton responderCantoInfDirButton1;
     private javax.swing.JButton responderCantoSupDirButton;
@@ -4199,7 +4668,7 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JButton responderMeioInfDirButton;
     private javax.swing.JButton responderMeioSupDirButton;
     private javax.swing.JButton responderMeioSupEsqButton1;
-    private javax.swing.JButton resposderVanguardaButton;
+    private javax.swing.JButton responderVanguardaButton;
     private javax.swing.JLabel respostaAlunoCantoEsqInfRespostaLabel;
     private javax.swing.JLabel respostaAlunoCantoInfDirRespostaLabel;
     private javax.swing.JLabel respostaAlunoCantoSupDirRespostaLabel;
@@ -4232,6 +4701,12 @@ public class TelaJogo extends javax.swing.JFrame {
     private javax.swing.JTextField respostaMeioSupEsqRespostaTextField;
     private javax.swing.JTextField respostaMeioSupEsqTextField;
     private javax.swing.JTextField respostaTextField4;
+    private javax.swing.JLabel totalQuestoesLabel;
+    private javax.swing.JLabel totalQuestoesLabel1;
+    private javax.swing.JLabel totalQuestoesLabel2;
     private javax.swing.JPanel ultimaPerguntaPanel;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JPanel ultimaPerguntaPanel1;
+    private javax.swing.JPanel vanguardaCertaPanel;
+    private javax.swing.JPanel vanguardaErradaPanel;
+    // End of variables declaration                   
 }

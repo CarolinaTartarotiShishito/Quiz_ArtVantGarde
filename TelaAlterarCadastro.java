@@ -651,7 +651,11 @@ public class TelaAlterarCadastro extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                                                                        
+    }// </editor-fold>                        
+
+    private void emailAlunoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        // TODO add your handling code here:
+    }                                                   
 
     private void verSenhaAlunoLabelMouseClicked(java.awt.event.MouseEvent evt) {                                                
         verSenhaAlunoLabel.setVisible(false);
@@ -684,7 +688,19 @@ public class TelaAlterarCadastro extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Problemas Técnicos!!", "Quiz ArtVantGarde", 1);
             }
         }
-    }                                                   
+    }                                                  
+
+    private void nomeAlunoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        // TODO add your handling code here:
+    }                                                  
+
+    private void serieTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void codMatriculaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        // TODO add your handling code here:
+    }                                                     
 
     private void menuPrincipalAlunoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                         
         try{
@@ -734,7 +750,11 @@ public class TelaAlterarCadastro extends javax.swing.JFrame {
         TelaConfiguracoes frame = new TelaConfiguracoes(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
-    }                                                                                                  
+    }                                                 
+
+    private void emailProfessorTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                        
+        // TODO add your handling code here:
+    }                                                       
 
     private void verSenhaProfessorLabelMouseClicked(java.awt.event.MouseEvent evt) {                                                    
         verSenhaProfessorLabel.setVisible(false);
@@ -747,6 +767,14 @@ public class TelaAlterarCadastro extends javax.swing.JFrame {
         esconderSenhaProfessorLabel.setVisible(false);
         senhaProfessorPasswordField.setEchoChar('*');
     }                                                        
+
+    private void nomeProfessorTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // TODO add your handling code here:
+    }                                                      
+
+    private void materiaLecionadaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        // TODO add your handling code here:
+    }                                                         
 
     private void alterarProfessorButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
         String email = emailProfessorTextField.getText();

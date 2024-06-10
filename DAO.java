@@ -585,7 +585,8 @@ public class DAO {
         String sql = "UPDATE tbResumos SET resumo = ? WHERE idVanguarda = ?";
         try (Connection conn = ConnectionFactory.obterConexao();
         PreparedStatement ps = conn.prepareStatement(sql)){
-        ps.setString(1, resumo);
+        ps.setString(1, resumo.getResumo());
+        ps.setInt(1, resumo.getIdVanguarda());
         ps.execute();
         }
     }

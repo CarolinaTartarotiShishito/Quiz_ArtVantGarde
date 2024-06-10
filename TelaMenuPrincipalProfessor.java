@@ -192,7 +192,7 @@ public class TelaMenuPrincipalProfessor extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void estatisticasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        TelaEstatisticas frame = new TelaEstatisticas(idLogin, musica);
+        TelaVanguardasEstatisticas frame = new TelaVanguardasEstatisticas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                  

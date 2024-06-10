@@ -1,5 +1,3 @@
-package com.mycompany.quizartvantgarde;
-
 /**
  *
  * @author louis

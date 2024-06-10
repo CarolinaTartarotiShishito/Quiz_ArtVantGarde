@@ -3,16 +3,25 @@
  * @author louis
  */
 public class UsuarioProfessor {
-    public int id;
-    public String nomeCompleto;
-    public String materiaLecionada;
+    private int idProfessor;
+    private String nomeCompleto;
+    private String materiaLecionada;
+    private int idLogin;
 
-    public int getId() {
-        return id;
+    public int getIdProfessor() {
+        return idProfessor;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdProfessor(int idProfessor) {
+        this.idProfessor = idProfessor;
+    }
+
+    public int getIdLogin() {
+        return idLogin;
+    }
+
+    public void setIdLogin(int idLogin) {
+        this.idLogin = idLogin;
     }
 
     public String getNomeCompleto() {
@@ -31,9 +40,22 @@ public class UsuarioProfessor {
         this.materiaLecionada = materiaLecionada;
     }
 
-    public UsuarioProfessor(int id, String nomeCompleto, String materiaLecionada) {
-        this.id = id;
+    public UsuarioProfessor(int idProfessor, String nomeCompleto, String materiaLecionada, int idLogin) {
+        this.idProfessor = idProfessor;
+        this.nomeCompleto = nomeCompleto;
+        this.materiaLecionada = materiaLecionada;
+        this.idLogin = idLogin;
+    }
+
+    public UsuarioProfessor(int idLogin, String nomeCompleto, String materiaLecionada) {
+        this.idLogin = idLogin;
         this.nomeCompleto = nomeCompleto;
         this.materiaLecionada = materiaLecionada;
     }
+
+    public UsuarioProfessor(String nomeCompleto, String materiaLecionada) {
+        this.nomeCompleto = nomeCompleto;
+        this.materiaLecionada = materiaLecionada;
+    }
+    
 }

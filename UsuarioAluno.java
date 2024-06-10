@@ -3,11 +3,20 @@
  * @author louis
  */
 public class UsuarioAluno {
-    public String nome;
-    public String serie;
-    public String codMatricula;
-    public int idLogin;
+    private int idAluno;
+    private String nome;
+    private String serie;
+    private String codMatricula;
+    private int idLogin;
 
+    public int getIdAluno() {
+        return idAluno;
+    }
+
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
+    }
+ 
     public String getNome() {
         return nome;
     }
@@ -40,13 +49,24 @@ public class UsuarioAluno {
         this.idLogin = idLogin;
     }
 
+    public UsuarioAluno(int idAluno, String nome, String serie, String codMatricula, int idLogin) {
+        this.idAluno = idAluno;
+        this.nome = nome;
+        this.serie = serie;
+        this.codMatricula = codMatricula;
+        this.idLogin = idLogin;
+    }
+
     public UsuarioAluno(String nome, String serie, String codMatricula, int idLogin) {
         this.nome = nome;
         this.serie = serie;
         this.codMatricula = codMatricula;
         this.idLogin = idLogin;
     }
-    
-    
+
+    public UsuarioAluno(String nome, String codMatricula) {
+        this.nome = nome;
+        this.codMatricula = codMatricula;
+    }   
     
 }

@@ -3,9 +3,19 @@
  * @author louis
  */
 public class Ranking {
-    public String nomeGrupo;
-    public int acertos;
-    public int erros;
+    private int posicao;
+    private String nomeGrupo;
+    private int acertos;
+    private int erros;
+    private String cronometro;
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
+    }
 
     public String getNomeGrupo() {
         return nomeGrupo;
@@ -31,11 +41,20 @@ public class Ranking {
         this.erros = erros;
     }
 
-    public Ranking(String nomeGrupo, int acertos, int erros) {
+    public String getCronometro() {
+        return cronometro;
+    }
+
+    public void setCronometro(String cronometro) {
+        this.cronometro = cronometro;
+    }
+
+    public Ranking(int posicao, String nomeGrupo, int acertos, int erros, String cronometro) {
+        this.posicao = posicao;
         this.nomeGrupo = nomeGrupo;
         this.acertos = acertos;
         this.erros = erros;
+        this.cronometro = cronometro;
     }
-    
     
 }

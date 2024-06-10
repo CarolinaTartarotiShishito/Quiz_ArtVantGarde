@@ -19,6 +19,7 @@ public class TelaManterCadastro extends javax.swing.JFrame {
     public TelaManterCadastro(int idLogin, String cadastro, Musica musica) {
         super("Quiz ArtVantGarde");
         initComponents();
+        this.setLocationRelativeTo(null);
         this.idLogin = idLogin;
         this.cadastro = cadastro;
         this.musica = musica;

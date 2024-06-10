@@ -109,7 +109,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        menuPrincipalLabel.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
+        menuPrincipalLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         menuPrincipalLabel.setText("Menu Principal");
 
         perguntasButton.setFont(new java.awt.Font("Bahnschrift", 0, 22)); // NOI18N
@@ -153,7 +153,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
                             .addComponent(configuracoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(710, 710, 710)
+                        .addGap(674, 674, 674)
                         .addComponent(menuPrincipalLabel)))
                 .addContainerGap(198, Short.MAX_VALUE))
         );
@@ -162,9 +162,9 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(menuPrincipalLabel)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(resumosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,7 +200,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void estatisticasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        TelaVanguardasEstatisticas frame = new TelaVanguardasEstatisticas(idLogin, musica);
+        TelaEstatisticas frame = new TelaEstatisticas(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
     }                                                  
@@ -217,7 +217,8 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         frame.setVisible(true);
     }                                             
 
-    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        idLogin = 1;
         TelaConfiguracoes frame = new TelaConfiguracoes(idLogin, musica);
         this.dispose();
         frame.setVisible(true);
@@ -297,4 +298,3 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
     private javax.swing.JButton resumosButton;
     // End of variables declaration                   
 }
-

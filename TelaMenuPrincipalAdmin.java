@@ -217,8 +217,7 @@ public class TelaMenuPrincipalAdmin extends javax.swing.JFrame {
         frame.setVisible(true);
     }                                             
 
-    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
-        idLogin = 1;
+    private void configuracoesButtonActionPerformed(java.awt.event.ActionEvent evt) {
         TelaConfiguracoes frame = new TelaConfiguracoes(idLogin, musica);
         this.dispose();
         frame.setVisible(true);

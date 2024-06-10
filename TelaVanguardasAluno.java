@@ -2,6 +2,7 @@
  *
  * @author carol
  */
+import javax.swing.JOptionPane;
 public class TelaVanguardasAluno extends javax.swing.JFrame {
     static int idLogin;
     static Musica musica;

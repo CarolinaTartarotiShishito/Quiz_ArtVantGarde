@@ -15,7 +15,9 @@ public class TelaAlterarCadastro extends javax.swing.JFrame {
      * Creates new form TelaAlterarCadastro
      */
     public TelaAlterarCadastro(int idLogin, Musica musica) {
+        super("Quiz ArtVantGarde");
         initComponents();
+        this.setLocationRelativeTo(null);
         this.musica = musica;
         this.idLogin = idLogin;
         

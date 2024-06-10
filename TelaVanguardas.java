@@ -234,9 +234,20 @@ public class TelaVanguardas extends javax.swing.JFrame {
     }                                                 
 
     private void voltarMenuPrincipalButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
-        TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
-        this.dispose();
-        frame.setVisible(true);
+        DAO dao = new DAO();
+        try{
+            if(dao.existeProfessor(idLogin) == true){
+                TelaMenuPrincipalProfessor frame = new TelaMenuPrincipalProfessor(idLogin, musica);
+                this.dispose();
+                frame.setVisible(true);
+            }else{
+                TelaMenuPrincipalAdmin frame = new TelaMenuPrincipalAdmin(idLogin, musica);
+                this.dispose();
+                frame.setVisible(true);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Problemas técnicos");
+        }
     }                                                         
 
     /**
